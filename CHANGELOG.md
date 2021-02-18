@@ -2,4 +2,6 @@
 
 - Migrated to `dune` as build system
 
-- Switched
+- Switched to using `ppx` for derivation of sexp related functions
+
+- Switc
