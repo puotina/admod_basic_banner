@@ -1,3 +1,5 @@
 SRCFILES = src/*.ml*
 
-OCAMLF
+OCAMLFORMAT = ocamlformat \
+	--inplace \
+	--fie
