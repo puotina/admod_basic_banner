@@ -4,4 +4,4 @@
 
 - Switched to using `ppx` for derivation of sexp related functions
 
-- Switching from presumably ocamlyacc to menhir for
+- Switching from presumably ocamlyacc to menhir for `parser_yacc.mly` (modified file a bi
