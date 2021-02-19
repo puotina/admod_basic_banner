@@ -4,4 +4,4 @@
 
 - Switched to using `ppx` for derivation of sexp related functions
 
-- Switc
+- Switching from presumably ocamlyacc to menhir for
