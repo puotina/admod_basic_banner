@@ -4,4 +4,6 @@ OCAMLFORMAT = ocamlformat \
 	--inplace \
 	--field-space loose \
 	--let-and sparse \
-	--let-open auto 
+	--let-open auto \
+	--type-decl sparse \
+	--sequence
