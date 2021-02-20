@@ -23,4 +23,9 @@ test :
 
 .PHONY: run
 run :
-	dune exec ./src/main
+	dune exec ./src/main.exe
+
+.PHONY: format
+format :
+	$(OCAMLFORMAT)
+	$
