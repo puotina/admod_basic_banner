@@ -19,4 +19,8 @@ all :
 
 .PHONY: test
 test :
-	dune e
+	dune exec ./tests/main.exe
+
+.PHONY: run
+run :
+	dune exec ./src/main
