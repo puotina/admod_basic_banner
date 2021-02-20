@@ -6,4 +6,7 @@ OCAMLFORMAT = ocamlformat \
 	--let-and sparse \
 	--let-open auto \
 	--type-decl sparse \
-	--sequence
+	--sequence-style terminator \
+	$(SRCFILES)
+
+OCPINDENT 
