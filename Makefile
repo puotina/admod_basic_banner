@@ -28,4 +28,8 @@ run :
 .PHONY: format
 format :
 	$(OCAMLFORMAT)
-	$
+	$(OCPINDENT)
+
+.PHONY : clean
+clean:
+	dune clean
