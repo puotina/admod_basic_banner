@@ -2,4 +2,6 @@ SRCFILES = src/*.ml*
 
 OCAMLFORMAT = ocamlformat \
 	--inplace \
-	--fie
+	--field-space loose \
+	--let-and sparse \
+	--let-open auto 
