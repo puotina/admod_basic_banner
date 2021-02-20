@@ -9,4 +9,10 @@ OCAMLFORMAT = ocamlformat \
 	--sequence-style terminator \
 	$(SRCFILES)
 
-OCPINDENT 
+OCPINDENT = ocp-indent \
+	--inplace \
+	$(SRCFILES)
+
+.PHONY: all
+all :
+	d
