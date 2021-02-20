@@ -15,4 +15,8 @@ OCPINDENT = ocp-indent \
 
 .PHONY: all
 all :
-	d
+	dune build @all
+
+.PHONY: test
+test :
+	dune e
