@@ -42,3 +42,59 @@ Batsh is implemented in OCaml and managed by [OPAM](http://opam.ocaml.org/pkg/ba
 3. Install Batsh: `opam install batsh`
 
 ### Build from source
+
+You have to install OCaml (version 4.00.1 or higher) development environment before compiling Batsh from source code, and follow steps below:
+
+1. Download source code of Batsh from [releases](https://github.com/BYVoid/Batsh/releases) or clone with git.
+2. Uncompress source code tarball.
+3. `make`
+4. `make install`
+5. Run: `batsh`
+
+#### Dependencies
+
+If there is any missing dependency, you can install them by running `opam install dune core_kernel ounit dlist cmdliner`
+
+* [dune](https://dune.build/): Build framework.
+* [core_kernel](https://github.com/janestreet/core_kernel/): Core_kernel is the system-independent part of Core, Jane Street's industrial-strength alternative to the OCaml standard library.
+* [ounit](http://ounit.forge.ocamlcore.org/): Unit test framework.
+* [dlist](https://github.com/BYVoid/Dlist): A purely functional list-like data structure supporting O(1) concatenation.
+* [cmdliner](http://erratique.ch/software/cmdliner): Command line interfaces parser.
+
+## Syntax
+
+The syntax of Batsh is [C-based](https://en.wikipedia.org/wiki/List_of_C-based_programming_languages) (derived from C programming language).
+If you have learned C, Java, C++ or JavaScript, Batsh is quite easy for you.
+
+### Assignment
+
+```javascript
+a = 1;
+b = "string";
+c = [1, 2, "str", true, false];
+```
+
+### Expression
+
+```javascript
+a = 1 + 2;
+b = a * 7;
+c = "Con" ++ "cat";
+d = c ++ b;
+```
+
+### Command
+
+```javascript
+// On UNIX
+output = ls();
+// On Windows
+output = dir();
+// Platform independent
+output = readdir();
+
+// Test existence
+ex = exists("file.txt");
+```
+
+### If condition
