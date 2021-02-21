@@ -98,3 +98,43 @@ ex = exists("file.txt");
 ```
 
 ### If condition
+
+```javascript
+a = 3;
+if (a > 2) {
+  println("Yes");
+} else {
+  println("No");
+}
+```
+
+### Loop
+
+```javascript
+// Fibonacci
+n = 0;
+i = 0;
+j = 1;
+while (n < 60) {
+  k = i + j;
+  i = j;
+  j = k;
+  n = n + 1;
+  println(k);
+}
+```
+
+### Function
+
+```javascript
+v1 = "Global V1";
+v2 = "Global V2";
+function func(p) {
+  v1 = "Local " ++ p;
+  global v2;
+  v2 = "V2 Modified.";
+}
+func("Var");
+```
+
+### Recursion
