@@ -138,3 +138,44 @@ func("Var");
 ```
 
 ### Recursion
+
+```javascript
+function fibonacci(num) {
+  if (num == 0) {
+    return 0;
+  } else if (num == 1) {
+    return 1;
+  } else {
+    return (fibonacci(num - 2) + fibonacci(num - 1));
+  }
+}
+println(fibonacci(8));
+```
+
+### [More examples](https://github.com/BYVoid/Batsh/tree/master/test_scripts)
+
+### Syntax Highlighting
+
+* [vim-Batsh](https://github.com/vuryleo/vim-Batsh)
+
+## Built-in functions
+
+In order to make script cross-platform, Batsh provided some "built-in" functions that will compile to platform-dependent code. It is assumed that Bash script runs on Linux or Mac OS and Batch script runs on Windows (XP or higher), which means Cygwin or wine are not supported.
+
+### `print(text, ...)`
+
+Prints a text string to console without a newline.
+
+### `println(text, ...)`
+
+Prints a text string to console with a new line (LF for bash, CRLF for batch).
+
+### `call(path, arg, ...)`
+
+Runs command from path through shell.
+
+### `bash(rawStatement)`
+
+Put `rawStatement` into compiled code for Bash. Ignore for Windows Batch.
+
+### `batch(rawStatement)`
