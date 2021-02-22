@@ -226,3 +226,18 @@ Yes you can use any of them as platform-independent glue code. But there are sev
 3. Hard to integrate with existing code written in Bash or Batch.
 
 Those reasons are why I developed Batsh.
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+## Contributors
+
+* [Carbo Kuo](https://github.com/BYVoid)
+* [Song Zhang](http://www.linkedin.com/pub/song-zhang/76/632/b51)
+* [Anthony Chan](https://github.com/anthonyhchan)
+* [jeb-de](https://github.com/jeb-de)
+* [Al Ramirez](https://github.com/mirez)
+* [Nixola](https://github.com/Nixola)
+* [Darren Ldl](https://github.com/darrenldl)
+* [Anton Kochkov](https://github.com/XVilka)
