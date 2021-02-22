@@ -179,3 +179,50 @@ Runs command from path through shell.
 Put `rawStatement` into compiled code for Bash. Ignore for Windows Batch.
 
 ### `batch(rawStatement)`
+
+Put `rawStatement` into compiled code for Windows Batch. Ignore for Bash.
+
+### `readdir(path)`
+
+Equals to `ls` and `dir /w`.
+
+### `exists(path)`
+
+Test existence of given path. 
+
+## Command Line Usage
+
+```
+NAME
+       batsh - A language that compiles to Bash and Windows Batch
+
+SYNOPSIS
+       batsh COMMAND ...
+
+COMMANDS
+       bash
+           Compile to Bash script.
+
+       batsh
+           Format source file.
+
+       winbat
+           Compile to Windows Batch script.
+
+OPTIONS
+       --help[=FMT] (default=pager)
+           Show this help in format FMT (pager, plain or groff).
+
+       --version
+           Show version information.
+```
+
+## Why not Python/Ruby/Node.js/Lua
+
+Yes you can use any of them as platform-independent glue code. But there are several disadvantages:
+
+1. None of them is **preinstalled on all platforms** (including Windows).
+2. Functionalities like process piping are not convenient to use.
+3. Hard to integrate with existing code written in Bash or Batch.
+
+Those reasons are why I developed Batsh.
