@@ -5,4 +5,5 @@ type t = {
 }
 
 let compile (batsh : Parser.t) : t =
-  let
+  let bash_ast = Bash_compile.compile batsh in
+  let bash_ast_ex
