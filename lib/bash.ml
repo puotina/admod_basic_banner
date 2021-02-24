@@ -10,4 +10,5 @@ let compile (batsh : Parser.t) : t =
   {batsh; bash_ast; bash_ast_expanded}
 
 let print (bash : t) : string =
-  let buf
+  let buf = Buffer.create 1024 in
+  Bash_format.print buf bash.bas
