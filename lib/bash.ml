@@ -11,4 +11,7 @@ let compile (batsh : Parser.t) : t =
 
 let print (bash : t) : string =
   let buf = Buffer.create 1024 in
-  Bash_format.print buf bash.bas
+  Bash_format.print buf bash.bash_ast_expanded;
+  Buffer.contents buf
+
+let ast ?(expa
