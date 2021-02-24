@@ -18,4 +18,4 @@ let ast ?(expand_functions=true) (bash : t) : Bash_ast.t =
   if expand_functions then
     bash.bash_ast_expanded
   else
-    ba
+    bash.bash_ast
