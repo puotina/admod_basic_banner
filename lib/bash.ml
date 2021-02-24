@@ -7,4 +7,7 @@ type t = {
 let compile (batsh : Parser.t) : t =
   let bash_ast = Bash_compile.compile batsh in
   let bash_ast_expanded = Bash_functions.expand bash_ast in
-  {batsh; bash_ast; ba
+  {batsh; bash_ast; bash_ast_expanded}
+
+let print (bash : t) : string =
+  let buf
