@@ -14,4 +14,5 @@ let print (bash : t) : string =
   Bash_format.print buf bash.bash_ast_expanded;
   Buffer.contents buf
 
-let ast ?(expa
+let ast ?(expand_functions=true) (bash : t) : Bash_ast.t =
+  if expan
