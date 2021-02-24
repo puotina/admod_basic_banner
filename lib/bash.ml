@@ -15,4 +15,7 @@ let print (bash : t) : string =
   Buffer.contents buf
 
 let ast ?(expand_functions=true) (bash : t) : Bash_ast.t =
-  if expan
+  if expand_functions then
+    bash.bash_ast_expanded
+  else
+    ba
