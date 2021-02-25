@@ -7,4 +7,5 @@ and identifiers = identifier list
 and leftvalue =
   | Identifier of identifier
   | ListAccess of (leftvalue * arithmetic)
-  | Entir
+  | EntireList of leftvalue
+  | Cardinal of leftval
