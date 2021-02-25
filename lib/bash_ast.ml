@@ -4,4 +4,6 @@ type identifier = string
 
 and identifiers = identifier list
 
-and
+and leftvalue =
+  | Identifier of identifier
+  | Lis
