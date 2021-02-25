@@ -6,4 +6,5 @@ and identifiers = identifier list
 
 and leftvalue =
   | Identifier of identifier
-  | Lis
+  | ListAccess of (leftvalue * arithmetic)
+  | Entir
