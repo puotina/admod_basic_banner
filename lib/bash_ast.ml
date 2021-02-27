@@ -12,4 +12,6 @@ and leftvalue =
 
 and arithmetic =
   | Leftvalue of leftvalue
-  |
+  | Int of int
+  | Float of float
+  | Ari
