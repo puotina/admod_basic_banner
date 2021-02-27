@@ -8,4 +8,8 @@ and leftvalue =
   | Identifier of identifier
   | ListAccess of (leftvalue * arithmetic)
   | EntireList of leftvalue
-  | Cardinal of leftval
+  | Cardinal of leftvalue
+
+and arithmetic =
+  | Leftvalue of leftvalue
+  |
