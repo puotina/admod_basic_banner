@@ -24,4 +24,7 @@ and expression =
   | StrBinary of (string * expression * expression)
   | TestUnary of (string * expression)
   | Command of (expression * expressions)
-  | List of expr
+  | List of expressions
+  | Raw of string
+
+and expressions = ex
