@@ -27,4 +27,8 @@ and expression =
   | List of expressions
   | Raw of string
 
-and expressions = ex
+and expressions = expression list
+
+and statement =
+  | Comment of string
+  | 
