@@ -20,4 +20,5 @@ and arithmetic =
 and expression =
   | Variable of leftvalue
   | String of string
-  
+  | Result of arithmetic
+  | StrBinary of (string * expressio
