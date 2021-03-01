@@ -14,4 +14,5 @@ and arithmetic =
   | Leftvalue of leftvalue
   | Int of int
   | Float of float
-  | Ari
+  | ArithUnary of (string * arithmetic)
+  | ArithBinary
