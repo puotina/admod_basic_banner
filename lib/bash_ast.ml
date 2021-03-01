@@ -18,4 +18,6 @@ and arithmetic =
   | ArithBinary of (string * arithmetic * arithmetic)
 
 and expression =
-  | Vari
+  | Variable of leftvalue
+  | String of string
+  
