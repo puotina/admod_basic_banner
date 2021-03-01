@@ -15,4 +15,7 @@ and arithmetic =
   | Int of int
   | Float of float
   | ArithUnary of (string * arithmetic)
-  | ArithBinary
+  | ArithBinary of (string * arithmetic * arithmetic)
+
+and expression =
+  | Vari
