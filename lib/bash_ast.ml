@@ -37,4 +37,8 @@ and statement =
   | If of (expression * statement)
   | IfElse of (expression * statement * statement)
   | While of (expression * statement)
-  | Bl
+  | Block of statements
+  | Return
+  | Empty
+
+and sta
