@@ -41,4 +41,7 @@ and statement =
   | Return
   | Empty
 
-and sta
+and statements = statement list
+
+and toplevel =
+  | Statement of stat
