@@ -34,4 +34,5 @@ and statement =
   | Local of identifier
   | Assignment of (leftvalue * expression)
   | Expression of expression
-  | If of (expr
+  | If of (expression * statement)
+  | IfElse of (expression 
