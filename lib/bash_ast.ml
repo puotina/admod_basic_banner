@@ -46,3 +46,6 @@ and statements = statement list
 and toplevel =
   | Statement of statement
   | Function of (identifier * statements)
+
+and t = toplevel list
+[@@deriving sexp]
