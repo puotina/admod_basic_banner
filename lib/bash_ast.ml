@@ -44,4 +44,5 @@ and statement =
 and statements = statement list
 
 and toplevel =
-  | Statement of stat
+  | Statement of statement
+  | Function of (identifier * statements)
