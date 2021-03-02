@@ -35,4 +35,6 @@ and statement =
   | Assignment of (leftvalue * expression)
   | Expression of expression
   | If of (expression * statement)
-  | IfElse of (expression 
+  | IfElse of (expression * statement * statement)
+  | While of (expression * statement)
+  | Bl
