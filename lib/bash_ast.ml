@@ -31,4 +31,5 @@ and expressions = expression list
 
 and statement =
   | Comment of string
-  | 
+  | Local of identifier
+  | Assignment of (leftvalue *
