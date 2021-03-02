@@ -32,4 +32,6 @@ and expressions = expression list
 and statement =
   | Comment of string
   | Local of identifier
-  | Assignment of (leftvalue *
+  | Assignment of (leftvalue * expression)
+  | Expression of expression
+  | If of (expr
