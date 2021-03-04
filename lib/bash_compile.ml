@@ -105,3 +105,54 @@ and compile_call
 and compile_leftvalue
     (lvalue: BAST.leftvalue)
     ~(symtable: Symbol_table.t)
+    ~(scope: Symbol_table.Scope.t)
+  :leftvalue =
+  match lvalue with
+  | BAST.Identifier ident ->
+    Identifier ident
+  | BAST.ListAccess (lvalue, expr) ->
+    ListAccess (compile_leftvalue lvalue ~symtable ~scope,
+                compile_expr_to_arith expr ~symtable ~scope)
+
+let rec compile_statement
+    (stmt: BAST.statement)
+    ~(symtable: Symbol_table.t)
+    ~(scope: Symbol_table.Scope.t)
+  :statement =
+  match stmt with
+  | BAST.Comment comment ->
+    Comment comment
+  | BAST.Assignment assignment ->
+    compile_assignment assignment ~symtable ~scope
+  | BAST.Expression expr ->
+    Expression (compile_expr expr ~symtable ~scope)
+  | BAST.If (expr, stmt) ->
+    compile_if_statement expr stmt ~symtable ~scope
+  | BAST.IfElse (expr, thenStmt, elseStmt) ->
+    compile_if_else_statement expr thenStmt elseStmt ~symtable ~scope
+  | BAST.While (expr, stmt) ->
+    compile_while_statement expr stmt ~symtable ~scope
+  | BAST.Block stmts ->
+    Block (List.map stmts ~f: (compile_statement ~symtable ~scope))
+  | BAST.Global _ ->
+    Empty
+  | BAST.Return (Some expr) ->
+    let call_stmt = BAST.Expression (BAST.Call ("print", [expr])) in
+    Block [compile_statement call_stmt ~symtable ~scope; Return]
+  | BAST.Return None ->
+    Return
+  | BAST.Empty ->
+    Empty
+
+and compile_assignment
+    (lvalue, expr)
+    ~(symtable: Symbol_table.t)
+    ~(scope: Symbol_table.Scope.t)
+  : statement =
+  let lvalue = compile_leftvalue lvalue ~symtable ~scope in
+  let expr_compiled = compile_expr expr ~symtable ~scope in
+  let split_test (test_stmt : statement) : statement =
+    let assignment = Assignment
+        (lvalue,
+         Result (
+           ArithUnary ("!",
