@@ -135,3 +135,49 @@ let rec print_statement buf (stmt: statement) ~(indent: int) =
   | Return ->
     Buffer.add_string buf "return"
   | Empty -> ()
+
+and print_condition (buf : Buffer.t) (expr : expression) =
+  match expr with
+  | StrBinary (("==", _, _) as bin)
+  | StrBinary (("!=", _, _) as bin) ->
+    print_str_binary buf bin
+  | TestUnary test ->
+    print_test_unary buf test
+  | _ ->
+    bprintf buf "[ %a == 1 ]" print_expression expr
+
+and print_if_while
+    (buf: Buffer.t)
+    (expr: expression)
+    (stmt: statement)
+    (first: string)
+    (second: string)
+    (third: string)
+    ~(indent: int) =
+  let print_statement_indented = print_statement ~indent: (indent + 2) in
+  bprintf buf "%s %a; %s\n%a%a\n%s"
+    first (* if/while *)
+    print_condition expr
+    second (* then/do *)
+    print_statement_indented stmt
+    Formatutil.print_indent indent
+    third (* fi/done *)
+
+and print_if buf (expr: expression) (stmt: statement) ~(indent: int) =
+  print_if_while buf expr stmt "if" "then" "fi" ~indent
+
+and print_if_else
+    (buf: Buffer.t)
+    (expr: expression)
+    (then_stmt: statement)
+    (else_stmt: statement)
+    ~(indent: int) =
+  let print_statement_indented = print_statement ~indent: (indent + 2) in
+  bprintf buf "if %a; then\n%a\n%aelse\n%a\n%afi"
+    print_condition expr
+    print_statement_indented then_stmt
+    Formatutil.print_indent indent
+    print_statement_indented else_stmt
+    Formatutil.print_indent indent
+
+and print_while buf (expr: expression) (stmt: statement) ~(indent: int) =
