@@ -215,3 +215,31 @@ let compile_function
   let locals = Symbol_table.Scope.fold scope
       ~init: []
       ~f: (fun ident global acc ->
+          if global then
+            acc
+          else
+            (Local ident) :: acc
+        )
+  in
+  let param_defines = List.mapi params ~f: (fun i param ->
+      Assignment (Identifier param,
+                  Variable (Identifier (string_of_int (i + 1))))
+    )
+  in
+  Function (name, List.concat [locals; param_defines; body])
+
+let compile_toplevel
+    ~(symtable: Symbol_table.t)
+    (topl: BAST.toplevel)
+  :toplevel =
+  match topl with
+  | BAST.Statement stmt ->
+    Statement (compile_statement stmt ~symtable
+                 ~scope: (Symbol_table.global_scope symtable))
+  | BAST.Function func ->
+    compile_function func ~symtable
+
+let compile (batsh : Parser.t) : t =
+  let symtable = Parser.symtable batsh in
+  let program = Bash_transform.split (Parser.ast batsh) ~symtable in
+  List.map program ~f: (compile_toplevel ~symtable)
