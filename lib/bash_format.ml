@@ -82,3 +82,56 @@ let rec print_expression buf (expr: expression) =
           Buffer.add_string buf " "
       );
     Buffer.add_string buf ")"
+  | Raw str ->
+    Buffer.add_string buf str
+
+and print_str_binary (buf: Buffer.t) (operator, left, right) =
+  match operator with
+  | "++" ->
+    bprintf buf "%a%a" print_expression left print_expression right
+  | "==" ->
+    bprintf buf "[ %a == %a ]" print_expression left print_expression right
+  | "!=" ->
+    bprintf buf "[ %a != %a ]" print_expression left print_expression right
+  | _ ->
+    failwith ("Unknown operator: " ^ operator)
+
+and print_test_unary (buf: Buffer.t) (operator, expr) =
+  bprintf buf "[ %s %a ]" operator print_expression expr
+
+and print_command (buf: Buffer.t) (name, params) =
+  bprintf buf "%a %a"
+    print_expression name
+    (Formatutil.print_separate_list ~f: print_expression ~separator: " ") params
+
+let rec print_statement buf (stmt: statement) ~(indent: int) =
+  let () = match stmt with
+    | Block _ -> ()
+    | _ ->
+      Formatutil.print_indent buf indent in
+  match stmt with
+  | Comment comment ->
+    bprintf buf "#%s" comment
+  | Local ident ->
+    bprintf buf "local %s" ident
+  | Assignment (lvalue, expr) ->
+    bprintf buf "%a=%a"
+      print_lvalue_partial lvalue
+      print_expression expr
+  | Expression (Command cmd) ->
+    print_command buf cmd
+  | Expression expr ->
+    print_expression buf expr
+  | If (expr, stmts) ->
+    print_if buf expr stmts ~indent
+  | IfElse (expr, then_stmts, else_stmts) ->
+    print_if_else buf expr then_stmts else_stmts ~indent
+  | While (expr, stmts) ->
+    print_while buf expr stmts ~indent
+  | Block [] ->
+    Buffer.add_string buf "-"
+  | Block stmts ->
+    print_statements buf stmts ~indent
+  | Return ->
+    Buffer.add_string buf "return"
+  | Empty -> ()
