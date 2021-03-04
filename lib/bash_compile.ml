@@ -156,3 +156,62 @@ and compile_assignment
         (lvalue,
          Result (
            ArithUnary ("!",
+                       Leftvalue (Identifier "?"))))
+    in
+    Block [test_stmt; assignment]
+  in
+  match expr with
+  | BAST.StrCompare _ ->
+    let test_stmt = Expression expr_compiled in
+    split_test test_stmt
+  | BAST.Call (("exists", _) as call) ->
+    let test_expr = compile_call call ~symtable ~scope in
+    split_test (Expression test_expr)
+  | _ ->
+    Assignment (lvalue, expr_compiled)
+
+and compile_if_statement
+    (expr: BAST.expression)
+    stmt
+    ~(symtable: Symbol_table.t)
+    ~(scope: Symbol_table.Scope.t)
+  :statement =
+  If (compile_expr expr ~symtable ~scope,
+      compile_statement stmt ~symtable ~scope)
+
+and compile_if_else_statement
+    (expr: BAST.expression)
+    (thenStmt: BAST.statement)
+    (elseStmt: BAST.statement)
+    ~(symtable: Symbol_table.t)
+    ~(scope: Symbol_table.Scope.t)
+  :statement =
+  IfElse (compile_expr expr ~symtable ~scope,
+          compile_statement thenStmt ~symtable ~scope,
+          compile_statement elseStmt ~symtable ~scope)
+
+and compile_while_statement
+    (expr: BAST.expression)
+    stmt
+    ~(symtable: Symbol_table.t)
+    ~(scope: Symbol_table.Scope.t)
+  :statement =
+  While (compile_expr expr ~symtable ~scope,
+         compile_statement stmt ~symtable ~scope)
+
+let compile_statements
+    (stmts: BAST.statements)
+    ~(symtable: Symbol_table.t)
+    ~(scope: Symbol_table.Scope.t)
+  :statements =
+  List.map stmts ~f: (compile_statement ~symtable ~scope)
+
+let compile_function
+    (name, params, stmts)
+    ~(symtable: Symbol_table.t)
+  :toplevel =
+  let scope = Symbol_table.scope symtable name in
+  let body = compile_statements stmts ~symtable ~scope in
+  let locals = Symbol_table.Scope.fold scope
+      ~init: []
+      ~f: (fun ident global acc ->
