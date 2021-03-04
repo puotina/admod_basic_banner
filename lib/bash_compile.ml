@@ -64,3 +64,44 @@ and compile_expr
     | BAST.Bool false -> String "false"
     | BAST.Bool true -> String "true"
     | BAST.Int number -> String (string_of_int number)
+    | BAST.Float number -> String (Float.to_string number)
+    | BAST.String str -> String str
+    | BAST.Leftvalue lvalue ->
+      Variable (compile_leftvalue lvalue ~symtable ~scope)
+    | BAST.StrCompare (operator, left, right) ->
+      StrBinary (operator,
+                 compile_expr left,
+                 compile_expr right)
+    | BAST.Concat (left, right) ->
+      StrBinary ("++",
+                 compile_expr left,
+                 compile_expr right)
+    | BAST.Call (ident, exprs) ->
+      compile_call (ident, exprs) ~symtable ~scope
+    | BAST.List exprs ->
+      List (List.map exprs ~f: compile_expr)
+    | BAST.ArithUnary _
+    | BAST.ArithBinary _ ->
+      assert false
+
+and compile_call
+    (ident, exprs)
+    ~(symtable: Symbol_table.t)
+    ~(scope: Symbol_table.Scope.t)
+  : expression =
+  match ident with
+  | "exists" ->
+    let params_1 params =
+      match params with
+      | param :: _ -> param
+      | _ -> failwith ("exists must have only 1 parameter.")
+    in
+    let param = compile_expr (params_1 exprs) ~symtable ~scope in
+    TestUnary ("-e", param)
+  | _ ->
+    let params = List.map exprs ~f: (compile_expr ~symtable ~scope) in
+    Command (String ident, params)
+
+and compile_leftvalue
+    (lvalue: BAST.leftvalue)
+    ~(symtable: Symbol_table.t)
