@@ -181,3 +181,20 @@ and print_if_else
     Formatutil.print_indent indent
 
 and print_while buf (expr: expression) (stmt: statement) ~(indent: int) =
+  print_if_while buf expr stmt "while" "do" "done" ~indent
+
+and print_statements: Buffer.t -> statements -> indent:int -> unit =
+  Formatutil.print_statements ~f: print_statement
+
+let print_function (buf: Buffer.t) (name, stmts) =
+  bprintf buf "function %s {\n%a\n}"
+    name
+    (print_statements ~indent: 2) stmts
+
+let print_toplevel (buf: Buffer.t) (topl: toplevel) ~indent =
+  match topl with
+  | Statement stmt -> print_statement buf stmt ~indent
+  | Function func -> print_function buf func
+
+let print (buf: Buffer.t) (program: t) :unit =
+  Formatutil.print_statements buf program ~f: print_toplevel ~indent: 0
