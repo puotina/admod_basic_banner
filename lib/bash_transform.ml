@@ -150,3 +150,7 @@ let split_toplevel
                  ~scope: (Symbol_table.global_scope symtable))
   | Function func ->
     Function (split_function func ~symtable)
+
+(* Split arithmetic expressions, list literal and command call *)
+let split (ast : Batsh_ast.t) ~(symtable : Symbol_table.t) : Batsh_ast.t =
+  List.map ast ~f: (split_toplevel ~symtable)
