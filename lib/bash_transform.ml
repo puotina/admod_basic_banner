@@ -98,3 +98,55 @@ let rec split_statement
   | Assignment (lvalue, expr) ->
     let assignments, expr = split_expression expr
         ~split_list:false ~split_strcmp:false ~symtable ~scope
+    in
+    prepend_assignments assignments (Assignment (lvalue, expr))
+  | If (expr, stmt) ->
+    let assignments, expr = split_expression expr
+        ~split_strcmp:false ~symtable ~scope
+    in
+    let stmt = split_statement stmt ~symtable ~scope in
+    prepend_assignments assignments (If (expr, stmt))
+  | IfElse (expr, then_stmt, else_stmt) ->
+    let assignments, expr = split_expression expr
+        ~split_strcmp:false ~symtable ~scope
+    in
+    let then_stmt = split_statement then_stmt ~symtable ~scope in
+    let else_stmt = split_statement else_stmt ~symtable ~scope in
+    prepend_assignments assignments (IfElse (expr, then_stmt, else_stmt))
+  | While (expr, stmt) ->
+    let assignments, expr = split_expression expr
+        ~split_strcmp:false ~symtable ~scope
+    in
+    let stmt = split_statement stmt ~symtable ~scope in
+    prepend_assignments assignments (While (expr, stmt))
+  | Block stmts ->
+    Block (split_statements stmts ~symtable ~scope)
+  | Return (Some expr) ->
+    let assignments, expr = split_expression expr ~symtable ~scope in
+    prepend_assignments assignments (Return (Some expr))
+
+and split_statements
+    (stmts : statements)
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Scope.t)
+  : statements =
+  List.map stmts ~f: (split_statement ~symtable ~scope)
+
+let split_function
+    (name, params, stmts)
+    ~(symtable : Symbol_table.t)
+  =
+  let scope = Symbol_table.scope symtable name in
+  let body = split_statements stmts ~symtable ~scope in
+  name, params, body
+
+let split_toplevel
+    (topl : toplevel)
+    ~(symtable : Symbol_table.t)
+  : toplevel =
+  match topl with
+  | Statement stmt ->
+    Statement (split_statement stmt ~symtable
+                 ~scope: (Symbol_table.global_scope symtable))
+  | Function func ->
+    Function (split_function func ~symtable)
