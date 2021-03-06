@@ -8,3 +8,4 @@ let rec print_lvalue (buf : Buffer.t) (lvalue: leftvalue) =
   | ListAccess (lvalue, expr) ->
     bprintf buf "%a[%a]" print_lvalue lvalue print_expression expr
 
+and print_expression (buf : Buffer.t) (expr: express
