@@ -6,4 +6,5 @@ let rec print_lvalue (buf : Buffer.t) (lvalue: leftvalue) =
   | Identifier ident ->
     Buffer.add_string buf ident
   | ListAccess (lvalue, expr) ->
-    bprintf buf
+    bprintf buf "%a[%a]" print_lvalue lvalue print_expression expr
+
