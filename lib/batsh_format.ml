@@ -10,4 +10,5 @@ let rec print_lvalue (buf : Buffer.t) (lvalue: leftvalue) =
 
 and print_expression (buf : Buffer.t) (expr: expression) =
   match expr with
-  | Leftvalue lvalue -> pr
+  | Leftvalue lvalue -> print_lvalue buf lvalue
+  | Int number -> Buf
