@@ -15,4 +15,4 @@ and print_expression (buf : Buffer.t) (expr: expression) =
   | Float number -> Buffer.add_string buf (Float.to_string number)
   | String str -> bprintf buf "\"%s\"" (Formatutil.escape str)
   | Bool true  -> Buffer.add_string buf "true"
-  | Boo
+  | Bool false -> Buffer.add_string buf "fa
