@@ -17,4 +17,5 @@ and print_expression (buf : Buffer.t) (expr: expression) =
   | Bool true  -> Buffer.add_string buf "true"
   | Bool false -> Buffer.add_string buf "false"
   | ArithUnary (operator, expr) ->
-    bprintf buf "%s(%a)" operato
+    bprintf buf "%s(%a)" operator print_expression expr
+  | ArithBinary binary | St
