@@ -13,4 +13,5 @@ and print_expression (buf : Buffer.t) (expr: expression) =
   | Leftvalue lvalue -> print_lvalue buf lvalue
   | Int number -> Buffer.add_string buf (string_of_int number)
   | Float number -> Buffer.add_string buf (Float.to_string number)
-  | String str -> bprintf 
+  | String str -> bprintf buf "\"%s\"" (Formatutil.escape str)
+  | Bo
