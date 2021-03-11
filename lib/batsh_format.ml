@@ -22,4 +22,5 @@ and print_expression (buf : Buffer.t) (expr: expression) =
     print_binary_expression buf binary
   | Concat (left, right) ->
     print_binary_expression buf ("++", left, right)
-  | Call (id
+  | Call (ident, exprs) ->
+    bprintf buf "%s(%a)" ident print_e
