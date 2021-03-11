@@ -19,4 +19,6 @@ and print_expression (buf : Buffer.t) (expr: expression) =
   | ArithUnary (operator, expr) ->
     bprintf buf "%s(%a)" operator print_expression expr
   | ArithBinary binary | StrCompare binary ->
-    print_binary_expression buf bin
+    print_binary_expression buf binary
+  | Concat (left, right) ->
+    print_binary_expre
