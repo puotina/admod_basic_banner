@@ -21,4 +21,5 @@ and print_expression (buf : Buffer.t) (expr: expression) =
   | ArithBinary binary | StrCompare binary ->
     print_binary_expression buf binary
   | Concat (left, right) ->
-    print_binary_expre
+    print_binary_expression buf ("++", left, right)
+  | Call (id
