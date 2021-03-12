@@ -25,4 +25,6 @@ and print_expression (buf : Buffer.t) (expr: expression) =
   | Call (ident, exprs) ->
     bprintf buf "%s(%a)" ident print_expressions exprs
   | List exprs ->
-    bprintf buf "[%a]" 
+    bprintf buf "[%a]" print_expressions exprs
+
+and print_expressions (buf : B
