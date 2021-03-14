@@ -29,4 +29,6 @@ and print_expression (buf : Buffer.t) (expr: expression) =
 
 and print_expressions (buf : Buffer.t) (exprs: expression list) =
   Formatutil.print_separate_list buf exprs
-    ~f: print_exp
+    ~f: print_expression ~separator: ", "
+
+and print_binary_
