@@ -28,4 +28,5 @@ and print_expression (buf : Buffer.t) (expr: expression) =
     bprintf buf "[%a]" print_expressions exprs
 
 and print_expressions (buf : Buffer.t) (exprs: expression list) =
-  Formatut
+  Formatutil.print_separate_list buf exprs
+    ~f: print_exp
