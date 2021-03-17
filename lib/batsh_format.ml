@@ -33,4 +33,7 @@ and print_expressions (buf : Buffer.t) (exprs: expression list) =
 
 and print_binary_expression
     (buf : Buffer.t)
-    (operator, 
+    (operator, left, right)
+  =
+  bprintf buf "(%a %s %a)"
+  
