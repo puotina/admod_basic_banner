@@ -36,4 +36,4 @@ and print_binary_expression
     (operator, left, right)
   =
   bprintf buf "(%a %s %a)"
-  
+    print_expression left operator print_exp
