@@ -36,4 +36,6 @@ and print_binary_expression
     (operator, left, right)
   =
   bprintf buf "(%a %s %a)"
-    print_expression left operator print_exp
+    print_expression left operator print_expression right
+
+let rec print_statement (buf : Buffer.t) (stmt: st
