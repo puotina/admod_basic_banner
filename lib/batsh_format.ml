@@ -44,4 +44,6 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
     | _ ->
       Formatutil.print_indent buf indent in
   match stmt with
-  | Comment comment
+  | Comment comment ->
+    bprintf buf "//%s" comment
+  | Block inner
