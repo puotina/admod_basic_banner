@@ -40,4 +40,6 @@ and print_binary_expression
 
 let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
   let () = match stmt with
-  
+    | Block _ -> ()
+    | _ ->
+      Formatutil.print_indent 
