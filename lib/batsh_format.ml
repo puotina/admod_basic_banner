@@ -46,4 +46,4 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
   match stmt with
   | Comment comment ->
     bprintf buf "//%s" comment
-  | Block inner
+  | Block inner_stmts -> print_block_statement ~indent buf inne
