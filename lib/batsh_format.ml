@@ -48,4 +48,6 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
     bprintf buf "//%s" comment
   | Block inner_stmts -> print_block_statement ~indent buf inner_stmts
   | Expression expr ->
-    print_expres
+    print_expression buf expr;
+    Buffer.add_string buf ";"
+  | Assi
