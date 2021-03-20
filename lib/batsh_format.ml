@@ -50,4 +50,5 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
   | Expression expr ->
     print_expression buf expr;
     Buffer.add_string buf ";"
-  | Assi
+  | Assignment (lvalue, expr) ->
+    bprintf buf "%a = %a;" print_l
