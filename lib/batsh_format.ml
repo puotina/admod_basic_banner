@@ -56,3 +56,5 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
     print_if_statement buf expr stmt ~indent
   | IfElse (expr, thenStmt, elseStmt) ->
     print_if_else_statement buf expr thenStmt elseStmt ~indent
+  | While (expr, stmt) ->
+    print_
