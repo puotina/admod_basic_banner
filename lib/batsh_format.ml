@@ -53,4 +53,6 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
   | Assignment (lvalue, expr) ->
     bprintf buf "%a = %a;" print_lvalue lvalue print_expression expr
   | If (expr, stmt) ->
-    print_if_statement buf expr stmt ~in
+    print_if_statement buf expr stmt ~indent
+  | IfElse (expr, thenStmt, elseStmt) ->
+   
