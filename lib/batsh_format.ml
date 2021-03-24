@@ -66,4 +66,6 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
     bprintf buf "return;"
   | Empty -> ()
 
-and print_statements = Formatutil
+and print_statements = Formatutil.print_statements ~f: print_statement
+
+and print_block_stat
