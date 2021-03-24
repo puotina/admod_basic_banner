@@ -63,4 +63,7 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
   | Return (Some expr) ->
     bprintf buf "return %a;" print_expression expr
   | Return None ->
-    bpri
+    bprintf buf "return;"
+  | Empty -> ()
+
+and print_statements = Formatutil
