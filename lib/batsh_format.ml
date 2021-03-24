@@ -73,4 +73,6 @@ and print_block_statement
     (inner_stmts : statements)
     ~(indent : int)
   =
-  let print_statements_indented = print_statements ~indent:(
+  let print_statements_indented = print_statements ~indent:(indent + 2) in
+  bprintf buf "{\n%a\n%a}"
+    print_
