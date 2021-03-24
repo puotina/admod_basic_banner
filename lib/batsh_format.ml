@@ -61,4 +61,6 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
   | Global ident ->
     bprintf buf "global %s;" ident
   | Return (Some expr) ->
-    bprintf buf "return %a;" 
+    bprintf buf "return %a;" print_expression expr
+  | Return None ->
+    bpri
