@@ -68,4 +68,6 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
 
 and print_statements = Formatutil.print_statements ~f: print_statement
 
-and print_block_stat
+and print_block_statement
+    (buf : Buffer.t)
+    (inner_stmts : s
