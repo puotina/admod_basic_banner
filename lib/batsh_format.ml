@@ -58,4 +58,6 @@ let rec print_statement (buf : Buffer.t) (stmt: statement) ~(indent: int) =
     print_if_else_statement buf expr thenStmt elseStmt ~indent
   | While (expr, stmt) ->
     print_while_statement buf expr stmt ~indent
-  | Global
+  | Global ident ->
+    bprintf buf "global %s;" ident
+  |
