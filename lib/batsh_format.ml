@@ -94,4 +94,6 @@ and print_if_statement
     (stmt: statement)
     ~(indent: int)
   =
-  print_if
+  print_if_while_statement buf "if" expr stmt ~indent
+
+and print_
