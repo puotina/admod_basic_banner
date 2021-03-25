@@ -96,4 +96,6 @@ and print_if_statement
   =
   print_if_while_statement buf "if" expr stmt ~indent
 
-and print_
+and print_if_else_statement
+    (buf : Buffer.t)
+    (expr: e
