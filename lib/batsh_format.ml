@@ -79,4 +79,7 @@ and print_block_statement
     Formatutil.print_indent indent
 
 and print_if_while_statement
-    (buf :
+    (buf : Buffer.t)
+    (name : string)
+    (expr : expression)
+   
