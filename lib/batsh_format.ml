@@ -91,4 +91,7 @@ and print_if_while_statement
 and print_if_statement
     (buf : Buffer.t)
     (expr: expression)
-    (st
+    (stmt: statement)
+    ~(indent: int)
+  =
+  print_if
