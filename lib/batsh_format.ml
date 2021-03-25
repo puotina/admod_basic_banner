@@ -85,4 +85,5 @@ and print_if_while_statement
     (stmt : statement) 
     ~(indent : int)
   =
-  b
+  bprintf buf "%s (%a) " name print_expression expr;
+  print_
