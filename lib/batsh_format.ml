@@ -75,4 +75,5 @@ and print_block_statement
   =
   let print_statements_indented = print_statements ~indent:(indent + 2) in
   bprintf buf "{\n%a\n%a}"
-    print_
+    print_statements_indented inner_stmts
+    Formatutil.print_in
