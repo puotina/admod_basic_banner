@@ -88,4 +88,7 @@ and print_if_while_statement
   bprintf buf "%s (%a) " name print_expression expr;
   print_statement buf stmt ~indent
 
-and print_if_
+and print_if_statement
+    (buf : Buffer.t)
+    (expr: expression)
+    (st
