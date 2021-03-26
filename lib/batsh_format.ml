@@ -103,4 +103,5 @@ and print_if_else_statement
     (elseStmt: statement)
     ~(indent: int)
   =
-  print_if_state
+  print_if_statement buf expr thenStmt ~indent;
+  Buffer.add_string buf 
