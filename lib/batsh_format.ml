@@ -100,4 +100,7 @@ and print_if_else_statement
     (buf : Buffer.t)
     (expr: expression)
     (thenStmt: statement)
-    (elseSt
+    (elseStmt: statement)
+    ~(indent: int)
+  =
+  print_if_state
