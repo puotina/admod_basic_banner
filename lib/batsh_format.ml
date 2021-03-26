@@ -98,4 +98,6 @@ and print_if_statement
 
 and print_if_else_statement
     (buf : Buffer.t)
-    (expr: e
+    (expr: expression)
+    (thenStmt: statement)
+    (elseSt
