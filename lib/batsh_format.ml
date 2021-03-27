@@ -113,4 +113,6 @@ and print_while_statement
     (stmt: statement)
     ~(indent: int)
   =
-  print_if
+  print_if_while_statement buf "while" expr stmt ~indent
+
+let print_
