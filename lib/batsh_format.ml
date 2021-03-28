@@ -120,4 +120,6 @@ let print_params (buf : Buffer.t) (params: identifiers) =
 
 let print_function (buf : Buffer.t) (name, params, stmts) =
   bprintf buf "function %s (%a) {\n%a\n}"
-    nam
+    name
+    print_params params
+    (print_stateme
