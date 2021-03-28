@@ -127,4 +127,6 @@ let print_function (buf : Buffer.t) (name, params, stmts) =
 let print_toplevel (buf : Buffer.t) (topl: toplevel) ~indent =
   match topl with
   | Statement stmt ->
-    print_statement 
+    print_statement buf stmt ~indent
+  | Function func ->
+    print_function 
