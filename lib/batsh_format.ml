@@ -124,4 +124,5 @@ let print_function (buf : Buffer.t) (name, params, stmts) =
     print_params params
     (print_statements ~indent: 2) stmts
 
-let print_toplevel (b
+let print_toplevel (buf : Buffer.t) (topl: toplevel) ~indent =
+  matc
