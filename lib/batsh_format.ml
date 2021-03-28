@@ -122,4 +122,6 @@ let print_function (buf : Buffer.t) (name, params, stmts) =
   bprintf buf "function %s (%a) {\n%a\n}"
     name
     print_params params
-    (print_stateme
+    (print_statements ~indent: 2) stmts
+
+let print_toplevel (b
