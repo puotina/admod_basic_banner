@@ -116,4 +116,6 @@ and print_while_statement
   print_if_while_statement buf "while" expr stmt ~indent
 
 let print_params (buf : Buffer.t) (params: identifiers) =
-  Formatutil.print_separate_list buf param
+  Formatutil.print_separate_list buf params ~f: Buffer.add_string ~separator: ", "
+
+l
