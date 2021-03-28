@@ -119,3 +119,5 @@ let print_params (buf : Buffer.t) (params: identifiers) =
   Formatutil.print_separate_list buf params ~f: Buffer.add_string ~separator: ", "
 
 let print_function (buf : Buffer.t) (name, params, stmts) =
+  bprintf buf "function %s (%a) {\n%a\n}"
+    nam
