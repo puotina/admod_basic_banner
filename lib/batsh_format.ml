@@ -118,4 +118,4 @@ and print_while_statement
 let print_params (buf : Buffer.t) (params: identifiers) =
   Formatutil.print_separate_list buf params ~f: Buffer.add_string ~separator: ", "
 
-l
+let print_function (buf : Buffer.t) (name, params, stmts) =
