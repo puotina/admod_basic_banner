@@ -129,4 +129,6 @@ let print_toplevel (buf : Buffer.t) (topl: toplevel) ~indent =
   | Statement stmt ->
     print_statement buf stmt ~indent
   | Function func ->
-    print_function 
+    print_function buf func
+
+let print_ast (buf : Buffer.t) (ast: t) =
