@@ -1,4 +1,7 @@
 open Core_kernel
 
 let print_indent (buf : Buffer.t) (indent : int) =
-  Buffer.add_string buf (String.make indent
+  Buffer.add_string buf (String.make indent ' ')
+
+let print_statements
+    (buf : Buffer.t
