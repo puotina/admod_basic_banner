@@ -1,1 +1,1 @@
-exceptio
+exception SemanticError of (string * string)
