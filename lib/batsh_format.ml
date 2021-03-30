@@ -132,4 +132,4 @@ let print_toplevel (buf : Buffer.t) (topl: toplevel) ~indent =
     print_function buf func
 
 let print_ast (buf : Buffer.t) (ast: t) =
-  Formatutil.print_statements buf ast ~f: print_toplevel 
+  Formatutil.print_statements buf ast ~f: print_toplevel ~indent: 0
