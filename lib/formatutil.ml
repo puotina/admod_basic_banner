@@ -4,4 +4,6 @@ let print_indent (buf : Buffer.t) (indent : int) =
   Buffer.add_string buf (String.make indent ' ')
 
 let print_statements
-    (buf : Buffer.t
+    (buf : Buffer.t)
+    (stmts : 'a list)
+    ~(f : Buffer.t -> 
