@@ -13,4 +13,5 @@ let print_statements
   List.iteri stmts ~f: (fun i stmt ->
       print_statement_indented buf stmt;
       if i < num_stmts - 1 then
-  
+        Buffer.add_string buf "\n"
+   
