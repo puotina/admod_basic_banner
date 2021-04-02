@@ -14,4 +14,8 @@ let print_statements
       print_statement_indented buf stmt;
       if i < num_stmts - 1 then
         Buffer.add_string buf "\n"
-   
+    )
+
+let print_separate_list
+    (buf : Buffer.t)
+    
