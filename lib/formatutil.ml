@@ -18,4 +18,5 @@ let print_statements
 
 let print_separate_list
     (buf : Buffer.t)
-    
+    (elements : 'a list)
+    ~(f : Buffer.t -> 'a -> unit)
