@@ -8,4 +8,6 @@ let print_statements
     (stmts : 'a list)
     ~(f : Buffer.t -> 'a -> indent:int -> unit)
     ~(indent : int) =
-  let print_statement_indented buf stmt = f buf s
+  let print_statement_indented buf stmt = f buf stmt ~indent in
+  let num_stmts = List.length stmts in
+ 
