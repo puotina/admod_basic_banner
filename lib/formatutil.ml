@@ -10,4 +10,5 @@ let print_statements
     ~(indent : int) =
   let print_statement_indented buf stmt = f buf stmt ~indent in
   let num_stmts = List.length stmts in
- 
+  List.iteri stmts ~f: (fun i stmt ->
+      print_
