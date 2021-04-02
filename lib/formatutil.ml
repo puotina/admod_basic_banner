@@ -11,4 +11,6 @@ let print_statements
   let print_statement_indented buf stmt = f buf stmt ~indent in
   let num_stmts = List.length stmts in
   List.iteri stmts ~f: (fun i stmt ->
-      print_
+      print_statement_indented buf stmt;
+      if i < num_stmts - 1 then
+  
