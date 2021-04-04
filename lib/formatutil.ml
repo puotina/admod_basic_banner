@@ -31,4 +31,6 @@ let print_separate_list
 let escaper = Staged.unstage (
     String.Escaping.escape_gen_exn
       ~escapeworthy_map: [
-        ('\n', '
+        ('\n', 'n');
+        ('\r', 'r');
+        ('\"', 
