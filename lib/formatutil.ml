@@ -33,4 +33,8 @@ let escaper = Staged.unstage (
       ~escapeworthy_map: [
         ('\n', 'n');
         ('\r', 'r');
-        ('\"', 
+        ('\"', '"')]
+      ~escape_char: '\\'
+  )
+
+let escape (str
