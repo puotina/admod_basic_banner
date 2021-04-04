@@ -21,4 +21,5 @@ let print_separate_list
     (elements : 'a list)
     ~(f : Buffer.t -> 'a -> unit)
     ~(separator : string) =
-  let num_elements = List.lengt
+  let num_elements = List.length elements in
+  List.iteri elements ~f: (fun i eleme
