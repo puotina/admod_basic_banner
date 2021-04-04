@@ -25,4 +25,8 @@ let print_separate_list
   List.iteri elements ~f: (fun i element ->
       f buf element;
       if i < num_elements - 1 then
-        Buffer.add_string buf sep
+        Buffer.add_string buf separator
+    )
+
+let escaper = Staged.unstage (
+    String.Esc
