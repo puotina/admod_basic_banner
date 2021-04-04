@@ -24,4 +24,5 @@ let print_separate_list
   let num_elements = List.length elements in
   List.iteri elements ~f: (fun i element ->
       f buf element;
-      if i < num_e
+      if i < num_elements - 1 then
+        Buffer.add_string buf sep
