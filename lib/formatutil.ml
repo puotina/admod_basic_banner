@@ -37,4 +37,5 @@ let escaper = Staged.unstage (
       ~escape_char: '\\'
   )
 
-let escape (str
+let escape (str : string) : string =
+  escaper str
