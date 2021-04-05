@@ -1,4 +1,6 @@
 type t
 
 exception ParseError of string
-exception Semanti
+exception SemanticError of string
+
+val create_from_file : string -> 
