@@ -8,4 +8,4 @@ val create_from_channel : in_channel -> string -> t
 val create_from_string : string -> t
 val prettify : t -> string
 val ast : t -> Batsh_ast.t
-val symtable :
+val symtable : t -> Symbol_table.t
