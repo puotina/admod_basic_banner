@@ -1,2 +1,5 @@
 %token <int> INT
-%token <float>
+%token <float> FLOAT
+%token <string> STRING
+%token <string> IDENTIFIER
+%
