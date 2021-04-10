@@ -6,4 +6,7 @@
 %token TRUE
 %token FALSE
 %token IF
-%t
+%token ELSE
+%token WHILE
+%token FUNCTION
+%token G
