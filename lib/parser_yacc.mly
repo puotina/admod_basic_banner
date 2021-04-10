@@ -22,4 +22,8 @@
 %token COMMA
 %token PLUS
 %token MINUS
-%token MUL
+%token MULTIPLY
+%token DIVIDE
+%token MODULO
+%token CONCAT
+%token 
