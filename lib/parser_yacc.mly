@@ -12,4 +12,7 @@
 %token GLOBAL
 %token RETURN
 %token EQUAL
-%token LEFT_P
+%token LEFT_PAREN
+%token RIGHT_PAREN
+%token LEFT_BRACK
+%token RIGHT_BR
