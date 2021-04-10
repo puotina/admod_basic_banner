@@ -18,4 +18,8 @@
 %token RIGHT_BRACK
 %token LEFT_BRACE
 %token RIGHT_BRACE
-%token SEMI
+%token SEMICOLON
+%token COMMA
+%token PLUS
+%token MINUS
+%token MUL
