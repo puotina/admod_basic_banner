@@ -9,4 +9,7 @@
 %token ELSE
 %token WHILE
 %token FUNCTION
-%token G
+%token GLOBAL
+%token RETURN
+%token EQUAL
+%token LEFT_P
