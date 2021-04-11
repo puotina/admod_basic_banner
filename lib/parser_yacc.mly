@@ -26,4 +26,9 @@
 %token DIVIDE
 %token MODULO
 %token CONCAT
-%token 
+%token NOT
+%token SEQ
+%token SNE
+%token AEQ
+%token ANE
+%token GT
