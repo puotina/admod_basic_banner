@@ -32,3 +32,9 @@
 %token AEQ
 %token ANE
 %token GT
+%token LT
+%token GE
+%token LE
+%token EOF
+
+%nonassoc 
