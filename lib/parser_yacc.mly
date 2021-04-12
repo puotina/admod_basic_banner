@@ -37,4 +37,7 @@
 %token LE
 %token EOF
 
-%nonassoc 
+%nonassoc SEQ SNE AEQ ANE
+%nonassoc GT LT GE LE
+%left CONCAT
+%nonassoc N
