@@ -40,4 +40,8 @@
 %nonassoc SEQ SNE AEQ ANE
 %nonassoc GT LT GE LE
 %left CONCAT
-%nonassoc N
+%nonassoc NOT
+%left PLUS MINUS
+%left MULTIPLY DIVIDE MODULO
+
+%
