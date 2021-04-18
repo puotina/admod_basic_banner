@@ -44,4 +44,8 @@
 %left PLUS MINUS
 %left MULTIPLY DIVIDE MODULO
 
-%
+%nonassoc IF
+%nonassoc ELSE
+
+%start program
+%type <Batsh_ast.t
