@@ -48,4 +48,10 @@
 %nonassoc ELSE
 
 %start program
-%type <Batsh_ast.t
+%type <Batsh_ast.t> program
+
+%%
+
+program:
+    toplevel_list; EOF;
+      
