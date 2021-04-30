@@ -59,4 +59,5 @@ program:
 
 toplevel:
   | statement;
-     
+      { Batsh_ast.Statement $1 }
+  | FUNCTION; IDENTIFIER; LEFT_P
