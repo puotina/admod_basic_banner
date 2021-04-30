@@ -54,4 +54,9 @@
 
 program:
     toplevel_list; EOF;
-      
+      { $1 }
+  ;
+
+toplevel:
+  | statement;
+     
