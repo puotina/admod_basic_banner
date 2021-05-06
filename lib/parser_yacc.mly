@@ -62,4 +62,5 @@ toplevel:
       { Batsh_ast.Statement $1 }
   | FUNCTION; IDENTIFIER; LEFT_PAREN;
       identifier_list; RIGHT_PAREN;
-      LEFT_BRAC
+      LEFT_BRACE; statement_list; RIGHT_BRACE;
+      { Batsh_ast.Function
