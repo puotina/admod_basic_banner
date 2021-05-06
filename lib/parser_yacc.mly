@@ -63,4 +63,8 @@ toplevel:
   | FUNCTION; IDENTIFIER; LEFT_PAREN;
       identifier_list; RIGHT_PAREN;
       LEFT_BRACE; statement_list; RIGHT_BRACE;
-      { Batsh_ast.Function
+      { Batsh_ast.Function ($2, $4, $7) }
+
+toplevel_list:
+  |   { [] }
+  | tople
