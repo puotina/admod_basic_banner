@@ -60,4 +60,6 @@ program:
 toplevel:
   | statement;
       { Batsh_ast.Statement $1 }
-  | FUNCTION; IDENTIFIER; LEFT_P
+  | FUNCTION; IDENTIFIER; LEFT_PAREN;
+      identifier_list; RIGHT_PAREN;
+      LEFT_BRAC
