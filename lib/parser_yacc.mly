@@ -72,4 +72,7 @@ toplevel_list:
 
 statement:
   | SEMICOLON;
-      { Batsh_ast.Empt
+      { Batsh_ast.Empty }
+  | COMMENT;
+      { Batsh_ast.Comment $1 }
+  | express
