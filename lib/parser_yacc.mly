@@ -67,4 +67,7 @@ toplevel:
 
 toplevel_list:
   |   { [] }
-  | tople
+  | toplevel; toplevel_list
+      { $1 :: $2 }
+
+stat
