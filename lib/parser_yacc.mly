@@ -70,4 +70,6 @@ toplevel_list:
   | toplevel; toplevel_list
       { $1 :: $2 }
 
-stat
+statement:
+  | SEMICOLON;
+      { Batsh_ast.Empt
