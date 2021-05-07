@@ -75,4 +75,6 @@ statement:
       { Batsh_ast.Empty }
   | COMMENT;
       { Batsh_ast.Comment $1 }
-  | express
+  | expression; SEMICOLON;
+      { Batsh_ast.Expression $1 }
+  | L
