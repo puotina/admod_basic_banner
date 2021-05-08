@@ -77,4 +77,5 @@ statement:
       { Batsh_ast.Comment $1 }
   | expression; SEMICOLON;
       { Batsh_ast.Expression $1 }
-  | L
+  | LEFT_BRACE; statement_list; RIGHT_BRACE;
+      { Batsh_ast
