@@ -81,4 +81,7 @@ statement:
       { Batsh_ast.Block $2 }
   | leftvalue; EQUAL; expression; SEMICOLON;
       { Batsh_ast.Assignment ($1, $3) }
-  | if_
+  | if_statement
+      { $1 }
+  | loop_statement
+      { $
