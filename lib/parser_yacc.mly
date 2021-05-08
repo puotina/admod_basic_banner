@@ -84,4 +84,6 @@ statement:
   | if_statement
       { $1 }
   | loop_statement
-      { $
+      { $1 }
+  | GLOBAL IDENTIFIER; SEMICOLON
+      { Batsh_ast.Global $2
