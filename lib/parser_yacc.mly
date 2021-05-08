@@ -86,4 +86,6 @@ statement:
   | loop_statement
       { $1 }
   | GLOBAL IDENTIFIER; SEMICOLON
-      { Batsh_ast.Global $2
+      { Batsh_ast.Global $2 }
+  | RETURN expression; SEMICOLON
+      { Bats
