@@ -79,4 +79,6 @@ statement:
       { Batsh_ast.Expression $1 }
   | LEFT_BRACE; statement_list; RIGHT_BRACE;
       { Batsh_ast.Block $2 }
-  | leftvalue; EQUAL; expression; SEMICOLON
+  | leftvalue; EQUAL; expression; SEMICOLON;
+      { Batsh_ast.Assignment ($1, $3) }
+  | if_
