@@ -88,4 +88,6 @@ statement:
   | GLOBAL IDENTIFIER; SEMICOLON
       { Batsh_ast.Global $2 }
   | RETURN expression; SEMICOLON
-      { Bats
+      { Batsh_ast.Return (Some $2)}
+  | RETURN SEMICOLON
+      {
