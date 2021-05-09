@@ -90,4 +90,8 @@ statement:
   | RETURN expression; SEMICOLON
       { Batsh_ast.Return (Some $2)}
   | RETURN SEMICOLON
-      {
+      { Batsh_ast.Return None}
+
+statement_list:
+  |   { [] }
+  | state
