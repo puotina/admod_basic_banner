@@ -98,4 +98,4 @@ statement_list:
       { $1 :: $2 }
 
 if_statement:
-  | IF; 
+  | IF; LEFT_PAREN; expression; RIGHT_PAREN; statement      %prec
