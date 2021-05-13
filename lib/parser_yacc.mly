@@ -94,4 +94,8 @@ statement:
 
 statement_list:
   |   { [] }
-  | state
+  | statement; statement_list
+      { $1 :: $2 }
+
+if_statement:
+  | IF; 
