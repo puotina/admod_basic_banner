@@ -101,4 +101,6 @@ if_statement:
   | IF; LEFT_PAREN; expression; RIGHT_PAREN; statement      %prec IF
       { Batsh_ast.If ($3, $5) }
   | IF; LEFT_PAREN; expression; RIGHT_PAREN; statement; ELSE; statement
- 
+      { Batsh_ast.IfElse ($3, $5, $7) }
+
+loop
