@@ -103,4 +103,5 @@ if_statement:
   | IF; LEFT_PAREN; expression; RIGHT_PAREN; statement; ELSE; statement
       { Batsh_ast.IfElse ($3, $5, $7) }
 
-loop
+loop_statement:
+  | WHILE; LEFT_PAREN; expression; RIGHT_PARE
