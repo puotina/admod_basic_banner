@@ -108,4 +108,7 @@ loop_statement:
       { Batsh_ast.While ($3, $5) }
   ;
 
-expressi
+expression:
+  | leftvalue
+      { Batsh_ast.Leftvalue $1 }
+  | STR
