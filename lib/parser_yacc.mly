@@ -104,4 +104,8 @@ if_statement:
       { Batsh_ast.IfElse ($3, $5, $7) }
 
 loop_statement:
-  | WHILE; LEFT_PAREN; expression; RIGHT_PARE
+  | WHILE; LEFT_PAREN; expression; RIGHT_PAREN; statement;
+      { Batsh_ast.While ($3, $5) }
+  ;
+
+expressi
