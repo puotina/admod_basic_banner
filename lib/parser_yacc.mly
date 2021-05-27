@@ -111,4 +111,7 @@ loop_statement:
 expression:
   | leftvalue
       { Batsh_ast.Leftvalue $1 }
-  | STR
+  | STRING
+      { Batsh_ast.String $1 }
+  | INT
+      { Batsh_ast.Int 
