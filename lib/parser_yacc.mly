@@ -114,4 +114,6 @@ expression:
   | STRING
       { Batsh_ast.String $1 }
   | INT
-      { Batsh_ast.Int 
+      { Batsh_ast.Int $1 }
+  | FLOAT
+      { Batsh_ast.Float $1 }
