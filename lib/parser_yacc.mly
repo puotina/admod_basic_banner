@@ -117,3 +117,7 @@ expression:
       { Batsh_ast.Int $1 }
   | FLOAT
       { Batsh_ast.Float $1 }
+  | TRUE
+      { Batsh_ast.Bool true }
+  | FALSE
+      {
