@@ -120,4 +120,5 @@ expression:
   | TRUE
       { Batsh_ast.Bool true }
   | FALSE
-      {
+      { Batsh_ast.Bool false }
+  | LEFT_BRACK; expression_list; RI
