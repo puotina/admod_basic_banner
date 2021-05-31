@@ -123,4 +123,8 @@ expression:
       { Batsh_ast.Bool false }
   | LEFT_BRACK; expression_list; RIGHT_BRACK
       { Batsh_ast.List $2 }
-  | unary_expressio
+  | unary_expression;
+      { $1 }
+  | binary_expression;
+      { $1 }
+  
