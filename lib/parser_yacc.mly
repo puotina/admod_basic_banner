@@ -121,4 +121,6 @@ expression:
       { Batsh_ast.Bool true }
   | FALSE
       { Batsh_ast.Bool false }
-  | LEFT_BRACK; expression_list; RI
+  | LEFT_BRACK; expression_list; RIGHT_BRACK
+      { Batsh_ast.List $2 }
+  | unary_expressio
