@@ -127,4 +127,6 @@ expression:
       { $1 }
   | binary_expression;
       { $1 }
-  
+  | LEFT_PAREN; expression; RIGHT_PAREN;
+      { $2 }
+  | IDENTIFIER; LEFT_
