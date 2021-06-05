@@ -133,4 +133,7 @@ expression:
       { Batsh_ast.Call ($1, $3) }
 
 expression_list:
-  |  
+  |   { [] }
+  | expression
+      { [$1] }
+  | expression; COMM
