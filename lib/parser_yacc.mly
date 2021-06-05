@@ -130,4 +130,7 @@ expression:
   | LEFT_PAREN; expression; RIGHT_PAREN;
       { $2 }
   | IDENTIFIER; LEFT_PAREN; expression_list; RIGHT_PAREN;
- 
+      { Batsh_ast.Call ($1, $3) }
+
+expression_list:
+  |  
