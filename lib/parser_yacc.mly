@@ -129,4 +129,5 @@ expression:
       { $1 }
   | LEFT_PAREN; expression; RIGHT_PAREN;
       { $2 }
-  | IDENTIFIER; LEFT_
+  | IDENTIFIER; LEFT_PAREN; expression_list; RIGHT_PAREN;
+ 
