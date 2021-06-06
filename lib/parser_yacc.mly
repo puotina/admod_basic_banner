@@ -139,4 +139,7 @@ expression_list:
   | expression; COMMA; expression_list
       { $1 :: $3 }
 
-identifier
+identifier_list:
+  |   { [] }
+  | IDENTIFIER
+      { [$1]
