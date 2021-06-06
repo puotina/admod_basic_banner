@@ -136,4 +136,7 @@ expression_list:
   |   { [] }
   | expression
       { [$1] }
-  | expression; COMM
+  | expression; COMMA; expression_list
+      { $1 :: $3 }
+
+identifier
