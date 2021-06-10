@@ -144,4 +144,8 @@ identifier_list:
   | IDENTIFIER
       { [$1] }
   | IDENTIFIER; COMMA; identifier_list
-      { $1 :: $
+      { $1 :: $3 }
+
+leftvalue:
+  | IDENTIFIER;
+      { Batsh_ast.Identifie
