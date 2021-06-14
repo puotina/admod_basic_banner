@@ -148,4 +148,5 @@ identifier_list:
 
 leftvalue:
   | IDENTIFIER;
-      { Batsh_ast.Identifie
+      { Batsh_ast.Identifier $1 }
+  | leftvalue; LEFT_BRACK; expression; R
