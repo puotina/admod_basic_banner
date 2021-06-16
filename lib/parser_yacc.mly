@@ -149,4 +149,5 @@ identifier_list:
 leftvalue:
   | IDENTIFIER;
       { Batsh_ast.Identifier $1 }
-  | leftvalue; LEFT_BRACK; expression; R
+  | leftvalue; LEFT_BRACK; expression; RIGHT_BRACK
+      { Batsh_ast.ListAccess ($1,
