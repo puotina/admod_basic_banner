@@ -154,4 +154,6 @@ leftvalue:
 
 unary_expression:
   | NOT; expression
-      { Batsh_a
+      { Batsh_ast.ArithUnary ("!", $2) }
+
+binary_expression:
