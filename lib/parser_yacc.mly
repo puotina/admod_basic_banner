@@ -158,4 +158,6 @@ unary_expression:
 
 binary_expression:
   | expression; PLUS; expression
-      { Batsh_ast.ArithBinary
+      { Batsh_ast.ArithBinary ("+", $1, $3) }
+  | expression; MINUS; expression
+      { Batsh
