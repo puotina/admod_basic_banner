@@ -157,3 +157,5 @@ unary_expression:
       { Batsh_ast.ArithUnary ("!", $2) }
 
 binary_expression:
+  | expression; PLUS; expression
+      { Batsh_ast.ArithBinary
