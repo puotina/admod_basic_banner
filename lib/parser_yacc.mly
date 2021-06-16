@@ -150,4 +150,8 @@ leftvalue:
   | IDENTIFIER;
       { Batsh_ast.Identifier $1 }
   | leftvalue; LEFT_BRACK; expression; RIGHT_BRACK
-      { Batsh_ast.ListAccess ($1,
+      { Batsh_ast.ListAccess ($1, $3) }
+
+unary_expression:
+  | NOT; expression
+      { Batsh_a
