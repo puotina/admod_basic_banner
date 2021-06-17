@@ -162,4 +162,6 @@ binary_expression:
   | expression; MINUS; expression
       { Batsh_ast.ArithBinary ("-", $1, $3) }
   | expression; MULTIPLY; expression
-      { Batsh_ast.ArithBinary ("*", $1, $3) 
+      { Batsh_ast.ArithBinary ("*", $1, $3) }
+  | expression; DIVIDE; expression
+      { Bats
