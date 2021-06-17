@@ -165,4 +165,5 @@ binary_expression:
       { Batsh_ast.ArithBinary ("*", $1, $3) }
   | expression; DIVIDE; expression
       { Batsh_ast.ArithBinary ("/", $1, $3) }
-  | expression; MODU
+  | expression; MODULO; expression
+      { Batsh_ast.ArithBinary ("%", $1,
