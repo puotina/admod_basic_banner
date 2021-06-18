@@ -168,4 +168,5 @@ binary_expression:
   | expression; MODULO; expression
       { Batsh_ast.ArithBinary ("%", $1, $3) }
   | expression; AEQ; expression
-      { Batsh_ast.Ar
+      { Batsh_ast.ArithBinary ("===", $1, $3) }
+  | expression; ANE; exp
