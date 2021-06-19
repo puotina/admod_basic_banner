@@ -173,4 +173,5 @@ binary_expression:
       { Batsh_ast.ArithBinary ("!==", $1, $3) }
   | expression; GT; expression
       { Batsh_ast.ArithBinary (">", $1, $3) }
-  | expression; LT; e
+  | expression; LT; expression
+      { Batsh_ast.ArithBinary ("<", $1, $3) }
