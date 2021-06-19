@@ -169,4 +169,6 @@ binary_expression:
       { Batsh_ast.ArithBinary ("%", $1, $3) }
   | expression; AEQ; expression
       { Batsh_ast.ArithBinary ("===", $1, $3) }
-  | expression; ANE; exp
+  | expression; ANE; expression
+      { Batsh_ast.ArithBinary ("!==", $1, $3) }
+  | 
