@@ -180,4 +180,5 @@ binary_expression:
   | expression; LE; expression
       { Batsh_ast.ArithBinary ("<=", $1, $3) }
   | expression; CONCAT; expression
-      { Batsh_
+      { Batsh_ast.Concat ($1, $3) }
+  | expression; SEQ; expressio
