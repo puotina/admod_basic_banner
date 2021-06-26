@@ -181,4 +181,5 @@ binary_expression:
       { Batsh_ast.ArithBinary ("<=", $1, $3) }
   | expression; CONCAT; expression
       { Batsh_ast.Concat ($1, $3) }
-  | expression; SEQ; expressio
+  | expression; SEQ; expression
+      { Batsh_ast.StrCompare ("==", $1, $3
