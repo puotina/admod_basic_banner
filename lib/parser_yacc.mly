@@ -182,4 +182,6 @@ binary_expression:
   | expression; CONCAT; expression
       { Batsh_ast.Concat ($1, $3) }
   | expression; SEQ; expression
-      { Batsh_ast.StrCompare ("==", $1, $3
+      { Batsh_ast.StrCompare ("==", $1, $3) }
+  | expression; SNE; expression
+      { Batsh_ast.StrCom
