@@ -184,4 +184,4 @@ binary_expression:
   | expression; SEQ; expression
       { Batsh_ast.StrCompare ("==", $1, $3) }
   | expression; SNE; expression
-      { Batsh_ast.StrCom
+      { Batsh_ast.StrCompare ("!=", $1, $3) }
