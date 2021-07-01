@@ -1,2 +1,6 @@
 open Core_kernel
-open Bat
+open Batsh_ast
+
+exception Error of string
+
+let check_function
