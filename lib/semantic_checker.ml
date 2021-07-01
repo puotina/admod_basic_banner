@@ -5,4 +5,5 @@ exception Error of string
 
 let check_function_statement (stmt : statement) =
   match stmt with
-  | Return 
+  | Return (Some List _) ->
+    raise (Error "list can n
