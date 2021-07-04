@@ -10,4 +10,4 @@ let check_function_statement (stmt : statement) =
   | _ ->
     ()
 
-le
+let check_function (func : (identifier * identifiers * statements)) 
