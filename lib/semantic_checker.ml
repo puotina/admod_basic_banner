@@ -10,4 +10,6 @@ let check_function_statement (stmt : statement) =
   | _ ->
     ()
 
-let check_function (func : (identifier * identifiers * statements)) 
+let check_function (func : (identifier * identifiers * statements)) =
+  let _name, _params, stmts = func in
+  List.iter stmts ~f:
