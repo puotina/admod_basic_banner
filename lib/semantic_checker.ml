@@ -14,4 +14,7 @@ let check_function (func : (identifier * identifiers * statements)) =
   let _name, _params, stmts = func in
   List.iter stmts ~f: check_function_statement
 
-let check_toplevel (topl : t
+let check_toplevel (topl : toplevel) =
+  match topl with
+  | Statement (Global _) ->
+    raise
