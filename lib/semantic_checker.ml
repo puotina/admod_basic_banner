@@ -17,4 +17,4 @@ let check_function (func : (identifier * identifiers * statements)) =
 let check_toplevel (topl : toplevel) =
   match topl with
   | Statement (Global _) ->
-    raise
+    raise (Error "qualifier 'global' must be used
