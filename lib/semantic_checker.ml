@@ -23,4 +23,7 @@ let check_toplevel (topl : toplevel) =
   | Statement _ ->
     ()
   | Function func ->
-    check_f
+    check_function func
+
+let check (ast : t) : unit =
+  List.iter a
