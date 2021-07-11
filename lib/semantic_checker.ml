@@ -19,4 +19,4 @@ let check_toplevel (topl : toplevel) =
   | Statement (Global _) ->
     raise (Error "qualifier 'global' must be used in a function")
   | Statement (Return _) ->
-    raise (E
+    raise (Error "statement 'return' must be used in a functio
