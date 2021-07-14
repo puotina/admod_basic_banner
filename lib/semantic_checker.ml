@@ -26,4 +26,4 @@ let check_toplevel (topl : toplevel) =
     check_function func
 
 let check (ast : t) : unit =
-  List.iter a
+  List.iter ast ~f: check_toplevel
