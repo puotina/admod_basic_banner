@@ -8,4 +8,6 @@ type variable_entry = {
 [@@deriving sexp]
 
 type variable_table = (string, variable_entry) Hashtbl.Poly.t
-[@@deriving s
+[@@deriving sexp]
+
+let sexp_of_variable_table (vtable : var
