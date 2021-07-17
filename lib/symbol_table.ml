@@ -7,4 +7,5 @@ type variable_entry = {
 }
 [@@deriving sexp]
 
-type variable_table = (string,
+type variable_table = (string, variable_entry) Hashtbl.Poly.t
+[@@deriving s
