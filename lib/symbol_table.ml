@@ -12,3 +12,5 @@ type variable_table = (string, variable_entry) Hashtbl.Poly.t
 
 let sexp_of_variable_table (vtable : variable_table) : Sexp.t =
   Sexp.List (Hashtbl.fold vtable ~init: []
+               ~f: (fun ~key:_ ~data acc ->
+    
