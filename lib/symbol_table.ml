@@ -19,4 +19,6 @@ let sexp_of_variable_table (vtable : variable_table) : Sexp.t =
             )
 
 type function_entry =
- 
+  | Declaration
+  | Defination of variable_table
+[@
