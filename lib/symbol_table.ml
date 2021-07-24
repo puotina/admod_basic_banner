@@ -15,4 +15,8 @@ let sexp_of_variable_table (vtable : variable_table) : Sexp.t =
                ~f: (fun ~key:_ ~data acc ->
                    let item = (sexp_of_variable_entry data) in
                    item :: acc
-  
+                 )
+            )
+
+type function_entry =
+ 
