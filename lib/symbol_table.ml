@@ -24,4 +24,5 @@ type function_entry =
 [@@deriving sexp]
 
 type t = {
-  functions : (string, funct
+  functions : (string, function_entry) Hashtbl.Poly.t;
+  globals : variable_t
