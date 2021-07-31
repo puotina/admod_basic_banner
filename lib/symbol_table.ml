@@ -31,4 +31,5 @@ type t = {
 
 module Scope = struct
   type t =
-    
+    | GlobalScope of variable_table
+    | Functio
