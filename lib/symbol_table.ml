@@ -25,4 +25,10 @@ type function_entry =
 
 type t = {
   functions : (string, function_entry) Hashtbl.Poly.t;
-  globals : variable_t
+  globals : variable_table;
+}
+[@@deriving sexp]
+
+module Scope = struct
+  type t =
+    
