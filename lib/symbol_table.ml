@@ -32,4 +32,5 @@ type t = {
 module Scope = struct
   type t =
     | GlobalScope of variable_table
-    | Functio
+    | FunctionScope of (string * variable_table)
+  [@@deriving 
