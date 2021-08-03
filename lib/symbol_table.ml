@@ -36,4 +36,6 @@ module Scope = struct
   [@@deriving sexp]
 
   let is_function (scope : t) : bool =
-    match scop
+    match scope with
+    | GlobalScope _ -> false
+    | Fu
