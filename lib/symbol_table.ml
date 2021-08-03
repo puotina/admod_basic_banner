@@ -33,4 +33,7 @@ module Scope = struct
   type t =
     | GlobalScope of variable_table
     | FunctionScope of (string * variable_table)
-  [@@deriving 
+  [@@deriving sexp]
+
+  let is_function (scope : t) : bool =
+    match scop
