@@ -38,4 +38,6 @@ module Scope = struct
   let is_function (scope : t) : bool =
     match scope with
     | GlobalScope _ -> false
-    | Fu
+    | FunctionScope _ -> true
+
+  let variables (scope : 
