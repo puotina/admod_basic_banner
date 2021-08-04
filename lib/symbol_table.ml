@@ -40,4 +40,6 @@ module Scope = struct
     | GlobalScope _ -> false
     | FunctionScope _ -> true
 
-  let variables (scope : 
+  let variables (scope : t) : variable_table =
+    match scope with
+    | GlobalScope va
