@@ -46,4 +46,6 @@ module Scope = struct
     | FunctionScope (_, variables) -> variables
 
   let find_variable
-      (sc
+      (scope: t)
+      ~(name: string)
+    : variable_entry
