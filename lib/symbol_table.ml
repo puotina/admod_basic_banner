@@ -43,4 +43,7 @@ module Scope = struct
   let variables (scope : t) : variable_table =
     match scope with
     | GlobalScope variables -> variables
-    | FunctionScope (_, variables
+    | FunctionScope (_, variables) -> variables
+
+  let find_variable
+      (sc
