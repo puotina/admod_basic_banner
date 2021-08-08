@@ -48,4 +48,7 @@ module Scope = struct
   let find_variable
       (scope: t)
       ~(name: string)
-    : variable_entry
+    : variable_entry option =
+    Hashtbl.find (variables scope) name
+
+  le
