@@ -51,4 +51,5 @@ module Scope = struct
     : variable_entry option =
     Hashtbl.find (variables scope) name
 
-  le
+  let is_global_variable
+      (scope : t
