@@ -52,4 +52,7 @@ module Scope = struct
     Hashtbl.find (variables scope) name
 
   let is_global_variable
-      (scope : t
+      (scope : t)
+      ~(name : string)
+    : bool =
+    match scope
