@@ -57,4 +57,5 @@ module Scope = struct
     : bool =
     match scope with
     | GlobalScope _ -> true
-    | Func
+    | FunctionScope (_, variable_table) ->
+      match Has
