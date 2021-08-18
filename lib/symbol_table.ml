@@ -55,4 +55,6 @@ module Scope = struct
       (scope : t)
       ~(name : string)
     : bool =
-    match scope
+    match scope with
+    | GlobalScope _ -> true
+    | Func
