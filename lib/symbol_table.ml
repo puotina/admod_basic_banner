@@ -58,4 +58,5 @@ module Scope = struct
     match scope with
     | GlobalScope _ -> true
     | FunctionScope (_, variable_table) ->
-      match Has
+      match Hashtbl.find variable_table name with
+      | None ->
