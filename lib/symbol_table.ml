@@ -59,4 +59,4 @@ module Scope = struct
     | GlobalScope _ -> true
     | FunctionScope (_, variable_table) ->
       match Hashtbl.find variable_table name with
-      | None ->
+      | None -> true (* if variable is not found, consider it as exter
