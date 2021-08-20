@@ -60,4 +60,9 @@ module Scope = struct
     | FunctionScope (_, variable_table) ->
       match Hashtbl.find variable_table name with
       | None -> true (* if variable is not found, consider it as external *)
-      | Some variable -> variable.glob
+      | Some variable -> variable.global
+
+  let fold
+      (scope: t)
+      ~(init: 'a)
+   
