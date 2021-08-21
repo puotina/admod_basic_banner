@@ -65,4 +65,5 @@ module Scope = struct
   let fold
       (scope: t)
       ~(init: 'a)
-   
+      ~(f: string -> bool -> 'a -> 'a) =
+    let vtable 
