@@ -70,4 +70,7 @@ module Scope = struct
     Hashtbl.fold vtable ~init
       ~f: (fun ~key:_ ~data acc -> f data.name data.global acc)
 
-  let
+  let add_temporary_variable
+      (scope: t)
+    : identifier =
+ 
