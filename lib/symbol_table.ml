@@ -66,4 +66,6 @@ module Scope = struct
       (scope: t)
       ~(init: 'a)
       ~(f: string -> bool -> 'a -> 'a) =
-    let vtable 
+    let vtable = variables scope in
+    Hashtbl.fold vtable ~init
+      ~f
