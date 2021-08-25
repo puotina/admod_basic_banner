@@ -73,4 +73,4 @@ module Scope = struct
   let add_temporary_variable
       (scope: t)
     : identifier =
- 
+    let rec find_available_name (num : int) : string =
