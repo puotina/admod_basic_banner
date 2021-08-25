@@ -75,4 +75,6 @@ module Scope = struct
     : identifier =
     let rec find_available_name (num : int) : string =
       let name = "_" ^ (Int.to_string num) in
-      ma
+      match find_variable scope ~name with
+      | None ->
+    
