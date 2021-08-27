@@ -78,4 +78,5 @@ module Scope = struct
       match find_variable scope ~name with
       | None ->
         (* Add to symbol table *)
-        
+        let variables = variables scope in
+        Hashtbl.add
