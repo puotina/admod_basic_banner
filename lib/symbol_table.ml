@@ -79,4 +79,5 @@ module Scope = struct
       | None ->
         (* Add to symbol table *)
         let variables = variables scope in
-        Hashtbl.add
+        Hashtbl.add_exn variables ~key: name ~data: {name; global = false};
+  
