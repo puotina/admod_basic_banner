@@ -77,4 +77,5 @@ module Scope = struct
       let name = "_" ^ (Int.to_string num) in
       match find_variable scope ~name with
       | None ->
-    
+        (* Add to symbol table *)
+        
