@@ -82,4 +82,6 @@ module Scope = struct
         Hashtbl.add_exn variables ~key: name ~data: {name; global = false};
         name
       | Some _ ->
-        (* Duplicated, try
+        (* Duplicated, try again *)
+        find_available_name (num + 1)
+    in
