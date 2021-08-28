@@ -80,4 +80,6 @@ module Scope = struct
         (* Add to symbol table *)
         let variables = variables scope in
         Hashtbl.add_exn variables ~key: name ~data: {name; global = false};
-  
+        name
+      | Some _ ->
+        (* Duplicated, try
