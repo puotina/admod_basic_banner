@@ -85,3 +85,7 @@ module Scope = struct
         (* Duplicated, try again *)
         find_available_name (num + 1)
     in
+    find_available_name 0
+end
+
+let pro
