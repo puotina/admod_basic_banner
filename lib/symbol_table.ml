@@ -92,4 +92,5 @@ let process_identifier
     (scope: variable_table)
     (ident: identifier)
     ~(global: bool) =
-  Hashtbl.change scope 
+  Hashtbl.change scope ident ~f:(fun original ->
+      let entry = Some {
