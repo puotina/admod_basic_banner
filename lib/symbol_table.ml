@@ -90,4 +90,6 @@ end
 
 let process_identifier
     (scope: variable_table)
-    (ide
+    (ident: identifier)
+    ~(global: bool) =
+  Hashtbl.change scope 
