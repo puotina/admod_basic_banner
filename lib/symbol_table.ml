@@ -88,4 +88,6 @@ module Scope = struct
     find_available_name 0
 end
 
-let pro
+let process_identifier
+    (scope: variable_table)
+    (ide
