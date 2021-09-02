@@ -109,4 +109,6 @@ let process_identifier
 
 let rec process_leftvalue
     (scope: variable_table)
-    (lval
+    (lvalue: leftvalue)
+    ~(global: bool) =
+  match lval
