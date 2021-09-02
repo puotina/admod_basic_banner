@@ -113,4 +113,5 @@ let rec process_leftvalue
     ~(global: bool) =
   match lvalue with
   | Identifier ident ->
-    process_
+    process_identifier scope ident ~global
+  | ListAccess (lv
