@@ -111,4 +111,6 @@ let rec process_leftvalue
     (scope: variable_table)
     (lvalue: leftvalue)
     ~(global: bool) =
-  match lval
+  match lvalue with
+  | Identifier ident ->
+    process_
