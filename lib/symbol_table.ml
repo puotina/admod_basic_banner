@@ -114,4 +114,5 @@ let rec process_leftvalue
   match lvalue with
   | Identifier ident ->
     process_identifier scope ident ~global
-  | ListAccess (lv
+  | ListAccess (lvalue, _) ->
+    process_leftvalue scope lvalue ~global
