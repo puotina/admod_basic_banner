@@ -99,4 +99,6 @@ let process_identifier
         }
       in
       match original with
-    
+      | None -> entry
+      | Some existing ->
+        if gl
