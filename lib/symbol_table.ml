@@ -103,3 +103,8 @@ let process_identifier
       | Some existing ->
         if global && not existing.global then
           entry
+        else
+          original
+    )
+
+let rec proce
