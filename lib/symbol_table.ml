@@ -101,4 +101,5 @@ let process_identifier
       match original with
       | None -> entry
       | Some existing ->
-        if gl
+        if global && not existing.global then
+          entry
