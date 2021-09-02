@@ -107,4 +107,6 @@ let process_identifier
           original
     )
 
-let rec proce
+let rec process_leftvalue
+    (scope: variable_table)
+    (lval
