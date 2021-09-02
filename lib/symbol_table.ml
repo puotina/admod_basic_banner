@@ -95,4 +95,8 @@ let process_identifier
   Hashtbl.change scope ident ~f:(fun original ->
       let entry = Some {
           name = ident;
-          global = glob
+          global = global;
+        }
+      in
+      match original with
+    
