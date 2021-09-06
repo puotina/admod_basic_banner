@@ -118,4 +118,7 @@ let rec process_leftvalue
     process_leftvalue scope lvalue ~global
 
 let process_statement
-    (scope: variable_tab
+    (scope: variable_table)
+    (stmt: statement) =
+  match stmt with
+  |
