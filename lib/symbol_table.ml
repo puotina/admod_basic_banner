@@ -116,3 +116,6 @@ let rec process_leftvalue
     process_identifier scope ident ~global
   | ListAccess (lvalue, _) ->
     process_leftvalue scope lvalue ~global
+
+let process_statement
+    (scope: variable_tab
