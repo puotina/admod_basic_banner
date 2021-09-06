@@ -121,4 +121,5 @@ let process_statement
     (scope: variable_table)
     (stmt: statement) =
   match stmt with
-  | Assignment (lvalue, _) -> process_leftvalue scope 
+  | Assignment (lvalue, _) -> process_leftvalue scope lvalue ~global: false
+  | Global ident -> proces
