@@ -125,4 +125,7 @@ let process_statement
   | Global ident -> process_identifier scope ident ~global: true
   | _ -> ()
 
-let pr
+let process_function
+    functions
+    (name, params, stmts) =
+  
