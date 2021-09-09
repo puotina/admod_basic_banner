@@ -122,4 +122,7 @@ let process_statement
     (stmt: statement) =
   match stmt with
   | Assignment (lvalue, _) -> process_leftvalue scope lvalue ~global: false
-  | Global ident -> proces
+  | Global ident -> process_identifier scope ident ~global: true
+  | _ -> ()
+
+let pr
