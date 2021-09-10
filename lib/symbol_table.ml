@@ -128,4 +128,5 @@ let process_statement
 let process_function
     functions
     (name, params, stmts) =
-  
+  match Hashtbl.find functions name with
+  | Some _ -> ()
