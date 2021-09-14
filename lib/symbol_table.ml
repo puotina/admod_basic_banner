@@ -129,4 +129,6 @@ let process_function
     functions
     (name, params, stmts) =
   match Hashtbl.find functions name with
-  | Some _ -> ()
+  | Some _ -> () (* TODO duplicate *)
+  | None ->
+    let 
