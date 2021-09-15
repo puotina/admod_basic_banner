@@ -131,4 +131,5 @@ let process_function
   match Hashtbl.find functions name with
   | Some _ -> () (* TODO duplicate *)
   | None ->
-    let 
+    let variables = Hashtbl.create (module String) in
+    Ha
