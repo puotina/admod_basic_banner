@@ -134,4 +134,6 @@ let process_function
     let variables = Hashtbl.create (module String) in
     Hashtbl.change functions name ~f:(fun _original ->
         (* TODO declaration *)
-        Some
+        Some (Defination variables)
+      );
+    List.iter s
