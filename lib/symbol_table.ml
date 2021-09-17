@@ -132,4 +132,6 @@ let process_function
   | Some _ -> () (* TODO duplicate *)
   | None ->
     let variables = Hashtbl.create (module String) in
-    Hashtbl.change functions name ~f:(fun _
+    Hashtbl.change functions name ~f:(fun _original ->
+        (* TODO declaration *)
+        Some
