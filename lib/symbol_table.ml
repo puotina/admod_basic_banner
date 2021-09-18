@@ -137,4 +137,4 @@ let process_function
         Some (Defination variables)
       );
     List.iter stmts ~f: (process_statement variables);
-    Lis
+    List.iter params ~f: (process_identifier variables ~global: false
