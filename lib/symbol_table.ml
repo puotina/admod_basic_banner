@@ -142,4 +142,6 @@ let process_function
 let process_toplevel (symtable: t) (topl: toplevel) =
   match topl with
   | Statement stmt -> process_statement symtable.globals stmt
-  | Function func -> proces
+  | Function func -> process_function symtable.functions func
+
+let create (ast: Batsh
