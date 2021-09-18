@@ -136,4 +136,5 @@ let process_function
         (* TODO declaration *)
         Some (Defination variables)
       );
-    List.iter s
+    List.iter stmts ~f: (process_statement variables);
+    Lis
