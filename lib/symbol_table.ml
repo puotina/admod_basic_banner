@@ -144,4 +144,6 @@ let process_toplevel (symtable: t) (topl: toplevel) =
   | Statement stmt -> process_statement symtable.globals stmt
   | Function func -> process_function symtable.functions func
 
-let create (ast: Batsh
+let create (ast: Batsh_ast.t) :t =
+  let symtable = {
+    functions = Hashtbl
