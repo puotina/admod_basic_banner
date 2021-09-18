@@ -137,4 +137,7 @@ let process_function
         Some (Defination variables)
       );
     List.iter stmts ~f: (process_statement variables);
-    List.iter params ~f: (process_identifier variables ~global: false
+    List.iter params ~f: (process_identifier variables ~global: false)
+
+let process_toplevel (symtable: t) (topl: toplevel) =
+  m
