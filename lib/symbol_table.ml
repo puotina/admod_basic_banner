@@ -140,4 +140,5 @@ let process_function
     List.iter params ~f: (process_identifier variables ~global: false)
 
 let process_toplevel (symtable: t) (topl: toplevel) =
-  m
+  match topl with
+  | Statement stmt -> process_statement 
