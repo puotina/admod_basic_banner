@@ -146,4 +146,5 @@ let process_toplevel (symtable: t) (topl: toplevel) =
 
 let create (ast: Batsh_ast.t) :t =
   let symtable = {
-    functions = Hashtbl
+    functions = Hashtbl.create (module String);
+    globals = Hashtbl.create (modu
