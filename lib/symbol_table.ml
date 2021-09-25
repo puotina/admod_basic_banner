@@ -149,4 +149,8 @@ let create (ast: Batsh_ast.t) :t =
     functions = Hashtbl.create (module String);
     globals = Hashtbl.create (module String)
   } in
-  List.iter ast ~f: (process_topleve
+  List.iter ast ~f: (process_toplevel symtable);
+  symtable
+
+let scope (symtable: t) (name: string) : Scope.t =
+  
