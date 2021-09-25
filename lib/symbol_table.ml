@@ -154,4 +154,7 @@ let create (ast: Batsh_ast.t) :t =
 
 let scope (symtable: t) (name: string) : Scope.t =
   let variables = match Hashtbl.find_exn symtable.functions name with
-    | Declaration -> failwith "No suc
+    | Declaration -> failwith "No such function"
+    | Defination variables -> variables
+  in
+  Scope
