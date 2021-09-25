@@ -157,4 +157,6 @@ let scope (symtable: t) (name: string) : Scope.t =
     | Declaration -> failwith "No such function"
     | Defination variables -> variables
   in
-  Scope
+  Scope.FunctionScope (name, variables)
+
+let global_scope (symtable: t) : S
