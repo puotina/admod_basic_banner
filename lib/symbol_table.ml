@@ -159,4 +159,7 @@ let scope (symtable: t) (name: string) : Scope.t =
   in
   Scope.FunctionScope (name, variables)
 
-let global_scope (symtable: t) : S
+let global_scope (symtable: t) : Scope.t =
+  Scope.GlobalScope symtable.globals
+
+let is_func
