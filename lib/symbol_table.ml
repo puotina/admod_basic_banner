@@ -162,4 +162,5 @@ let scope (symtable: t) (name: string) : Scope.t =
 let global_scope (symtable: t) : Scope.t =
   Scope.GlobalScope symtable.globals
 
-let is_func
+let is_function (symtable : t) (name : string) : bool =
+  match Hashtbl.fin
