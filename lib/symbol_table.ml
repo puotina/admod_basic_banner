@@ -163,4 +163,6 @@ let global_scope (symtable: t) : Scope.t =
   Scope.GlobalScope symtable.globals
 
 let is_function (symtable : t) (name : string) : bool =
-  match Hashtbl.fin
+  match Hashtbl.find symtable.functions name with
+  | Some _ -> true
+  |
