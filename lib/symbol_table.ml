@@ -165,4 +165,4 @@ let global_scope (symtable: t) : Scope.t =
 let is_function (symtable : t) (name : string) : bool =
   match Hashtbl.find symtable.functions name with
   | Some _ -> true
-  |
+  | None -> false
