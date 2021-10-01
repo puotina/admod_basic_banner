@@ -4,4 +4,5 @@ type t = {
   batch_ast_expanded : Winbat_ast.t;
 }
 
-let compile (bat
+let compile (batsh : Parser.t) : t =
+  let batch_ast = Winbat_compi
