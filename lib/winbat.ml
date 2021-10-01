@@ -5,4 +5,5 @@ type t = {
 }
 
 let compile (batsh : Parser.t) : t =
-  let batch_ast = Winbat_compi
+  let batch_ast = Winbat_compile.compile batsh in
+  let batch_ast_expanded = Winbat
