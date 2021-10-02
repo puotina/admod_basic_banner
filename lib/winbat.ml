@@ -10,3 +10,5 @@ let compile (batsh : Parser.t) : t =
   {batsh; batch_ast; batch_ast_expanded}
 
 let print (batch : t) : string =
+  let buf = Buffer.create 1024 in
+  Wi
