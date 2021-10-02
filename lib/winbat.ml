@@ -7,4 +7,6 @@ type t = {
 let compile (batsh : Parser.t) : t =
   let batch_ast = Winbat_compile.compile batsh in
   let batch_ast_expanded = Winbat_functions.expand batch_ast in
-  {batsh; batch_ast; b
+  {batsh; batch_ast; batch_ast_expanded}
+
+let print (batch : t) : string =
