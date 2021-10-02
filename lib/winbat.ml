@@ -12,4 +12,6 @@ let compile (batsh : Parser.t) : t =
 let print (batch : t) : string =
   let buf = Buffer.create 1024 in
   Winbat_format.print buf batch.batch_ast_expanded;
-  B
+  Buffer.contents buf
+
+let ast ?(expand_functions=true) (wi
