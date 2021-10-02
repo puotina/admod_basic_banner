@@ -15,4 +15,7 @@ let print (batch : t) : string =
   Buffer.contents buf
 
 let ast ?(expand_functions=true) (winbat : t) : Winbat_ast.t =
-  if expand_functi
+  if expand_functions then
+    winbat.batch_ast_expanded
+  else
+  
