@@ -14,4 +14,5 @@ let print (batch : t) : string =
   Winbat_format.print buf batch.batch_ast_expanded;
   Buffer.contents buf
 
-let ast ?(expand_functions=true) (wi
+let ast ?(expand_functions=true) (winbat : t) : Winbat_ast.t =
+  if expand_functi
