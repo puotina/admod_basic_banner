@@ -1,3 +1,5 @@
 type t
 
-val compile : Pars
+val compile : Parser.t -> t
+val print : t -> string
+val ast : ?expand_fu
