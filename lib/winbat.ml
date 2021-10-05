@@ -18,4 +18,4 @@ let ast ?(expand_functions=true) (winbat : t) : Winbat_ast.t =
   if expand_functions then
     winbat.batch_ast_expanded
   else
-  
+    winbat.batch_ast
