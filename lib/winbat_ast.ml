@@ -4,4 +4,7 @@ type identifier = string
 
 and identifiers = identifier list
 
-and
+and label = string
+
+and varint = [
+  | `Var of leftv
