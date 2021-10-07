@@ -7,4 +7,9 @@ and identifiers = identifier list
 and label = string
 
 and varint = [
-  | `Var of leftv
+  | `Var of leftvalue
+  | `Int of int
+]
+
+and leftvalue = [
+  | `Ide
