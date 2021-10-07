@@ -12,4 +12,5 @@ and varint = [
 ]
 
 and leftvalue = [
-  | `Ide
+  | `Identifier of identifier
+  | `ListAccess of (leftvalue 
