@@ -19,4 +19,5 @@ and leftvalue = [
 and arithmetic = [
   | `Var of leftvalue
   | `Int of int
-  | `ArithUnary of (string * arithmet
+  | `ArithUnary of (string * arithmetic)
+  | `ArithBinary of (string * arithmetic * arit
