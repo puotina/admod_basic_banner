@@ -17,4 +17,6 @@ and leftvalue = [
 ]
 
 and arithmetic = [
-  | `Var of leftv
+  | `Var of leftvalue
+  | `Int of int
+  | `ArithUnary of (string * arithmet
