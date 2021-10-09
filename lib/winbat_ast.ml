@@ -13,4 +13,8 @@ and varint = [
 
 and leftvalue = [
   | `Identifier of identifier
-  | `ListAccess of (leftvalue 
+  | `ListAccess of (leftvalue * varint)
+]
+
+and arithmetic = [
+  | `Var of leftv
