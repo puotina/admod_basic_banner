@@ -32,4 +32,5 @@ and varstring = [
 and varstrings = varstring list
 
 and comparison = [
-  | `UniCompare of (string * var
+  | `UniCompare of (string * varstrings)
+  | `StrCompare of (string * 
