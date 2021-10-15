@@ -41,4 +41,6 @@ and parameter = varstrings
 
 and parameters = parameter list
 
-and statemen
+and statement = [
+  | `Comment of string
+  | `Raw of string
