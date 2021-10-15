@@ -47,4 +47,5 @@ and statement = [
   | `Label of label
   | `Goto of label
   | `Assignment of (leftvalue * varstrings)
-  | `ArithAssign of 
+  | `ArithAssign of (leftvalue * arithmetic)
+  | `Call of (varstr
