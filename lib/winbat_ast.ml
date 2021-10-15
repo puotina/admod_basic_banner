@@ -44,3 +44,6 @@ and parameters = parameter list
 and statement = [
   | `Comment of string
   | `Raw of string
+  | `Label of label
+  | `Goto of label
+  | `Assignment 
