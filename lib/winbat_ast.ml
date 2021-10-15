@@ -46,4 +46,5 @@ and statement = [
   | `Raw of string
   | `Label of label
   | `Goto of label
-  | `Assignment 
+  | `Assignment of (leftvalue * varstrings)
+  | `ArithAssign of 
