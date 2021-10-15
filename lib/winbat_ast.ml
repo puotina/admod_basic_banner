@@ -39,4 +39,6 @@ and comparison = [
 
 and parameter = varstrings
 
-and p
+and parameters = parameter list
+
+and statemen
