@@ -51,4 +51,8 @@ and statement = [
   | `Call of (varstrings * parameters)
   | `Output of (leftvalue * varstrings * parameters)
   | `If of (comparison * statements)
-  | `IfElse of (comparison * statemen
+  | `IfElse of (comparison * statements * statements)
+  | `Empty
+]
+
+and statements =
