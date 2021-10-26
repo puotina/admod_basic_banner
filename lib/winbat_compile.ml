@@ -5,4 +5,5 @@ open Winbat_ast
 let rec compile_leftvalue
     (lvalue: Batsh_ast.leftvalue)
     ~(symtable: Symbol_table.t)
-    ~(scop
+    ~(scope: Symbol_table.Scope.t)
+  : leftvalue =
