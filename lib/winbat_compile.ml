@@ -7,3 +7,6 @@ let rec compile_leftvalue
     ~(symtable: Symbol_table.t)
     ~(scope: Symbol_table.Scope.t)
   : leftvalue =
+  match lvalue with
+  | Identifier ident ->
+    `
