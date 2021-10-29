@@ -9,4 +9,6 @@ let rec compile_leftvalue
   : leftvalue =
   match lvalue with
   | Identifier ident ->
-    `
+    `Identifier ident
+  | ListAccess (lvalue, index) ->
+    let lvalu
