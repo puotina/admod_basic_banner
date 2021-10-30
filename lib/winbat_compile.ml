@@ -11,4 +11,4 @@ let rec compile_leftvalue
   | Identifier ident ->
     `Identifier ident
   | ListAccess (lvalue, index) ->
-    let lvalu
+    let lvalue = compile_leftvalue lvalue ~symtable ~scope in
