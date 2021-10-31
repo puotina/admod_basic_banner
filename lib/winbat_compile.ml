@@ -12,4 +12,5 @@ let rec compile_leftvalue
     `Identifier ident
   | ListAccess (lvalue, index) ->
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
-    let index = compile_expression_to_varin
+    let index = compile_expression_to_varint index ~symtable ~scope in
+    `ListAccess (lvalu
