@@ -20,3 +20,6 @@ and compile_expression_to_varint
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : varint =
+  match expr with
+  | Leftvalue lvalue ->
+  
