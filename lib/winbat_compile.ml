@@ -17,4 +17,6 @@ let rec compile_leftvalue
 
 and compile_expression_to_varint
     (expr : Batsh_ast.expression)
-    ~(symtable : Symbol_table
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Scope.t)
+  : varint =
