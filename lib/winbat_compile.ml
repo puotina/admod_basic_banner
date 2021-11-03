@@ -16,4 +16,5 @@ let rec compile_leftvalue
     `ListAccess (lvalue, index)
 
 and compile_expression_to_varint
-    (expr : B
+    (expr : Batsh_ast.expression)
+    ~(symtable : Symbol_table
