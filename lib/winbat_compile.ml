@@ -27,4 +27,5 @@ and compile_expression_to_varint
     `Int num
   | _ ->
     raise (Errors.SemanticError
-             ("Index should be eithe
+             ("Index should be either var or int",
+              expr |> Batsh_ast.se
