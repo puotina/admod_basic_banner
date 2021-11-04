@@ -22,4 +22,5 @@ and compile_expression_to_varint
   : varint =
   match expr with
   | Leftvalue lvalue ->
-  
+    `Var (compile_leftvalue lvalue ~symtable ~scope)
+  | Int num -
