@@ -23,4 +23,7 @@ and compile_expression_to_varint
   match expr with
   | Leftvalue lvalue ->
     `Var (compile_leftvalue lvalue ~symtable ~scope)
-  | Int num -
+  | Int num ->
+    `Int num
+  | _ ->
+    raise (Errors.Seman
