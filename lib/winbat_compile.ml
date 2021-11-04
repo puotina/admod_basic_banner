@@ -26,4 +26,5 @@ and compile_expression_to_varint
   | Int num ->
     `Int num
   | _ ->
-    raise (Errors.Seman
+    raise (Errors.SemanticError
+             ("Index should be eithe
