@@ -28,4 +28,6 @@ and compile_expression_to_varint
   | _ ->
     raise (Errors.SemanticError
              ("Index should be either var or int",
-              expr |> Batsh_ast.se
+              expr |> Batsh_ast.sexp_of_expression |> Sexp.to_string
+             )
+       
