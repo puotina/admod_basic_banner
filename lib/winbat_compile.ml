@@ -30,4 +30,7 @@ and compile_expression_to_varint
              ("Index should be either var or int",
               expr |> Batsh_ast.sexp_of_expression |> Sexp.to_string
              )
-       
+          )
+
+let rec compile_expression_to_arith
+    (expr : Batsh_ast
