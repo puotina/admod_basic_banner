@@ -37,4 +37,8 @@ let rec compile_expression_to_arith
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : arithmetic =
-  matc
+  match expr with
+  | Bool false ->
+    `Int 0
+  | Bool true ->
+ 
