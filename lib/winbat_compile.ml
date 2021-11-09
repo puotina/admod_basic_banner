@@ -35,4 +35,6 @@ and compile_expression_to_varint
 let rec compile_expression_to_arith
     (expr : Batsh_ast.expression)
     ~(symtable : Symbol_table.t)
-    ~(scop
+    ~(scope : Symbol_table.Scope.t)
+  : arithmetic =
+  matc
