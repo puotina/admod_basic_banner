@@ -44,4 +44,5 @@ let rec compile_expression_to_arith
     `Int 1
   | Int num ->
     `Int num
-  | Leftvalue l
+  | Leftvalue lvalue ->
+    `Var (compile_leftvalue lvalue ~symtable
