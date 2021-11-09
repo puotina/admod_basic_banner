@@ -33,4 +33,6 @@ and compile_expression_to_varint
           )
 
 let rec compile_expression_to_arith
-    (expr : Batsh_ast
+    (expr : Batsh_ast.expression)
+    ~(symtable : Symbol_table.t)
+    ~(scop
