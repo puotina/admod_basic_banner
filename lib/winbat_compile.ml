@@ -41,4 +41,7 @@ let rec compile_expression_to_arith
   | Bool false ->
     `Int 0
   | Bool true ->
- 
+    `Int 1
+  | Int num ->
+    `Int num
+  | Leftvalue l
