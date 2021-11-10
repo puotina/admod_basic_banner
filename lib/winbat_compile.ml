@@ -47,3 +47,4 @@ let rec compile_expression_to_arith
   | Leftvalue lvalue ->
     `Var (compile_leftvalue lvalue ~symtable ~scope)
   | ArithUnary (operator, expr) ->
+    `ArithUnary (operator, compile_expression_to_arith e
