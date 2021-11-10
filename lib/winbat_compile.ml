@@ -45,4 +45,5 @@ let rec compile_expression_to_arith
   | Int num ->
     `Int num
   | Leftvalue lvalue ->
-    `Var (compile_leftvalue lvalue ~symtable
+    `Var (compile_leftvalue lvalue ~symtable ~scope)
+  | ArithUnary (operator, expr) ->
