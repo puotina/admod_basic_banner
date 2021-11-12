@@ -50,4 +50,4 @@ let rec compile_expression_to_arith
     `ArithUnary (operator, compile_expression_to_arith expr ~symtable ~scope)
   | ArithBinary (operator, left, right) ->
     `ArithBinary (operator,
-  
+                  compile_expression_to_arith left ~symtable ~
