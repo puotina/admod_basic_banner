@@ -48,4 +48,6 @@ let rec compile_expression_to_arith
     `Var (compile_leftvalue lvalue ~symtable ~scope)
   | ArithUnary (operator, expr) ->
     `ArithUnary (operator, compile_expression_to_arith expr ~symtable ~scope)
-  | ArithBinary (operator,
+  | ArithBinary (operator, left, right) ->
+    `ArithBinary (operator,
+  
