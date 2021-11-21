@@ -56,4 +56,6 @@ let rec compile_expression_to_arith
   | Float _
   | List _
   | Concat _
-  | StrCo
+  | StrCompare _
+  | Call _ ->
+    Sexp.output_hum stde
