@@ -51,4 +51,6 @@ let rec compile_expression_to_arith
   | ArithBinary (operator, left, right) ->
     `ArithBinary (operator,
                   compile_expression_to_arith left ~symtable ~scope,
-                  compile_expression_to_
+                  compile_expression_to_arith right ~symtable ~scope)
+  | String _
+  |
