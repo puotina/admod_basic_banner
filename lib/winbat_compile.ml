@@ -53,4 +53,7 @@ let rec compile_expression_to_arith
                   compile_expression_to_arith left ~symtable ~scope,
                   compile_expression_to_arith right ~symtable ~scope)
   | String _
-  |
+  | Float _
+  | List _
+  | Concat _
+  | StrCo
