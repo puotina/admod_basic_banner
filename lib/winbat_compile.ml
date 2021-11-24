@@ -62,4 +62,6 @@ let rec compile_expression_to_arith
     failwith "Can not be here"
 
 let compile_expression
-    (expr : Batsh_ast.expre
+    (expr : Batsh_ast.expression)
+    ~(symtable : Symbol_table.t)
+    
