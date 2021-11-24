@@ -59,4 +59,7 @@ let rec compile_expression_to_arith
   | StrCompare _
   | Call _ ->
     Sexp.output_hum stderr (Batsh_ast.sexp_of_expression expr);
-    failwith "Can not be
+    failwith "Can not be here"
+
+let compile_expression
+    (expr : Batsh_ast.expre
