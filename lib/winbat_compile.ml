@@ -58,4 +58,5 @@ let rec compile_expression_to_arith
   | Concat _
   | StrCompare _
   | Call _ ->
-    Sexp.output_hum stde
+    Sexp.output_hum stderr (Batsh_ast.sexp_of_expression expr);
+    failwith "Can not be
