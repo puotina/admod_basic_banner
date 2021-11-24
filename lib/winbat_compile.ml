@@ -64,4 +64,5 @@ let rec compile_expression_to_arith
 let compile_expression
     (expr : Batsh_ast.expression)
     ~(symtable : Symbol_table.t)
-    
+    ~(scope : Symbol_table.Scope.t)
+  : 
