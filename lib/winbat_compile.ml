@@ -65,4 +65,6 @@ let compile_expression
     (expr : Batsh_ast.expression)
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
-  : 
+  : varstrings =
+  let rec compile_expression_impl
+      (
