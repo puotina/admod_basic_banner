@@ -67,4 +67,6 @@ let compile_expression
     ~(scope : Symbol_table.Scope.t)
   : varstrings =
   let rec compile_expression_impl
-      (
+      (expr : Batsh_ast.expression)
+    : varstring Dlist.t =
+ 
