@@ -69,4 +69,6 @@ let compile_expression
   let rec compile_expression_impl
       (expr : Batsh_ast.expression)
     : varstring Dlist.t =
- 
+    match expr with
+    | Bool false ->
+    
