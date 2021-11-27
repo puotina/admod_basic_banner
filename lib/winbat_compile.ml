@@ -71,4 +71,6 @@ let compile_expression
     : varstring Dlist.t =
     match expr with
     | Bool false ->
-    
+      Dlist.of_list [`Str "0"]
+    | Bool true ->
+      Dl
