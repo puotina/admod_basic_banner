@@ -76,4 +76,5 @@ let compile_expression
       Dlist.of_list [`Str "1"]
     | Int num ->
       Dlist.of_list [`Str (string_of_int num)]
-    | Float n
+    | Float num ->
+      Dlist.of_list [`Str (Float.to_stri
