@@ -73,4 +73,6 @@ let compile_expression
     | Bool false ->
       Dlist.of_list [`Str "0"]
     | Bool true ->
-      Dl
+      Dlist.of_list [`Str "1"]
+    | Int num ->
+      Dlist.of
