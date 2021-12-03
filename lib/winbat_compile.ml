@@ -79,4 +79,6 @@ let compile_expression
     | Float num ->
       Dlist.of_list [`Str (Float.to_string num)]
     | String str ->
-     
+      Dlist.of_list [`Str str]
+    | Leftvalue lvalue ->
+ 
