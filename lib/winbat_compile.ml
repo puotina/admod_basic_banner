@@ -83,4 +83,5 @@ let compile_expression
     | Leftvalue lvalue ->
       Dlist.of_list [`Var (compile_leftvalue lvalue ~symtable ~scope)]
     | Concat (left, right) ->
-      l
+      let left = compile_expression_impl left in
+ 
