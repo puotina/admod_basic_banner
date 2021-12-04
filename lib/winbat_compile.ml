@@ -81,4 +81,4 @@ let compile_expression
     | String str ->
       Dlist.of_list [`Str str]
     | Leftvalue lvalue ->
- 
+      Dlist.of_list [`Var (compile_leftvalue lvalue ~symtab
