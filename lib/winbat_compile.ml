@@ -88,4 +88,7 @@ let compile_expression
       Dlist.append left right
     | List _
     | ArithUnary _
-    | ArithBinary
+    | ArithBinary _
+    | StrCompare _
+    | Call _ ->
+      Sexp.outp
