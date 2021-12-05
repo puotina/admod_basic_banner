@@ -86,4 +86,6 @@ let compile_expression
       let left = compile_expression_impl left in
       let right = compile_expression_impl right in
       Dlist.append left right
-    
+    | List _
+    | ArithUnary _
+    | ArithBinary
