@@ -91,4 +91,4 @@ let compile_expression
     | ArithBinary _
     | StrCompare _
     | Call _ ->
-      Sexp.outp
+      Sexp.output_hum stderr (Batsh_ast.sexp_of_expression expr);
