@@ -92,4 +92,6 @@ let compile_expression
     | StrCompare _
     | Call _ ->
       Sexp.output_hum stderr (Batsh_ast.sexp_of_expression expr);
-      failwith "Bug: Must have been split 
+      failwith "Bug: Must have been split into assignments."
+  in
+  Dlist.to_list (compile_expression_im
