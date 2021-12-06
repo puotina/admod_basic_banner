@@ -92,3 +92,4 @@ let compile_expression
     | StrCompare _
     | Call _ ->
       Sexp.output_hum stderr (Batsh_ast.sexp_of_expression expr);
+      failwith "Bug: Must have been split 
