@@ -97,4 +97,5 @@ let compile_expression
   Dlist.to_list (compile_expression_impl expr)
 
 let compile_expressions_to_arguments
-    (exprs : Batsh
+    (exprs : Batsh_ast.expressions)
+    ~(symtable : Symbol_table.t)
