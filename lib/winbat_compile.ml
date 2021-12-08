@@ -101,4 +101,6 @@ let compile_expressions_to_arguments
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : parameters =
-  List.map exprs ~f: (compile_expression ~sy
+  List.map exprs ~f: (compile_expression ~symtable ~scope)
+
+let compile_expression_t
