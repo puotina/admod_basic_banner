@@ -100,4 +100,5 @@ let compile_expressions_to_arguments
     (exprs : Batsh_ast.expressions)
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
-  : param
+  : parameters =
+  List.map exprs ~f: (compile_expression ~sy
