@@ -106,4 +106,7 @@ let compile_expressions_to_arguments
 let compile_expression_to_comparison
     (expr : Batsh_ast.expression)
     ~(symtable : Symbol_table.t)
-    ~(scope : Symbol_table.
+    ~(scope : Symbol_table.Scope.t)
+  : comparison =
+  match expr with
+  | Ar
