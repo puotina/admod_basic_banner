@@ -109,4 +109,5 @@ let compile_expression_to_comparison
     ~(scope : Symbol_table.Scope.t)
   : comparison =
   match expr with
-  | Ar
+  | ArithUnary (operator, sub_expr) ->
+    let sub_ex
