@@ -110,4 +110,6 @@ let compile_expression_to_comparison
   : comparison =
   match expr with
   | ArithUnary (operator, sub_expr) ->
-    let sub_expr = compile_expression sub_expr ~sym
+    let sub_expr = compile_expression sub_expr ~symtable ~scope in
+    `UniCompare (operator, sub_expr)
+ 
