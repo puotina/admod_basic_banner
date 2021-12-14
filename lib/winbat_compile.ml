@@ -114,4 +114,5 @@ let compile_expression_to_comparison
     `UniCompare (operator, sub_expr)
   | StrCompare (operator, left, right)
   | ArithBinary (operator, left, right) ->
-    let left = compile
+    let left = compile_expression left ~symtable ~scope in
+    let r
