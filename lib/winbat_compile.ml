@@ -115,4 +115,6 @@ let compile_expression_to_comparison
   | StrCompare (operator, left, right)
   | ArithBinary (operator, left, right) ->
     let left = compile_expression left ~symtable ~scope in
-    let right = compile_expression right ~symtable ~sco
+    let right = compile_expression right ~symtable ~scope in
+    `StrCompare (operator, left, right)
+  | Leftval
