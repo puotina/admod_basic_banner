@@ -121,4 +121,6 @@ let compile_expression_to_comparison
     let lvalue = `Var (compile_leftvalue lvalue ~symtable ~scope) in
     `StrCompare ("==", [lvalue], [`Str "1"])
   | Bool true | Int 1 ->
-    `Un
+    `UniCompare ("", [`Str "1"])
+  | Bool false | Int _ ->
+    `UniCompa
