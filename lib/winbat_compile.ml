@@ -118,4 +118,5 @@ let compile_expression_to_comparison
     let right = compile_expression right ~symtable ~scope in
     `StrCompare (operator, left, right)
   | Leftvalue lvalue ->
-    let lvalue = `Var (compile_leftvalue lvalue
+    let lvalue = `Var (compile_leftvalue lvalue ~symtable ~scope) in
+    `StrCompare ("==", [lv
