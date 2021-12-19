@@ -123,4 +123,5 @@ let compile_expression_to_comparison
   | Bool true | Int 1 ->
     `UniCompare ("", [`Str "1"])
   | Bool false | Int _ ->
-    `UniCompa
+    `UniCompare ("!", [`Str "1"])
+  | Call ("exists", (sub_expr
