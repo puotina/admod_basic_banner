@@ -125,4 +125,5 @@ let compile_expression_to_comparison
   | Bool false | Int _ ->
     `UniCompare ("!", [`Str "1"])
   | Call ("exists", (sub_expr :: _)) ->
-    let clause = compile_express
+    let clause = compile_expression sub_expr ~symtable ~scope in
+    `TestCompare ("e
