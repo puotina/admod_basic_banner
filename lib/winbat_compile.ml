@@ -129,4 +129,4 @@ let compile_expression_to_comparison
     `TestCompare ("exist", clause)
   | _ ->
     raise (Errors.SemanticError
-  
+             ("Expression can not compile to comp
