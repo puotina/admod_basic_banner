@@ -126,4 +126,7 @@ let compile_expression_to_comparison
     `UniCompare ("!", [`Str "1"])
   | Call ("exists", (sub_expr :: _)) ->
     let clause = compile_expression sub_expr ~symtable ~scope in
-    `TestCompare ("e
+    `TestCompare ("exist", clause)
+  | _ ->
+    raise (Errors.SemanticError
+  
