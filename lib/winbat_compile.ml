@@ -134,4 +134,6 @@ let compile_expression_to_comparison
              )
           )
 
-let com
+let compile_call
+    (ident, exprs)
+    ~(return_value : left
