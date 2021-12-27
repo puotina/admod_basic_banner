@@ -136,4 +136,5 @@ let compile_expression_to_comparison
 
 let compile_call
     (ident, exprs)
-    ~(return_value : left
+    ~(return_value : leftvalue option)
+    ~(symtable : Symbo
