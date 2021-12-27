@@ -130,4 +130,5 @@ let compile_expression_to_comparison
   | _ ->
     raise (Errors.SemanticError
              ("Expression can not compile to comparison",
-              expr |> Batsh_a
+              expr |> Batsh_ast.sexp_of_expression |> Sexp.to_string
+     
