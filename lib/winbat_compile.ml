@@ -137,4 +137,5 @@ let compile_expression_to_comparison
 let compile_call
     (ident, exprs)
     ~(return_value : leftvalue option)
-    ~(symtable : Symbo
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Sco
