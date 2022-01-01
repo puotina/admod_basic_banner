@@ -138,4 +138,6 @@ let compile_call
     (ident, exprs)
     ~(return_value : leftvalue option)
     ~(symtable : Symbol_table.t)
-    ~(scope : Symbol_table.Sco
+    ~(scope : Symbol_table.Scope.t)
+  : statements =
+  let args = compile_expressio
