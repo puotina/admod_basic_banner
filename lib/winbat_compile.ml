@@ -140,4 +140,5 @@ let compile_call
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : statements =
-  let args = compile_expressio
+  let args = compile_expressions_to_arguments exprs ~symtable ~scope in
+  if Symbol_tabl
