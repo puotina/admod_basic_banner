@@ -141,4 +141,6 @@ let compile_call
     ~(scope : Symbol_table.Scope.t)
   : statements =
   let args = compile_expressions_to_arguments exprs ~symtable ~scope in
-  if Symbol_tabl
+  if Symbol_table.is_function symtable ident then
+    (* function call *)
+ 
