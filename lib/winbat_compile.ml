@@ -143,4 +143,5 @@ let compile_call
   let args = compile_expressions_to_arguments exprs ~symtable ~scope in
   if Symbol_table.is_function symtable ident then
     (* function call *)
- 
+    let frame_pointer_assign, frame_pointer =
+      
