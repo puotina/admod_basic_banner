@@ -144,4 +144,5 @@ let compile_call
   if Symbol_table.is_function symtable ident then
     (* function call *)
     let frame_pointer_assign, frame_pointer =
-      if Symbol_table.Scope.is_function scope th
+      if Symbol_table.Scope.is_function scope then
+        (* add frame pointer as surffix 
