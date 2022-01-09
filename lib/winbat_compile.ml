@@ -145,4 +145,5 @@ let compile_call
     (* function call *)
     let frame_pointer_assign, frame_pointer =
       if Symbol_table.Scope.is_function scope then
-        (* add frame pointer as surffix 
+        (* add frame pointer as surffix to local variables *)
+        (* increase frame
