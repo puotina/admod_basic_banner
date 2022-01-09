@@ -147,4 +147,5 @@ let compile_call
       if Symbol_table.Scope.is_function scope then
         (* add frame pointer as surffix to local variables *)
         (* increase frame pointer %~2 by 1 *)
-        let frame_po
+        let frame_pointer = `Identifier (
+            Symbol_table.Scope.add
