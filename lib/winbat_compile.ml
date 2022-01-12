@@ -148,4 +148,5 @@ let compile_call
         (* add frame pointer as surffix to local variables *)
         (* increase frame pointer %~2 by 1 *)
         let frame_pointer = `Identifier (
-            Symbol_table.Scope.add
+            Symbol_table.Scope.add_temporary_variable scope)
+        in
