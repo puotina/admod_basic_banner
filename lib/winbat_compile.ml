@@ -152,4 +152,4 @@ let compile_call
         in
         [`ArithAssign (
             frame_pointer,
-      
+            `ArithBinary ("+", `Int 1, `Var (
