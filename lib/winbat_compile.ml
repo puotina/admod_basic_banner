@@ -154,4 +154,6 @@ let compile_call
             frame_pointer,
             `ArithBinary ("+", `Int 1, `Var (`Identifier "%~2"))
           )
-        ], `Var (frame
+        ], `Var (frame_pointer)
+      else
+        (* call from topl
