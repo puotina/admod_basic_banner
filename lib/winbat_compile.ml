@@ -156,4 +156,7 @@ let compile_call
           )
         ], `Var (frame_pointer)
       else
-        (* call from topl
+        (* call from toplevel *)
+        [], `Str "0"
+    in
+    let retval = Symbol_t
