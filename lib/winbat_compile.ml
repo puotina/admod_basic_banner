@@ -150,3 +150,6 @@ let compile_call
         let frame_pointer = `Identifier (
             Symbol_table.Scope.add_temporary_variable scope)
         in
+        [`ArithAssign (
+            frame_pointer,
+      
