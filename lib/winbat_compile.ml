@@ -161,3 +161,4 @@ let compile_call
     in
     let retval = Symbol_table.Scope.add_temporary_variable scope in
     let surffix =
+      if Symbol_table.Scope.is_function scope then
