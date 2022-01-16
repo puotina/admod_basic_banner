@@ -159,4 +159,5 @@ let compile_call
         (* call from toplevel *)
         [], `Str "0"
     in
-    let retval = Symbol_t
+    let retval = Symbol_table.Scope.add_temporary_variable scope in
+    let surffix =
