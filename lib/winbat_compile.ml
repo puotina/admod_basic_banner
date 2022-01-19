@@ -168,4 +168,5 @@ let compile_call
         (* call from toplevel *)
         ""
     in
-    let
+    let surffixed_retval = `Rawstr (retval ^ surffix) in
+ 
