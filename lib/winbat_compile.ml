@@ -163,3 +163,6 @@ let compile_call
     let surffix =
       if Symbol_table.Scope.is_function scope then
         (* call from function scope *)
+        "_%~2"
+      else
+        (* call
