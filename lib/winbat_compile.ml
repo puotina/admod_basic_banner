@@ -165,4 +165,7 @@ let compile_call
         (* call from function scope *)
         "_%~2"
       else
-        (* call
+        (* call from toplevel *)
+        ""
+    in
+    let
