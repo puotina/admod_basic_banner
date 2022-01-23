@@ -175,4 +175,7 @@ let compile_call
           [`Rawstr (ident ^ surffix)]
         | _ ->
           Sexp.output_hum stderr (Winbat_ast.sexp_of_parameter arg);
-          failwith "Arg
+          failwith "Argument should have been converted to variable."
+      )
+    in
+ 
