@@ -174,4 +174,5 @@ let compile_call
         | [`Var (`Identifier ident)] ->
           [`Rawstr (ident ^ surffix)]
         | _ ->
-          Sexp.output_hum stderr (Winbat_ast.
+          Sexp.output_hum stderr (Winbat_ast.sexp_of_parameter arg);
+          failwith "Arg
