@@ -173,4 +173,5 @@ let compile_call
         match arg with
         | [`Var (`Identifier ident)] ->
           [`Rawstr (ident ^ surffix)]
-    
+        | _ ->
+          Sexp.output_hum stderr (Winbat_ast.
