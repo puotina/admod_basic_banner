@@ -180,4 +180,5 @@ let compile_call
     in
     let prefixed_args = [
       [surffixed_retval]; (* return value *)
-      [frame_pointe
+      [frame_pointer]; (* frame pointer *)
+    ] @ stringified_args 
