@@ -181,4 +181,5 @@ let compile_call
     let prefixed_args = [
       [surffixed_retval]; (* return value *)
       [frame_pointer]; (* frame pointer *)
-    ] @ stringified_args 
+    ] @ stringified_args in
+    let call_stmt = `Call ([`Str ("call :" ^ ident)], 
