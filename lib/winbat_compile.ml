@@ -183,4 +183,7 @@ let compile_call
       [frame_pointer]; (* frame pointer *)
     ] @ stringified_args in
     let call_stmt = `Call ([`Str ("call :" ^ ident)], prefixed_args) in
-    let stmts = frame_pointer_assign 
+    let stmts = frame_pointer_assign @ [call_stmt] in
+    let stmts =
+      match return_value with
+  
