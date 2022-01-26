@@ -186,4 +186,6 @@ let compile_call
     let stmts = frame_pointer_assign @ [call_stmt] in
     let stmts =
       match return_value with
-  
+      | Some lvalue ->
+        (* Assign return value *)
+ 
