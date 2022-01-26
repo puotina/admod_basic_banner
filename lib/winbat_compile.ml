@@ -191,4 +191,6 @@ let compile_call
         stmts @ [`Assignment (lvalue, [`Var (`Identifier retval)])]
       | None ->
         (* Print out return value *)
-        stmts @ [`Call ([`Str "print"
+        stmts @ [`Call ([`Str "print"], [[`Var (`Identifier retval)]])]
+    in
+    st
