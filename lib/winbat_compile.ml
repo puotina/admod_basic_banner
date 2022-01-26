@@ -188,4 +188,4 @@ let compile_call
       match return_value with
       | Some lvalue ->
         (* Assign return value *)
- 
+        stmts @ [`Assignment (lvalue, [`Var (`Ident
