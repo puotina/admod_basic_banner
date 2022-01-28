@@ -193,4 +193,7 @@ let compile_call
         (* Print out return value *)
         stmts @ [`Call ([`Str "print"], [[`Var (`Identifier retval)]])]
     in
-    st
+    stmts
+  else
+    match ident with
+    | "exists" -
