@@ -196,4 +196,6 @@ let compile_call
     stmts
   else
     match ident with
-    | "exists" -
+    | "exists" ->
+      let params_1 params =
+        match params w
