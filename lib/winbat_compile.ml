@@ -200,4 +200,5 @@ let compile_call
       let params_1 params =
         match params with
         | param :: _ -> param
-        | _ -> fail
+        | _ -> failwith ("exists must have only 1 parameter.")
+     
