@@ -198,4 +198,6 @@ let compile_call
     match ident with
     | "exists" ->
       let params_1 params =
-        match params w
+        match params with
+        | param :: _ -> param
+        | _ -> fail
