@@ -202,4 +202,5 @@ let compile_call
         | param :: _ -> param
         | _ -> failwith ("exists must have only 1 parameter.")
       in
-      let arg = compile_expression (params_1 exprs) 
+      let arg = compile_expression (params_1 exprs) ~symtable ~scope in
+      let cond = `TestCompare ("exist
