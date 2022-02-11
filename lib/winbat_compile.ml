@@ -205,4 +205,6 @@ let compile_call
       let arg = compile_expression (params_1 exprs) ~symtable ~scope in
       let cond = `TestCompare ("exist", arg) in
       let stmts =
-        match
+        match return_value with
+        | Some lvalue ->
+ 
