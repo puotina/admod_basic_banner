@@ -209,4 +209,6 @@ let compile_call
         | Some lvalue ->
           let true_stmt = [`ArithAssign (lvalue, `Int 1)] in
           let false_stmt = [`ArithAssign (lvalue, `Int 0)] in
-          [`IfElse (cond, 
+          [`IfElse (cond, true_stmt, false_stmt)]
+        | None ->
+          [`IfEl
