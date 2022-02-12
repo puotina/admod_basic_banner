@@ -208,3 +208,4 @@ let compile_call
         match return_value with
         | Some lvalue ->
           let true_stmt = [`ArithAssign (lvalue, `Int 1)] in
+          let false_stmt = [`ArithAssi
