@@ -207,4 +207,4 @@ let compile_call
       let stmts =
         match return_value with
         | Some lvalue ->
- 
+          let true_stmt = [`ArithAssign (lvalue, `Int 1)] in
