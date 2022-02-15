@@ -215,4 +215,6 @@ let compile_call
       in
       stmts
     | _ ->
- 
+      (* external command *)
+      let stmts =
+    
