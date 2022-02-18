@@ -217,4 +217,6 @@ let compile_call
     | _ ->
       (* external command *)
       let stmts =
-    
+        match return_value with
+        | Some lvalue ->
+  
