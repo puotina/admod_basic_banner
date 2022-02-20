@@ -225,4 +225,6 @@ let compile_call
       in
       stmts
 
-let compile_expressio
+let compile_expression_statement
+    (expr : Batsh_ast.expression)
+    ~
