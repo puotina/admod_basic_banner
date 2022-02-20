@@ -221,4 +221,8 @@ let compile_call
         | Some lvalue ->
           [`Output (lvalue, [`Str ident], args)]
         | None ->
-          [`Call ([`Str ident], args)
+          [`Call ([`Str ident], args)]
+      in
+      stmts
+
+let compile_expressio
