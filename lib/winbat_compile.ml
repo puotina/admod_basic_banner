@@ -219,4 +219,5 @@ let compile_call
       let stmts =
         match return_value with
         | Some lvalue ->
-  
+          [`Output (lvalue, [`Str ident], args)]
+        | Non
