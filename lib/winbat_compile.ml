@@ -220,4 +220,5 @@ let compile_call
         match return_value with
         | Some lvalue ->
           [`Output (lvalue, [`Str ident], args)]
-        | Non
+        | None ->
+          [`Call ([`Str ident], args)
