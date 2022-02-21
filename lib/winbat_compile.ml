@@ -232,4 +232,5 @@ let compile_expression_statement
   : statements =
   match expr with
   | Call call ->
-    (* Call discarding re
+    (* Call discarding return value *)
+    compile_call call ~return_valu
