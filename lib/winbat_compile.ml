@@ -227,4 +227,5 @@ let compile_call
 
 let compile_expression_statement
     (expr : Batsh_ast.expression)
-    ~
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_
