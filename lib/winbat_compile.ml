@@ -228,4 +228,6 @@ let compile_call
 let compile_expression_statement
     (expr : Batsh_ast.expression)
     ~(symtable : Symbol_table.t)
-    ~(scope : Symbol_
+    ~(scope : Symbol_table.Scope.t)
+  : statements =
+  match expr wit
