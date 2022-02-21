@@ -230,4 +230,6 @@ let compile_expression_statement
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : statements =
-  match expr wit
+  match expr with
+  | Call call ->
+    (* Call discarding re
