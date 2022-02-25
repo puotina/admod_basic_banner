@@ -238,4 +238,7 @@ let compile_expression_statement
     [] (* No side effect *)
   | _ ->
     Sexp.output_hum stderr (Batsh_ast.sexp_of_expression expr);
-    assert f
+    assert false (* TODO *)
+
+let compile_arith_assignment
+    (l
