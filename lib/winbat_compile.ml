@@ -233,4 +233,6 @@ let compile_expression_statement
   match expr with
   | Call call ->
     (* Call discarding return value *)
-    compile_call call ~return_valu
+    compile_call call ~return_value:None ~symtable ~scope
+  | Leftvalue _ ->
+    [
