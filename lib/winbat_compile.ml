@@ -235,4 +235,6 @@ let compile_expression_statement
     (* Call discarding return value *)
     compile_call call ~return_value:None ~symtable ~scope
   | Leftvalue _ ->
-    [
+    [] (* No side effect *)
+  | _ ->
+    Sexp.output_hum stderr (
