@@ -237,4 +237,5 @@ let compile_expression_statement
   | Leftvalue _ ->
     [] (* No side effect *)
   | _ ->
-    Sexp.output_hum stderr (
+    Sexp.output_hum stderr (Batsh_ast.sexp_of_expression expr);
+    assert f
