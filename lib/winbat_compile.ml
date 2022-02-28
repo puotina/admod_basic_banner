@@ -242,4 +242,5 @@ let compile_expression_statement
 
 let compile_arith_assignment
     (lvalue : Batsh_ast.leftvalue)
-    (expr : Bat
+    (expr : Batsh_ast.expression)
+    ~(symtable : Symbol_table
