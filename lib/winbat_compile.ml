@@ -241,4 +241,5 @@ let compile_expression_statement
     assert false (* TODO *)
 
 let compile_arith_assignment
-    (l
+    (lvalue : Batsh_ast.leftvalue)
+    (expr : Bat
