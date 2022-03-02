@@ -245,4 +245,7 @@ let compile_arith_assignment
     (expr : Batsh_ast.expression)
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
-  : stateme
+  : statements =
+  match expr with
+  | ArithBinary ("===", _, _)
+  |
