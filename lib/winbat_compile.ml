@@ -250,4 +250,6 @@ let compile_arith_assignment
   | ArithBinary ("===", _, _)
   | ArithBinary ("!==", _, _)
   | ArithBinary (">", _, _)
-  | Arit
+  | ArithBinary ("<", _, _)
+  | ArithBinary (">=", _, _)
+  | A
