@@ -248,4 +248,6 @@ let compile_arith_assignment
   : statements =
   match expr with
   | ArithBinary ("===", _, _)
-  |
+  | ArithBinary ("!==", _, _)
+  | ArithBinary (">", _, _)
+  | Arit
