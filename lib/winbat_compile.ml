@@ -253,4 +253,5 @@ let compile_arith_assignment
   | ArithBinary ("<", _, _)
   | ArithBinary (">=", _, _)
   | ArithBinary ("<=", _, _)
-  | ArithUnary ("!", _) 
+  | ArithUnary ("!", _) ->
+    let cond = compile_expression_to_comparison expr 
