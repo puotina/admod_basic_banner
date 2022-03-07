@@ -254,4 +254,5 @@ let compile_arith_assignment
   | ArithBinary (">=", _, _)
   | ArithBinary ("<=", _, _)
   | ArithUnary ("!", _) ->
-    let cond = compile_expression_to_comparison expr 
+    let cond = compile_expression_to_comparison expr ~symtable ~scope in
+    let lvalue = co
