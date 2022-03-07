@@ -257,4 +257,4 @@ let compile_arith_assignment
     let cond = compile_expression_to_comparison expr ~symtable ~scope in
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
     let true_stmt = [`ArithAssign (lvalue, `Int 1)] in
-   
+    let false_stmt = [`ArithAssign (lvalue, `In
