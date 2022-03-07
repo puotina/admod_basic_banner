@@ -256,4 +256,5 @@ let compile_arith_assignment
   | ArithUnary ("!", _) ->
     let cond = compile_expression_to_comparison expr ~symtable ~scope in
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
-    le
+    let true_stmt = [`ArithAssign (lvalue, `Int 1)] in
+   
