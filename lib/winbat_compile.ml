@@ -264,4 +264,4 @@ let compile_arith_assignment
   | Float _
   | ArithUnary _
   | ArithBinary _ ->
-    
+    let lvalue = compile_leftvalue lvalue ~symtable ~scope
