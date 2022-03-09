@@ -258,4 +258,8 @@ let compile_arith_assignment
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
     let true_stmt = [`ArithAssign (lvalue, `Int 1)] in
     let false_stmt = [`ArithAssign (lvalue, `Int 0)] in
-    [`IfElse (cond, true_stmt, false_s
+    [`IfElse (cond, true_stmt, false_stmt)]
+  | Bool _
+  | Int _
+  | Float _
+  | ArithUn
