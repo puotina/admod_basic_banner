@@ -262,4 +262,6 @@ let compile_arith_assignment
   | Bool _
   | Int _
   | Float _
-  | ArithUn
+  | ArithUnary _
+  | ArithBinary _ ->
+    
