@@ -268,4 +268,5 @@ let compile_arith_assignment
     let arith = compile_expression_to_arith expr ~symtable ~scope in
     [`ArithAssign (lvalue, arith)]
   | _ ->
-    Sexp.output_hum stderr (Batsh_ast.sexp_of_
+    Sexp.output_hum stderr (Batsh_ast.sexp_of_leftvalue lvalue);
+    Sexp.output_hum stderr (Batsh_ast.sexp_o
