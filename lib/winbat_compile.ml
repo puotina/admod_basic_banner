@@ -265,4 +265,6 @@ let compile_arith_assignment
   | ArithUnary _
   | ArithBinary _ ->
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
-    let arith = compile_expression_to_arith expr ~symt
+    let arith = compile_expression_to_arith expr ~symtable ~scope in
+    [`ArithAssign (lvalue, arith)]
+  |
