@@ -270,4 +270,6 @@ let compile_arith_assignment
   | _ ->
     Sexp.output_hum stderr (Batsh_ast.sexp_of_leftvalue lvalue);
     Sexp.output_hum stderr (Batsh_ast.sexp_of_expression expr);
-    failwith "Can not r
+    failwith "Can not reach here."
+
+let rec compile_statement
