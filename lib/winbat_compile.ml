@@ -278,4 +278,7 @@ let rec compile_statement
     ~(scope : Symbol_table.Scope.t)
   : statements =
   match stmt with
-  | Comment comme
+  | Comment comment ->
+    [`Comment comment]
+  | Block stmts ->
+    comp
