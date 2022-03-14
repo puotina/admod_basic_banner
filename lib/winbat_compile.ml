@@ -274,4 +274,6 @@ let compile_arith_assignment
 
 let rec compile_statement
     (stmt : Batsh_ast.statement)
-    ~(symtable 
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Scope.t)
+  : sta
