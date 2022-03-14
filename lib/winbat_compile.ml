@@ -276,4 +276,6 @@ let rec compile_statement
     (stmt : Batsh_ast.statement)
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
-  : sta
+  : statements =
+  match stmt with
+  | Comment comme
