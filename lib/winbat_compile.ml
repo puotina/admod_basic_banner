@@ -273,3 +273,5 @@ let compile_arith_assignment
     failwith "Can not reach here."
 
 let rec compile_statement
+    (stmt : Batsh_ast.statement)
+    ~(symtable 
