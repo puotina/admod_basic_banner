@@ -281,4 +281,5 @@ let rec compile_statement
   | Comment comment ->
     [`Comment comment]
   | Block stmts ->
-    comp
+    compile_statements stmts ~symtable ~scope
+  | 
