@@ -282,4 +282,5 @@ let rec compile_statement
     [`Comment comment]
   | Block stmts ->
     compile_statements stmts ~symtable ~scope
-  | 
+  | Expression expr ->
+    compile_expression_statement
