@@ -283,4 +283,5 @@ let rec compile_statement
   | Block stmts ->
     compile_statements stmts ~symtable ~scope
   | Expression expr ->
-    compile_expression_statement
+    compile_expression_statement expr ~symtable ~scope
+  | Assignment (lva
