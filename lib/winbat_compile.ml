@@ -287,4 +287,5 @@ let rec compile_statement
   | Assignment (lvalue, expr) ->
     compile_assignment lvalue expr ~symtable ~scope
   | If (expr, stmt) ->
-    [`If (compile_expression_to_comparison expr ~symtable 
+    [`If (compile_expression_to_comparison expr ~symtable ~scope,
+          compile_statement stmt ~symtable ~scop
