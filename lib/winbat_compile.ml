@@ -288,4 +288,6 @@ let rec compile_statement
     compile_assignment lvalue expr ~symtable ~scope
   | If (expr, stmt) ->
     [`If (compile_expression_to_comparison expr ~symtable ~scope,
-          compile_statement stmt ~symtable ~scop
+          compile_statement stmt ~symtable ~scope)]
+  | IfElse (expr, then_stmt, else_stmt) ->
+    [`IfEls
