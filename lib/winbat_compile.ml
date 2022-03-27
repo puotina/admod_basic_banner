@@ -293,3 +293,5 @@ let rec compile_statement
     [`IfElse (compile_expression_to_comparison expr ~symtable ~scope,
               compile_statement then_stmt ~symtable ~scope,
               compile_statement else_stmt ~symtable ~scope)]
+  | While (expr, stmt) ->
+    let conditi
