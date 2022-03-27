@@ -294,4 +294,5 @@ let rec compile_statement
               compile_statement then_stmt ~symtable ~scope,
               compile_statement else_stmt ~symtable ~scope)]
   | While (expr, stmt) ->
-    let condition = compile_expression_to_comparison ex
+    let condition = compile_expression_to_comparison expr ~symtable ~scope in
+    let body = compile_statement stmt 
