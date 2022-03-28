@@ -297,4 +297,4 @@ let rec compile_statement
     let condition = compile_expression_to_comparison expr ~symtable ~scope in
     let body = compile_statement stmt ~symtable ~scope in
     let label_surfix = Symbol_table.Scope.add_temporary_variable
-        (S
+        (Symbol_table.global_scope symtable
