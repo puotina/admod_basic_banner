@@ -306,4 +306,4 @@ let rec compile_statement
     ]
   | Return (Some expr) ->
     [
-      `Assignment (`Identifier "%
+      `Assignment (`Identifier "%~1", compile_expression expr ~symtable ~s
