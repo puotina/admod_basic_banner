@@ -302,4 +302,6 @@ let rec compile_statement
     let label = sprintf "WHILE%s" label_surfix in
     [
       `Label label;
-      `If (conditi
+      `If (condition, body @ [`Goto label]);
+    ]
+  | Return (Some expr) ->
