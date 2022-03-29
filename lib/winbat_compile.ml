@@ -305,3 +305,5 @@ let rec compile_statement
       `If (condition, body @ [`Goto label]);
     ]
   | Return (Some expr) ->
+    [
+      `Assignment (`Identifier "%
