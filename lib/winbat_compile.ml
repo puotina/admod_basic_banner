@@ -299,4 +299,7 @@ let rec compile_statement
     let label_surfix = Symbol_table.Scope.add_temporary_variable
         (Symbol_table.global_scope symtable)
     in
-    let label = sprintf "WHILE%s" label_surf
+    let label = sprintf "WHILE%s" label_surfix in
+    [
+      `Label label;
+      `If (conditi
