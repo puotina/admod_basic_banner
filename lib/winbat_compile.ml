@@ -318,4 +318,5 @@ let rec compile_statement
 and compile_assignment
     (lvalue : Batsh_ast.leftvalue)
     (expr : Batsh_ast.expression)
-    ~(sym
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_t
