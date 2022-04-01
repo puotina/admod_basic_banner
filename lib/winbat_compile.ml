@@ -316,4 +316,6 @@ let rec compile_statement
     []
 
 and compile_assignment
-    (lvalue : Batsh
+    (lvalue : Batsh_ast.leftvalue)
+    (expr : Batsh_ast.expression)
+    ~(sym
