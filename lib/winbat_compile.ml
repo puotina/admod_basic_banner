@@ -312,4 +312,8 @@ let rec compile_statement
   | Return None ->
     [`Goto ":EOF"]
   | Global _
-  | Empty -
+  | Empty ->
+    []
+
+and compile_assignment
+    (lvalue : Batsh
