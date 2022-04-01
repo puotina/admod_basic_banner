@@ -309,4 +309,7 @@ let rec compile_statement
       `Assignment (`Identifier "%~1", compile_expression expr ~symtable ~scope);
       `Goto ":EOF"
     ]
-  | Re
+  | Return None ->
+    [`Goto ":EOF"]
+  | Global _
+  | Empty -
