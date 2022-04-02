@@ -322,4 +322,7 @@ and compile_assignment
     ~(scope : Symbol_table.Scope.t)
   : statements =
   match expr with
-  | String
+  | String _
+  | Concat _
+  | Leftvalue _ ->
+    let lv
