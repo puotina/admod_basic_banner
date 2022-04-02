@@ -319,4 +319,7 @@ and compile_assignment
     (lvalue : Batsh_ast.leftvalue)
     (expr : Batsh_ast.expression)
     ~(symtable : Symbol_table.t)
-    ~(scope : Symbol_t
+    ~(scope : Symbol_table.Scope.t)
+  : statements =
+  match expr with
+  | String
