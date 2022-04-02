@@ -325,4 +325,4 @@ and compile_assignment
   | String _
   | Concat _
   | Leftvalue _ ->
-    let lv
+    let lvalue = compile_leftvalue lvalue ~symtable 
