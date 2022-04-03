@@ -326,4 +326,6 @@ and compile_assignment
   | Concat _
   | Leftvalue _ ->
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
-    [`Assignment (lvalue, compile_expressio
+    [`Assignment (lvalue, compile_expression expr ~symtable ~scope)]
+  | Bool _
+  | Int _
