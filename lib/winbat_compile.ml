@@ -325,4 +325,5 @@ and compile_assignment
   | String _
   | Concat _
   | Leftvalue _ ->
-    let lvalue = compile_leftvalue lvalue ~symtable 
+    let lvalue = compile_leftvalue lvalue ~symtable ~scope in
+    [`Assignment (lvalue, compile_expressio
