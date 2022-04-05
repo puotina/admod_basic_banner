@@ -332,4 +332,6 @@ and compile_assignment
   | Float _
   | ArithUnary _
   | ArithBinary _ ->
-    compile_arith_assignment lvalue expr ~symta
+    compile_arith_assignment lvalue expr ~symtable ~scope
+  | List exprs ->
+    List.concat (List.mapi e
