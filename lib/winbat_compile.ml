@@ -332,3 +332,4 @@ and compile_assignment
   | Float _
   | ArithUnary _
   | ArithBinary _ ->
+    compile_arith_assignment lvalue expr ~symta
