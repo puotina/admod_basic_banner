@@ -329,3 +329,6 @@ and compile_assignment
     [`Assignment (lvalue, compile_expression expr ~symtable ~scope)]
   | Bool _
   | Int _
+  | Float _
+  | ArithUnary _
+  | ArithBinary _ ->
