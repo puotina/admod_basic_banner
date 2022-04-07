@@ -334,4 +334,5 @@ and compile_assignment
   | ArithBinary _ ->
     compile_arith_assignment lvalue expr ~symtable ~scope
   | List exprs ->
-    List.concat (List.mapi e
+    List.concat (List.mapi exprs ~f: (fun i expr ->
+        compile_assig
