@@ -335,4 +335,4 @@ and compile_assignment
     compile_arith_assignment lvalue expr ~symtable ~scope
   | List exprs ->
     List.concat (List.mapi exprs ~f: (fun i expr ->
-        compile_assig
+        compile_assignment (ListAccess (lvalue, (Int i))) expr ~symtable ~sc
