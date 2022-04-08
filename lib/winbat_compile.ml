@@ -340,4 +340,6 @@ and compile_assignment
   | Call call ->
     (* Call obtaining return value *)
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
-    compile_call call ~return_value:(Some 
+    compile_call call ~return_value:(Some lvalue) ~symtable ~scope
+  | StrCompare _ ->
+    l
