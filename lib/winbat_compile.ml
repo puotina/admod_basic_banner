@@ -338,4 +338,5 @@ and compile_assignment
         compile_assignment (ListAccess (lvalue, (Int i))) expr ~symtable ~scope
       ))
   | Call call ->
-    (* Call obtaining return va
+    (* Call obtaining return value *)
+    let lvalue = compile_leftvalue lvalue ~sy
