@@ -342,4 +342,5 @@ and compile_assignment
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
     compile_call call ~return_value:(Some lvalue) ~symtable ~scope
   | StrCompare _ ->
-    let comp = compile_expression_to_comparison expr ~
+    let comp = compile_expression_to_comparison expr ~symtable ~scope in
+    let lvalue = compile_leftvalue l
