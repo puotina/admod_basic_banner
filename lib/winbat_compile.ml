@@ -345,4 +345,5 @@ and compile_assignment
     let comp = compile_expression_to_comparison expr ~symtable ~scope in
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
     [`IfElse (
-        comp
+        comp,
+        [`ArithAssign (lvalue, `Int 
