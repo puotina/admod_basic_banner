@@ -346,4 +346,7 @@ and compile_assignment
     let lvalue = compile_leftvalue lvalue ~symtable ~scope in
     [`IfElse (
         comp,
-        [`ArithAssign (lvalue, `Int 
+        [`ArithAssign (lvalue, `Int 1)],
+        [`ArithAssign (lvalue, `Int 0)]
+      )
+   
