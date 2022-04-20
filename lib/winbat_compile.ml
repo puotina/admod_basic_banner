@@ -349,4 +349,7 @@ and compile_assignment
         [`ArithAssign (lvalue, `Int 1)],
         [`ArithAssign (lvalue, `Int 0)]
       )
-   
+    ]
+
+and compile_statements
+    (stmts: Batsh_ast.state
