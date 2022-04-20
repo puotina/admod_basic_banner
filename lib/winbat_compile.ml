@@ -356,4 +356,5 @@ and compile_statements
     ~(symtable: Symbol_table.t)
     ~(scope: Symbol_table.Scope.t)
   : statements =
-  Dlis
+  Dlist.to_list (
+    List.fold stmts ~init: (Dlist.em
