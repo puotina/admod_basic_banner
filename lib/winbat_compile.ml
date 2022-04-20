@@ -354,4 +354,6 @@ and compile_assignment
 and compile_statements
     (stmts: Batsh_ast.statements)
     ~(symtable: Symbol_table.t)
- 
+    ~(scope: Symbol_table.Scope.t)
+  : statements =
+  Dlis
