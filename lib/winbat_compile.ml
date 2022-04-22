@@ -363,4 +363,6 @@ and compile_statements
       )
   )
 
-(* Function va
+(* Function variable, call, return replacement *)
+
+let rec c
