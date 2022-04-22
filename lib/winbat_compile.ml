@@ -365,4 +365,5 @@ and compile_statements
 
 (* Function variable, call, return replacement *)
 
-let rec c
+let rec compile_function_leftvalue
+    (lvalue : leftval
