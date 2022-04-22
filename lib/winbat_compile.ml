@@ -357,4 +357,5 @@ and compile_statements
     ~(scope: Symbol_table.Scope.t)
   : statements =
   Dlist.to_list (
-    List.fold stmts ~init: (Dlist.em
+    List.fold stmts ~init: (Dlist.empty ()) ~f: (fun acc stmt ->
+        let stmts = compil
