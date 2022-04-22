@@ -359,4 +359,8 @@ and compile_statements
   Dlist.to_list (
     List.fold stmts ~init: (Dlist.empty ()) ~f: (fun acc stmt ->
         let stmts = compile_statement stmt ~symtable ~scope in
-        Dlist.appen
+        Dlist.append acc (Dlist.of_list stmts)
+      )
+  )
+
+(* Function va
