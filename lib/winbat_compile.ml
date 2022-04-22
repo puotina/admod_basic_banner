@@ -358,4 +358,5 @@ and compile_statements
   : statements =
   Dlist.to_list (
     List.fold stmts ~init: (Dlist.empty ()) ~f: (fun acc stmt ->
-        let stmts = compil
+        let stmts = compile_statement stmt ~symtable ~scope in
+        Dlist.appen
