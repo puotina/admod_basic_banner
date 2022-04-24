@@ -366,4 +366,6 @@ and compile_statements
 (* Function variable, call, return replacement *)
 
 let rec compile_function_leftvalue
-    (lvalue : leftval
+    (lvalue : leftvalue)
+    ~(symtable : Symbol_table.t)
+    ~(sc
