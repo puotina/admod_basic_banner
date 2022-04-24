@@ -368,4 +368,6 @@ and compile_statements
 let rec compile_function_leftvalue
     (lvalue : leftvalue)
     ~(symtable : Symbol_table.t)
-    ~(sc
+    ~(scope : Symbol_table.Scope.t)
+  : leftvalue =
+  m
