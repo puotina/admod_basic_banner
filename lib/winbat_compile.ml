@@ -370,4 +370,6 @@ let rec compile_function_leftvalue
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : leftvalue =
-  m
+  match lvalue with
+  | `Identifier ident ->
+    if Symb
