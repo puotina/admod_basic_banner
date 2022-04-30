@@ -372,4 +372,7 @@ let rec compile_function_leftvalue
   : leftvalue =
   match lvalue with
   | `Identifier ident ->
-    if Symbol_table.Scope.is_global_variable scope ~name:
+    if Symbol_table.Scope.is_global_variable scope ~name: ident then
+      lvalue
+    else
+      (* 
