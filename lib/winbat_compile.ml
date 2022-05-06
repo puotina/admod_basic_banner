@@ -375,4 +375,5 @@ let rec compile_function_leftvalue
     if Symbol_table.Scope.is_global_variable scope ~name: ident then
       lvalue
     else
-      (* 
+      (* Add surfix _%~2 to local variable *)
+      `Lis
