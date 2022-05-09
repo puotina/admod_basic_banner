@@ -377,4 +377,5 @@ let rec compile_function_leftvalue
     else
       (* Add surfix _%~2 to local variable *)
       `ListAccess (lvalue, `Var (`Identifier "%~2"))
-  | `List
+  | `ListAccess (lvalue, index) ->
+    `ListAccess (compile
