@@ -380,4 +380,6 @@ let rec compile_function_leftvalue
   | `ListAccess (lvalue, index) ->
     `ListAccess (compile_function_leftvalue lvalue ~symtable ~scope, index)
 
-let
+let compile_function_varstring
+    (var : varstring)
+    ~(symtabl
