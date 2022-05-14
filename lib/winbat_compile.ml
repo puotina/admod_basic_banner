@@ -386,4 +386,5 @@ let compile_function_varstring
     ~(scope : Symbol_table.Scope.t)
   : varstring =
   match var with
-  | `Var l
+  | `Var lvalue ->
+    `Var (compile_function_leftvalue lv
