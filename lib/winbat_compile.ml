@@ -383,4 +383,7 @@ let rec compile_function_leftvalue
 let compile_function_varstring
     (var : varstring)
     ~(symtable : Symbol_table.t)
-    ~(scope : Symbol_table.
+    ~(scope : Symbol_table.Scope.t)
+  : varstring =
+  match var with
+  | `Var l
