@@ -382,4 +382,5 @@ let rec compile_function_leftvalue
 
 let compile_function_varstring
     (var : varstring)
-    ~(symtabl
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.
