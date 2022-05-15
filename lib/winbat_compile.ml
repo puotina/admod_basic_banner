@@ -387,4 +387,5 @@ let compile_function_varstring
   : varstring =
   match var with
   | `Var lvalue ->
-    `Var (compile_function_leftvalue lv
+    `Var (compile_function_leftvalue lvalue ~symtable ~scope)
+  | `Str _ | `Rawstr _
