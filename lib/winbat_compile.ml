@@ -392,4 +392,6 @@ let compile_function_varstring
     var
 
 let compile_function_varstrings
-    (vars : var
+    (vars : varstrings)
+    ~(symtable : Symbol_table.t)
+    ~(scope 
