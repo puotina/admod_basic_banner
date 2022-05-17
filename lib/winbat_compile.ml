@@ -396,4 +396,4 @@ let compile_function_varstrings
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : varstrings =
-  List.m
+  List.map vars ~f: (compile_function_varstring ~symtable 
