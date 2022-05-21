@@ -403,4 +403,6 @@ let compile_function_parameters
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : parameters =
-  List.map params ~f: (compile_function_vars
+  List.map params ~f: (compile_function_varstrings ~symtable ~scope)
+
+let rec compi
