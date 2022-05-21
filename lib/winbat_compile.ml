@@ -402,4 +402,5 @@ let compile_function_parameters
     (params : parameters)
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
-  : parameters 
+  : parameters =
+  List.map params ~f: (compile_function_vars
