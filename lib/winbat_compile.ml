@@ -407,4 +407,5 @@ let compile_function_parameters
 
 let rec compile_function_arithmetic
     (arith : arithmetic)
-    ~(
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Scope
