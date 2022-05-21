@@ -405,4 +405,6 @@ let compile_function_parameters
   : parameters =
   List.map params ~f: (compile_function_varstrings ~symtable ~scope)
 
-let rec compi
+let rec compile_function_arithmetic
+    (arith : arithmetic)
+    ~(
