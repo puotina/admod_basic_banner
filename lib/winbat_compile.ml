@@ -412,4 +412,4 @@ let rec compile_function_arithmetic
   : arithmetic =
   match arith with
   | `Var lvalue ->
-  
+    `Var (compile_function_leftvalue lvalue ~symtable
