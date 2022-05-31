@@ -415,4 +415,5 @@ let rec compile_function_arithmetic
     `Var (compile_function_leftvalue lvalue ~symtable ~scope)
   | `Int _ ->
     arith
-  | `ArithUnary (operator, arith) -
+  | `ArithUnary (operator, arith) ->
+    `ArithUnary (operator, compile_function_ari
