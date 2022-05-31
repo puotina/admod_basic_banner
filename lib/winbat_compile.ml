@@ -416,4 +416,5 @@ let rec compile_function_arithmetic
   | `Int _ ->
     arith
   | `ArithUnary (operator, arith) ->
-    `ArithUnary (operator, compile_function_ari
+    `ArithUnary (operator, compile_function_arithmetic arith ~symtable ~scope)
+  | `ArithBinary
