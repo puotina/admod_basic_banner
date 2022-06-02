@@ -419,4 +419,5 @@ let rec compile_function_arithmetic
     `ArithUnary (operator, compile_function_arithmetic arith ~symtable ~scope)
   | `ArithBinary (operator, left, right) ->
     `ArithBinary (operator,
-                  compile_function_arithmetic left ~symtable ~s
+                  compile_function_arithmetic left ~symtable ~scope,
+                  compile_function_a
