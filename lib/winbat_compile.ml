@@ -422,4 +422,6 @@ let rec compile_function_arithmetic
                   compile_function_arithmetic left ~symtable ~scope,
                   compile_function_arithmetic right ~symtable ~scope)
 
-let compile_
+let compile_function_comparison
+    (cond : comparison)
+    ~(symtable :
