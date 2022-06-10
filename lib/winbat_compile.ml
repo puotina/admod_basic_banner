@@ -430,4 +430,4 @@ let compile_function_comparison
   match cond with
   | `TestCompare (operator, expr) ->
     `TestCompare (operator,
- 
+                  compile_function_varstrings expr ~sym
