@@ -428,4 +428,6 @@ let compile_function_comparison
     ~(scope : Symbol_table.Scope.t)
   : comparison =
   match cond with
-  | `TestCompare (op
+  | `TestCompare (operator, expr) ->
+    `TestCompare (operator,
+ 
