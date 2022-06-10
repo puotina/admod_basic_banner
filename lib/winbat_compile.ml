@@ -424,4 +424,5 @@ let rec compile_function_arithmetic
 
 let compile_function_comparison
     (cond : comparison)
-    ~(symtable :
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Scope.t)
