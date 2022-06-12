@@ -432,3 +432,5 @@ let compile_function_comparison
     `TestCompare (operator,
                   compile_function_varstrings expr ~symtable ~scope)
   | `UniCompare (operator, expr) ->
+    `UniCompare (operator,
+                 c
