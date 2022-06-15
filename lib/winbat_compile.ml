@@ -433,4 +433,4 @@ let compile_function_comparison
                   compile_function_varstrings expr ~symtable ~scope)
   | `UniCompare (operator, expr) ->
     `UniCompare (operator,
-                 c
+                 compile_function_varstrings expr ~symtable ~scope)
