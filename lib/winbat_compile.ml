@@ -435,4 +435,5 @@ let compile_function_comparison
     `UniCompare (operator,
                  compile_function_varstrings expr ~symtable ~scope)
   | `StrCompare (operator, left, right) ->
-    `S
+    `StrCompare (operator,
+                 compile_fu
