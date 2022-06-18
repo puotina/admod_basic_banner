@@ -439,4 +439,6 @@ let compile_function_comparison
                  compile_function_varstrings left ~symtable ~scope,
                  compile_function_varstrings right ~symtable ~scope)
 
-let rec compile_fun
+let rec compile_function_statement
+    (stmt : statement)
+    ~(s
