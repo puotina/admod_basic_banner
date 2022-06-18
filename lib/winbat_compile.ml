@@ -441,4 +441,5 @@ let compile_function_comparison
 
 let rec compile_function_statement
     (stmt : statement)
-    ~(s
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_
