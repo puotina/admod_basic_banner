@@ -445,4 +445,5 @@ let rec compile_function_statement
     ~(scope : Symbol_table.Scope.t)
   : statement =
   match stmt with
-  |
+  | `Comment _ | `Raw _ | `Label _ | `Goto _ | `Empty ->
+ 
