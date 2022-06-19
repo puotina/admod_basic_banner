@@ -448,3 +448,4 @@ let rec compile_function_statement
   | `Comment _ | `Raw _ | `Label _ | `Goto _ | `Empty ->
     stmt
   | `Assignment (lvalue, vars) ->
+    `Assignment (compile_function_leftvalue lvalue ~s
