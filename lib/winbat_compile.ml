@@ -446,4 +446,5 @@ let rec compile_function_statement
   : statement =
   match stmt with
   | `Comment _ | `Raw _ | `Label _ | `Goto _ | `Empty ->
- 
+    stmt
+  | `Assignment (lvalue, vars) ->
