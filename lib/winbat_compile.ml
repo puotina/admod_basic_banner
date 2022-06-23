@@ -450,4 +450,5 @@ let rec compile_function_statement
   | `Assignment (lvalue, vars) ->
     `Assignment (compile_function_leftvalue lvalue ~symtable ~scope,
                  compile_function_varstrings vars ~symtable ~scope)
-  | `ArithAssign (lva
+  | `ArithAssign (lvalue, arith) ->
+    `ArithAssign (compile_functi
