@@ -454,4 +454,5 @@ let rec compile_function_statement
     `ArithAssign (compile_function_leftvalue lvalue ~symtable ~scope,
                   compile_function_arithmetic arith ~symtable ~scope)
   | `Call (name, params) ->
-    `Call (compile_funct
+    `Call (compile_function_varstrings name ~symtable ~scope,
+           compile_func
