@@ -460,4 +460,4 @@ let rec compile_function_statement
     `Output (
       compile_function_leftvalue lvalue ~symtable ~scope,
       compile_function_varstrings name ~symtable ~scope,
-      compil
+      compile_function_parameters params ~symtable ~scope)
