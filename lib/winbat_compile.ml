@@ -456,4 +456,6 @@ let rec compile_function_statement
   | `Call (name, params) ->
     `Call (compile_function_varstrings name ~symtable ~scope,
            compile_function_parameters params ~symtable ~scope)
-  | `Output (lvalue,
+  | `Output (lvalue, name, params) ->
+    `Output (
+      compile_function
