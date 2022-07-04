@@ -461,3 +461,5 @@ let rec compile_function_statement
       compile_function_leftvalue lvalue ~symtable ~scope,
       compile_function_varstrings name ~symtable ~scope,
       compile_function_parameters params ~symtable ~scope)
+  | `If (cond, stmts) ->
+    `If (compile_function_comparis
