@@ -463,4 +463,5 @@ let rec compile_function_statement
       compile_function_parameters params ~symtable ~scope)
   | `If (cond, stmts) ->
     `If (compile_function_comparison cond ~symtable ~scope,
-         compile_function
+         compile_function_statements stmts ~symtable ~scope)
+  | `IfElse (co
