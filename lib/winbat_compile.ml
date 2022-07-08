@@ -470,4 +470,6 @@ let rec compile_function_statement
              compile_function_statements else_stmts ~symtable ~scope)
 
 and compile_function_statements
-    (stmts :
+    (stmts : statements)
+    ~(symtable : Symbol_table.t)
+    ~
