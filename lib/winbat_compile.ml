@@ -474,4 +474,7 @@ and compile_function_statements
     ~(symtable : Symbol_table.t)
     ~(scope : Symbol_table.Scope.t)
   : statements =
-  List.map stmts ~f: (compile_function_statement ~
+  List.map stmts ~f: (compile_function_statement ~symtable ~scope)
+
+let compile_function
+    (name, p
