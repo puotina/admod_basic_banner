@@ -479,4 +479,5 @@ and compile_function_statements
 let compile_function
     (name, params, stmts)
     ~(symtable : Symbol_table.t)
- 
+  : statements =
+  let scope = Symbol_table.scope symtable
