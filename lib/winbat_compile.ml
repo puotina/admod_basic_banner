@@ -483,4 +483,4 @@ let compile_function
   let scope = Symbol_table.scope symtable name in
   let body = compile_statements stmts ~symtable ~scope in
   let replaced_body = compile_function_statements body ~symtable ~scope in
-  let params
+  let params_assignments = List.mapi params ~f: (fun i param ->
