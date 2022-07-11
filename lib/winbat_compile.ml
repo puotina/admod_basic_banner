@@ -481,4 +481,5 @@ let compile_function
     ~(symtable : Symbol_table.t)
   : statements =
   let scope = Symbol_table.scope symtable name in
-  let body = compile_statements stmts ~symtab
+  let body = compile_statements stmts ~symtable ~scope in
+  let replaced_body = compile_function
