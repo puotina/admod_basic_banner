@@ -484,3 +484,4 @@ let compile_function
   let body = compile_statements stmts ~symtable ~scope in
   let replaced_body = compile_function_statements body ~symtable ~scope in
   let params_assignments = List.mapi params ~f: (fun i param ->
+      (* Add frame pointer surfix to every paramemete
