@@ -485,4 +485,5 @@ let compile_function
   let replaced_body = compile_function_statements body ~symtable ~scope in
   let params_assignments = List.mapi params ~f: (fun i param ->
       (* Add frame pointer surfix to every paramemeter *)
-      let lvalue = `ListAccess (`Identifier param, `Var (`
+      let lvalue = `ListAccess (`Identifier param, `Var (`Identifier "%~2")) in
+      let param_var = (sprintf "
