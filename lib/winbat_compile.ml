@@ -486,4 +486,5 @@ let compile_function
   let params_assignments = List.mapi params ~f: (fun i param ->
       (* Add frame pointer surfix to every paramemeter *)
       let lvalue = `ListAccess (`Identifier param, `Var (`Identifier "%~2")) in
-      let param_var = (sprintf "
+      let param_var = (sprintf "!%%~%d!" (i + 3)) in
+      `Assignment (lvalue, [`Rawstr pa
