@@ -491,4 +491,7 @@ let compile_function
     )
   in
   (`Empty
-   :: (`Goto ":EOF"
+   :: (`Goto ":EOF")
+   :: (`Label name)
+   :: params_assignments)
+  @ r
