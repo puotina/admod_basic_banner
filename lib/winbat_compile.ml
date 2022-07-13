@@ -502,4 +502,5 @@ let compile_toplevel
   : statements =
   match topl with
   | Statement stmt ->
-    compil
+    compile_statement stmt ~symtable
+      ~sco
