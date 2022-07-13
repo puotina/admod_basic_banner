@@ -507,4 +507,5 @@ let compile_toplevel
   | Function func ->
     compile_function func ~symtable
 
-let sort
+let sort_functions (topls : Batsh_ast.t) : Batsh_ast.t =
+  le
