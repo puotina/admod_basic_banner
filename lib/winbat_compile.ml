@@ -497,4 +497,6 @@ let compile_function
   @ replaced_body
 
 let compile_toplevel
-    ~(symta
+    ~(symtable : Symbol_table.t)
+    (topl: Batsh_ast.toplevel)
+  : statem
