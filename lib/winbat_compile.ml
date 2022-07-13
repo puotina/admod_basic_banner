@@ -487,4 +487,8 @@ let compile_function
       (* Add frame pointer surfix to every paramemeter *)
       let lvalue = `ListAccess (`Identifier param, `Var (`Identifier "%~2")) in
       let param_var = (sprintf "!%%~%d!" (i + 3)) in
-      `Assignment (lvalue, [`Rawstr pa
+      `Assignment (lvalue, [`Rawstr param_var])
+    )
+  in
+  (`Empty
+   :: (`Goto ":EOF"
