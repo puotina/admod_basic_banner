@@ -494,4 +494,7 @@ let compile_function
    :: (`Goto ":EOF")
    :: (`Label name)
    :: params_assignments)
-  @ r
+  @ replaced_body
+
+let compile_toplevel
+    ~(symta
