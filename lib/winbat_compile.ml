@@ -499,4 +499,7 @@ let compile_function
 let compile_toplevel
     ~(symtable : Symbol_table.t)
     (topl: Batsh_ast.toplevel)
-  : statem
+  : statements =
+  match topl with
+  | Statement stmt ->
+    compil
