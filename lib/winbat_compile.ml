@@ -504,4 +504,7 @@ let compile_toplevel
   | Statement stmt ->
     compile_statement stmt ~symtable
       ~scope: (Symbol_table.global_scope symtable)
-  | 
+  | Function func ->
+    compile_function func ~symtable
+
+let sort
