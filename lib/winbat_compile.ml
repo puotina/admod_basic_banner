@@ -503,4 +503,5 @@ let compile_toplevel
   match topl with
   | Statement stmt ->
     compile_statement stmt ~symtable
-      ~sco
+      ~scope: (Symbol_table.global_scope symtable)
+  | 
