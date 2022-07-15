@@ -517,4 +517,6 @@ let sort_functions (topls : Batsh_ast.t) : Batsh_ast.t =
       let func_a = is_function a in
       let func_b = is_function b in
       match (func_a, func_b) with
-      | (true, true) 
+      | (true, true) -> 0
+      | (true, false) -> 1
+      | (false, true) -> 
