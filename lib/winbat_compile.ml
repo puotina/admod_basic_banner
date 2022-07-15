@@ -519,4 +519,8 @@ let sort_functions (topls : Batsh_ast.t) : Batsh_ast.t =
       match (func_a, func_b) with
       | (true, true) -> 0
       | (true, false) -> 1
-      | (false, true) -> 
+      | (false, true) -> -1
+      | (false, false) -> 0
+    )
+
+let compile (batsh: Parser.t) : t 
