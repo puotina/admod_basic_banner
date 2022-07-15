@@ -508,4 +508,5 @@ let compile_toplevel
     compile_function func ~symtable
 
 let sort_functions (topls : Batsh_ast.t) : Batsh_ast.t =
-  le
+  let is_function topl : bool =
+    match topl with
