@@ -510,3 +510,5 @@ let compile_toplevel
 let sort_functions (topls : Batsh_ast.t) : Batsh_ast.t =
   let is_function topl : bool =
     match topl with
+    | Function _ -> true
+    | Statement _ -> false
