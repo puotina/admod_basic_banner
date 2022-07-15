@@ -512,3 +512,5 @@ let sort_functions (topls : Batsh_ast.t) : Batsh_ast.t =
     match topl with
     | Function _ -> true
     | Statement _ -> false
+  in
+  List.stable_sort topls ~compare:(fun a b ->
