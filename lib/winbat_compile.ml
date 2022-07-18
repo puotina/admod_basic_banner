@@ -525,4 +525,5 @@ let sort_functions (topls : Batsh_ast.t) : Batsh_ast.t =
 
 let compile (batsh: Parser.t) : t =
   let ast = Parser.ast batsh in
-  let symtable = 
+  let symtable = Parser.symtable batsh in
+  let transformed_ast = Winb
