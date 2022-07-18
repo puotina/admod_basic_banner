@@ -523,4 +523,6 @@ let sort_functions (topls : Batsh_ast.t) : Batsh_ast.t =
       | (false, false) -> 0
     )
 
-let compile (batsh: Parser.t) : t 
+let compile (batsh: Parser.t) : t =
+  let ast = Parser.ast batsh in
+  let symtable = 
