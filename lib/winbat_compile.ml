@@ -533,4 +533,6 @@ let compile (batsh: Parser.t) : t =
         ~init: (Dlist.empty ())
         ~f: (fun acc topl ->
             let stmts = compile_toplevel topl ~symtable in
-  
+            Dlist.append acc (Dlist.of_list stmts)
+          )
+ 
