@@ -535,4 +535,7 @@ let compile (batsh: Parser.t) : t =
             let stmts = compile_toplevel topl ~symtable in
             Dlist.append acc (Dlist.of_list stmts)
           )
- 
+    )
+  in
+  (`Raw "@echo off")
+  :: (`Raw "setlocal Enab
