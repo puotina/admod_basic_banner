@@ -527,4 +527,5 @@ let compile (batsh: Parser.t) : t =
   let ast = Parser.ast batsh in
   let symtable = Parser.symtable batsh in
   let transformed_ast = Winbat_transform.split ast ~symtable in
-  let sorted_ast =
+  let sorted_ast = sort_functions transformed_ast in
+  let st
