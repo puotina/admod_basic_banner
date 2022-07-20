@@ -539,4 +539,6 @@ let compile (batsh: Parser.t) : t =
   in
   (`Raw "@echo off")
   :: (`Raw "setlocal EnableDelayedExpansion")
-  :: (`Raw "setlocal Enabl
+  :: (`Raw "setlocal EnableExtensions")
+  :: (`Empty)
+  :: stmts
