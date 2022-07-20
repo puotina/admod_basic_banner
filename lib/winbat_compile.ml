@@ -529,4 +529,6 @@ let compile (batsh: Parser.t) : t =
   let transformed_ast = Winbat_transform.split ast ~symtable in
   let sorted_ast = sort_functions transformed_ast in
   let stmts = Dlist.to_list (
-      List.fold_left
+      List.fold_left sorted_ast
+        ~init: (Dlist.empty ())
+     
