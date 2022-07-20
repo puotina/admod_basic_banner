@@ -531,4 +531,5 @@ let compile (batsh: Parser.t) : t =
   let stmts = Dlist.to_list (
       List.fold_left sorted_ast
         ~init: (Dlist.empty ())
-     
+        ~f: (fun acc topl ->
+            let s
