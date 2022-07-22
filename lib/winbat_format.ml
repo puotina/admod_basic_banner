@@ -97,3 +97,41 @@ let print_varstrings buf (vars : varstrings) =
 
 let print_parameters buf (params : parameters) =
   let comsume = ref false in
+  List.iter params ~f: (fun vars ->
+      match vars with
+      | [] -> comsume := true
+      | _ ->
+        if !comsume then
+          comsume := false
+        else
+          Buffer.add_char buf ' ';
+        print_varstrings buf vars
+    )
+
+let print_comparison buf (condition : comparison) =
+  match condition with
+  | `TestCompare (operator, expr) ->
+    bprintf buf "%s %a"
+      operator
+      print_varstrings expr
+  | `UniCompare (operator, expr) -> (
+      let sign = match operator with
+        | "" -> "EQU"
+        | "!" -> "NEQ"
+        | _ -> failwith ("Unknown operator: " ^ operator)
+      in
+      bprintf buf "%a %s 1"
+        print_varstrings expr
+        sign
+    )
+  | `StrCompare (operator, left, right) -> (
+      let sign = match operator with
+        | "==" | "===" -> "EQU"
+        | "!=" | "!==" -> "NEQ"
+        | ">" -> "GTR"
+        | "<" -> "LSS"
+        | ">=" -> "GEQ"
+        | "<=" -> "LEQ"
+        | _ -> failwith ("Unknown operator: " ^ operator)
+      in
+      bprintf buf "%a %s %a"
