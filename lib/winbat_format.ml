@@ -60,3 +60,40 @@ and print_varint
     (buf : Buffer.t)
     (index : varint)
     ~(bare : bool)
+  =
+  match index with
+  | `Var lvalue ->
+    (print_leftvalue ~bare) buf lvalue
+  | `Int num ->
+    bprintf buf "%d" num
+
+let rec print_arith buf (arith : arithmetic) =
+  match arith with
+  | `Var lvalue ->
+    print_leftvalue buf lvalue ~bare: false
+  | `Int num ->
+    bprintf buf "%d" num
+  | `ArithUnary (operator, arith) ->
+    bprintf buf "%s^(%a^)" operator print_arith arith
+  | `ArithBinary (operator, left, right) -> (
+      let operator = if String.equal operator "%" then "%%" else operator in
+      bprintf buf "^(%a %s %a^)"
+        print_arith left
+        operator
+        print_arith right
+    )
+
+let print_varstring buf (var : varstring) =
+  match var with
+  | `Var lvalue ->
+    print_leftvalue buf lvalue ~bare: false
+  | `Str str ->
+    Buffer.add_string buf (escape str)
+  | `Rawstr str ->
+    Buffer.add_string buf str
+
+let print_varstrings buf (vars : varstrings) =
+  List.iter vars ~f: (print_varstring buf)
+
+let print_parameters buf (params : parameters) =
+  let comsume = ref false in
