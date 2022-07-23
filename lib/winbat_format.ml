@@ -135,3 +135,57 @@ let print_comparison buf (condition : comparison) =
         | _ -> failwith ("Unknown operator: " ^ operator)
       in
       bprintf buf "%a %s %a"
+        print_varstrings left
+        sign
+        print_varstrings right
+    )
+
+let rec print_statement buf (stmt: statement) ~(indent: int) =
+  Formatutil.print_indent buf indent;
+  match stmt with
+  | `Comment comment ->
+    let len = String.length comment in
+    bprintf buf "rem%s%s" (
+      if len = 0 || (len > 0 && Char.equal (String.get comment 0) ' ') then
+        ""
+      else
+        " "
+    ) comment
+  | `Raw str ->
+    Buffer.add_string buf str
+  | `Label lbl ->
+    bprintf buf ":%s" lbl
+  | `Goto lbl ->
+    bprintf buf "goto %s" lbl
+  | `Assignment (lvalue, vars) ->
+    bprintf buf "set %a=%a"
+      (print_leftvalue ~bare: true) lvalue
+      print_varstrings vars
+  | `ArithAssign (lvalue, arith) ->
+    bprintf buf "set /a %a=%a"
+      (print_leftvalue ~bare: true) lvalue
+      print_arith arith
+  | `Call (name, params) ->
+    bprintf buf "%a%a"
+      print_varstrings name
+      print_parameters params
+  | `Output (lvalue, name, params) ->
+    bprintf buf "for /f \"delims=\" %%%%i in ('%a%a') do set %a=%%%%i"
+      print_varstrings name
+      print_parameters params
+      (print_leftvalue ~bare: true) lvalue
+  | `If (condition, stmts) ->
+    bprintf buf "if %a (\n%a\n%a)"
+      print_comparison condition
+      (print_statements ~indent: (indent + 2)) stmts
+      Formatutil.print_indent indent
+  | `IfElse (condition, then_stmts, else_stmts) ->
+    bprintf buf "if %a (\n%a\n%a) else (\n%a\n%a)"
+      print_comparison condition
+      (print_statements ~indent: (indent + 2)) then_stmts
+      Formatutil.print_indent indent
+      (print_statements ~indent: (indent + 2)) else_stmts
+      Formatutil.print_indent indent
+  | `Empty -> ()
+
+and print_statements: Buffer.t -> statements -> indent:int -> unit =
