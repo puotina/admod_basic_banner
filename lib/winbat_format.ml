@@ -189,3 +189,7 @@ let rec print_statement buf (stmt: statement) ~(indent: int) =
   | `Empty -> ()
 
 and print_statements: Buffer.t -> statements -> indent:int -> unit =
+  Formatutil.print_statements ~f: print_statement
+
+let print (buf: Buffer.t) (program: t) :unit =
+  print_statements buf program ~indent: 0
