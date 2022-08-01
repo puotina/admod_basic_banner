@@ -7,4 +7,7 @@ let rec expand_command (name : varstrings) (args : parameters) =
     `Empty
   | [`Str "batch"] -> (
       match args with
-   
+      | [[`Str raw]] ->
+        `Raw raw
+      | _ ->
+       
