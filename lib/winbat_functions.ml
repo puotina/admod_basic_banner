@@ -10,4 +10,4 @@ let rec expand_command (name : varstrings) (args : parameters) =
       | [[`Str raw]] ->
         `Raw raw
       | _ ->
-       
+        failwith "batch raw command must have 1 argument of str
