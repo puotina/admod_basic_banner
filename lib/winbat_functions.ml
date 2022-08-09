@@ -13,4 +13,6 @@ let rec expand_command (name : varstrings) (args : parameters) =
         failwith "batch raw command must have 1 argument of string literal."
     )
   | [`Str "println"] -> (
-      
+      match args with
+      | [] ->
+        `Call ([`Str
