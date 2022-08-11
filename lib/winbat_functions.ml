@@ -15,4 +15,6 @@ let rec expand_command (name : varstrings) (args : parameters) =
   | [`Str "println"] -> (
       match args with
       | [] ->
-        `Call ([`Str
+        `Call ([`Str "echo:"], [])
+      | _ ->
+        `Call ([`Str "e
