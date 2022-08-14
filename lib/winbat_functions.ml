@@ -23,4 +23,6 @@ let rec expand_command (name : varstrings) (args : parameters) =
     `Call ([`Str "echo | set /p ="], [] :: args)
   | [`Str "call"] -> (
       match args with
-      | cmd :: r
+      | cmd :: real_args ->
+        expand_command cmd real_args
+    
