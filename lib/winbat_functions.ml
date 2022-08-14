@@ -25,4 +25,5 @@ let rec expand_command (name : varstrings) (args : parameters) =
       match args with
       | cmd :: real_args ->
         expand_command cmd real_args
-    
+      | [] ->
+        failwith "call must have at least 1 argumen
