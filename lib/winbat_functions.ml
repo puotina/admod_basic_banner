@@ -29,4 +29,8 @@ let rec expand_command (name : varstrings) (args : parameters) =
         failwith "call must have at least 1 argument."
     )
   | [`Str "readdir"] ->
-    `Call ([`Str "di
+    `Call ([`Str "dir /w"], args)
+  | _ ->
+    `Call (name, args)
+
+let 
