@@ -33,4 +33,6 @@ let rec expand_command (name : varstrings) (args : parameters) =
   | _ ->
     `Call (name, args)
 
-let rec expand_statement (stmt : statement) 
+let rec expand_statement (stmt : statement) : statement =
+  match stmt with
+  | 
