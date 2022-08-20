@@ -44,4 +44,5 @@ let rec expand_statement (stmt : statement) : statement =
       | _ -> failwith (sprintf "command do not have a return value.")
     )
   | `If (condition, stmts) ->
-    `If (condition, expand_stateme
+    `If (condition, expand_statements stmts)
+  | `IfElse (condition, then_stmts, else_st
