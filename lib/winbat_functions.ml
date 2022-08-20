@@ -41,4 +41,6 @@ let rec expand_statement (stmt : statement) : statement =
     let expaned = expand_command name exprs in (
       match expaned with
       | `Call (name, exprs) -> `Output (lvalue, name, exprs)
-      | _ -> failwith (sprintf "
+      | _ -> failwith (sprintf "command do not have a return value.")
+    )
+  | `If 
