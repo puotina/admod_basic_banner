@@ -36,4 +36,6 @@ let rec expand_command (name : varstrings) (args : parameters) =
 let rec expand_statement (stmt : statement) : statement =
   match stmt with
   | `Call (name, exprs) ->
-    expand_command name e
+    expand_command name exprs
+  | `Output (lvalue, name, exprs) ->
+    let ex
