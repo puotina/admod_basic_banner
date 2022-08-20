@@ -43,4 +43,5 @@ let rec expand_statement (stmt : statement) : statement =
       | `Call (name, exprs) -> `Output (lvalue, name, exprs)
       | _ -> failwith (sprintf "command do not have a return value.")
     )
-  | `If 
+  | `If (condition, stmts) ->
+    `If (condition, expand_stateme
