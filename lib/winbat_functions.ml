@@ -39,4 +39,5 @@ let rec expand_statement (stmt : statement) : statement =
     expand_command name exprs
   | `Output (lvalue, name, exprs) ->
     let expaned = expand_command name exprs in (
-      match expaned
+      match expaned with
+      | `Call (name, exprs) -> `Output 
