@@ -49,4 +49,6 @@ let rec expand_statement (stmt : statement) : statement =
     `IfElse (condition,
              expand_statements then_stmts,
              expand_statements else_stmts)
-  | 
+  | `Assignment _
+  | `ArithAssign _
+  | `Comment _ 
