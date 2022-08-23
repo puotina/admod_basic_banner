@@ -47,4 +47,6 @@ let rec expand_statement (stmt : statement) : statement =
     `If (condition, expand_statements stmts)
   | `IfElse (condition, then_stmts, else_stmts) ->
     `IfElse (condition,
-             expand_statemen
+             expand_statements then_stmts,
+             expand_statements else_stmts)
+  | 
