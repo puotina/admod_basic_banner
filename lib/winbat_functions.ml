@@ -51,4 +51,6 @@ let rec expand_statement (stmt : statement) : statement =
              expand_statements else_stmts)
   | `Assignment _
   | `ArithAssign _
-  | `Comment _ 
+  | `Comment _ | `Raw _ | `Label _ | `Goto _ | `Empty -> stmt
+
+and ex
