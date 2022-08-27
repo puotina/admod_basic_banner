@@ -54,4 +54,6 @@ let rec expand_statement (stmt : statement) : statement =
   | `Comment _ | `Raw _ | `Label _ | `Goto _ | `Empty -> stmt
 
 and expand_statements (stmts: statements) : statements =
-  
+  List.map stmts ~f: expand_statement
+
+let e
