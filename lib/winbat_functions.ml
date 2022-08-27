@@ -53,4 +53,5 @@ let rec expand_statement (stmt : statement) : statement =
   | `ArithAssign _
   | `Comment _ | `Raw _ | `Label _ | `Goto _ | `Empty -> stmt
 
-and ex
+and expand_statements (stmts: statements) : statements =
+  
