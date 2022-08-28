@@ -56,4 +56,5 @@ let rec expand_statement (stmt : statement) : statement =
 and expand_statements (stmts: statements) : statements =
   List.map stmts ~f: expand_statement
 
-let e
+let expand (ast : t) : t =
+  expand_statements ast
