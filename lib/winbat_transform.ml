@@ -113,3 +113,52 @@ and split_expressions
 let rec split_statement
     (stmt : statement)
     ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Scope.t)
+  : statement =
+  let prepend_assignments assignments stmt : statement =
+    if Dlist.length assignments = 0 then
+      stmt
+    else
+      Block (Dlist.to_list (Dlist.append assignments (Dlist.of_list [stmt])))
+  in
+  match stmt with
+  | Empty | Global _ | Comment _ | Return None ->
+    stmt
+  | Expression expr ->
+    let assignments, expr = split_expression expr ~symtable ~scope
+        ~split_call:false
+    in
+    prepend_assignments assignments (Expression expr)
+  | Return (Some expr) ->
+    let assignments, expr = split_expression expr ~symtable ~scope in
+    prepend_assignments assignments (Return (Some expr))
+  | Assignment (lvalue, expr) ->
+    let assignments, expr = split_expression expr
+        ~symtable
+        ~scope
+        ~split_arith:false
+        ~split_call:false
+        ~split_list:false
+    in
+    prepend_assignments assignments (Assignment (lvalue, expr))
+  | If (expr, stmt) ->
+    let assignments, expr = split_expression expr
+        ~symtable
+        ~scope
+        ~no_split_top:true
+    in
+    let stmt = split_statement stmt ~symtable ~scope in
+    prepend_assignments assignments (If (expr, stmt))
+  | IfElse (expr, then_stmt, else_stmt) ->
+    let assignments, expr = split_expression expr
+        ~symtable
+        ~scope
+        ~no_split_top:true
+    in
+    let then_stmt = split_statement then_stmt ~symtable ~scope in
+    let else_stmt = split_statement else_stmt ~symtable ~scope in
+    prepend_assignments assignments (IfElse (expr, then_stmt, else_stmt))
+  | While (expr, stmt) ->
+    let assignments, expr = split_expression expr
+        ~symtable
+        ~scope
