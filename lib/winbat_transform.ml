@@ -71,3 +71,45 @@ let rec split_expression
     let assignments, (left, right) = split_binary (left, right)
         ~split_arith:true
         ~split_string:false
+    in
+    split_when ~cond:split_string assignments (Concat (left, right))
+  | StrCompare (operator, left, right) ->
+    let assignments, (left, right) = split_binary (left, right)
+        ~split_arith:true
+        ~split_string:false
+    in
+    split_when ~cond:true assignments (StrCompare (operator, left, right))
+  | Call (ident, exprs) ->
+    (* If this is a function call, then split all its arguments *)
+    let split_primitive = Symbol_table.is_function symtable ident in
+    let assignments, exprs = split_expressions exprs
+        ~split_primitive ~symtable ~scope
+    in
+    split_when ~cond:split_call assignments (Call (ident, exprs))
+  | List exprs ->
+    let assignments, exprs = split_expressions exprs
+        ~split_primitive:false ~symtable ~scope
+    in
+    split_when ~cond:split_list assignments (List exprs)
+
+and split_expressions
+    (exprs : expressions)
+    ~(split_primitive : bool)
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Scope.t)
+  : (statement Dlist.t * expressions) =
+  let assignments, exprs = List.fold exprs ~init: (Dlist.empty (), [])
+      ~f: (fun (assignments_acc, exprs_acc) expr ->
+          let assignments, expr = split_expression expr
+              ~split_string:split_primitive
+              ~split_primitive
+              ~symtable ~scope
+          in
+          (Dlist.append assignments assignments_acc, expr :: exprs_acc)
+        )
+  in
+  assignments, List.rev exprs
+
+let rec split_statement
+    (stmt : statement)
+    ~(symtable : Symbol_table.t)
