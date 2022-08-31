@@ -162,3 +162,40 @@ let rec split_statement
     let assignments, expr = split_expression expr
         ~symtable
         ~scope
+        ~no_split_top:true
+    in
+    let stmt = split_statement stmt ~symtable ~scope in
+    prepend_assignments assignments (While (expr, stmt))
+  | Block stmts ->
+    Block (split_statements stmts ~symtable ~scope)
+
+and split_statements
+    (stmts : statements)
+    ~(symtable : Symbol_table.t)
+    ~(scope : Symbol_table.Scope.t)
+  : statements =
+  List.map stmts ~f: (split_statement ~symtable ~scope)
+
+let split_function
+    (name, params, stmts)
+    ~(symtable : Symbol_table.t)
+  =
+  let scope = Symbol_table.scope symtable name in
+  let body = split_statements stmts ~symtable ~scope in
+  name, params, body
+
+let split_toplevel
+    (topl : toplevel)
+    ~(symtable : Symbol_table.t)
+  : toplevel =
+  match topl with
+  | Statement stmt ->
+    Statement (split_statement stmt ~symtable
+                 ~scope: (Symbol_table.global_scope symtable))
+  | Function func ->
+    Function (split_function func ~symtable)
+
+(* Split arithmetic expressions, string literals, string comparisons,
+   list literals, and command calls *)
+let split (ast : Batsh_ast.t) ~(symtable : Symbol_table.t) : Batsh_ast.t =
+  List.map ast ~f: (split_toplevel ~symtable)
