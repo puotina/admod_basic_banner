@@ -55,3 +55,38 @@ begin syntax "sexplib-syntax"
   requires = [
     "camlp4o"
     "pa_sexp_conv.syntax"
+  ]
+end
+
+(* sexplib syntax *)
+begin
+  generated = true
+  dirname = ["%{sexplib_DST_DIR}%"]
+  begin library "pa_sexp_conv"
+    files = ["pa_sexp_conv.ml"]
+    requires = ["pa_type_conv"]
+  end
+  begin syntax "pa_sexp_conv.syntax"
+    requires = ["pa_sexp_conv"]
+  end
+  (* type_conv syntax *)
+  begin
+    generated = true
+    dirname = ["%{type_conv_DST_DIR}%"]
+    begin library "pa_type_conv"
+      is_before = ["pa_macro"]
+      requires = ["camlp4-pa-o" "camlp4-pa-op"]
+      files = ["pa_type_conv.ml"]
+    end
+    begin syntax "pa_type_conv.syntax"
+      requires = ["pa_type_conv"]
+    end
+  end
+end
+
+begin library "threads"
+  installed = true
+  dirname = ["%{OCAMLLIB}%/threads"]
+  has_byte = false
+  byte += ["-custom"]
+end
