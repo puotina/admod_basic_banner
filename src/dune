@@ -1,1 +1,4 @@
 (executable
+ (name main)
+ (public_name batsh)
+ (flags     
