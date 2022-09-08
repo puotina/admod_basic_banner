@@ -91,3 +91,42 @@ let winbat =
     Arg.(required & pos 0 (some non_dir_file) None & info [] ~doc ~docv:"FILE")
   in
   let cmd opts (filename : string) =
+    let batsh = parse_with_error filename in
+    let winbat =
+      try
+        Winbat.compile batsh
+      with
+      | Errors.SemanticError (msg, context) ->
+        eprintf "%s\n%s\n" msg context;
+        exit 1
+    in
+    let code = lazy (Winbat.print winbat) in
+    let ast = lazy (Winbat.ast winbat |> Winbat_ast.sexp_of_t) in
+    print_common opts ~code ~ast ~batsh
+  in
+  Term.(pure cmd $ copts_t $ t),
+  Term.info "winbat" ~doc:"Compile to Windows Batch script."
+
+let batsh =
+  let doc = "Format $(docv)." in
+  let t =
+    Arg.(required & pos 0 (some non_dir_file) None & info [] ~doc ~docv:"FILE")
+  in
+  let cmd opts (filename : string) =
+    let batsh = parse_with_error filename in
+    let code = lazy (Parser.prettify batsh) in
+    let ast = lazy (Parser.ast batsh |> Batsh_ast.sexp_of_t) in
+    print_common opts ~code ~ast ~batsh
+  in
+  Term.(pure cmd $ copts_t $ t),
+  Term.info "batsh" ~doc:"Format source file."
+
+let default_cmd =
+  let doc = Version.description in
+  Term.(ret (pure (fun _ -> `Help (`Plain, None)) $ (Term.pure ()) )),
+  Term.info "batsh" ~version:Version.string ~doc
+
+let () =
+  match Term.eval_choice default_cmd [bash; winbat; batsh] with
+  | `Error _ -> exit 1
+  | _ -> ()
