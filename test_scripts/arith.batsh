@@ -1,0 +1,4 @@
+
+println(false);
+println(true);
+println(42);
