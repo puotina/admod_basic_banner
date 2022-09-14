@@ -3,4 +3,6 @@ println(a);
 b = 3 + 4;
 println(b);
 c = a;
-pri
+println(c);
+d = b ++ c;
+println(d);
