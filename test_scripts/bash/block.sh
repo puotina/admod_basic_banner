@@ -2,4 +2,6 @@
 "echo" "-e" "Hello"
 #Level 1 Start
 "echo" "-e" "Lo"
-#Le
+#Level 2 Start
+"echo" "-e" "and behold"
+#Level 2 En
