@@ -1,3 +1,5 @@
 "echo" "-e" "Println Called"
 cmd="ec""ho"
-"$cmd" "Echo Ca
+"$cmd" "Echo Called"
+retval=$("echo" "Value 100%")
+"echo" "-e" "$retva
