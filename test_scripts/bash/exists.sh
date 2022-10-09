@@ -8,4 +8,5 @@ fi
 if [ -e "none" ]; then
   "echo" "-e" "Impossible"
 else
-  "echo" "-e
+  "echo" "-e" "No"
+fi
