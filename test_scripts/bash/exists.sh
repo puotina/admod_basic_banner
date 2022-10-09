@@ -5,4 +5,7 @@ ex=$((!$?))
 if [ -e "Makefile" ]; then
   "echo" "-e" "Yes"
 fi
-if [ 
+if [ -e "none" ]; then
+  "echo" "-e" "Impossible"
+else
+  "echo" "-e
