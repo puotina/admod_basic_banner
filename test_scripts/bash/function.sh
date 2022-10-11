@@ -7,4 +7,7 @@ function func1 {
   "echo" "-e" "$p1" "$p2"
 }
 "func1" "Hello" "World"
-# Global and l
+# Global and local variables
+v1="Global V1"
+v2="Global V2"
+v3
