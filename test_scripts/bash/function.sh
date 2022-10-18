@@ -22,4 +22,9 @@ function func2 {
   v3="V3 Modified."
 }
 "func2" "Var"
-"echo" "-e
+"echo" "-e" "$v1"
+"echo" "-e" "$v3"
+# Return value
+function func3 {
+  local num
+  num
