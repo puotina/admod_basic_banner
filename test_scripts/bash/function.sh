@@ -27,4 +27,7 @@ function func2 {
 # Return value
 function func3 {
   local num
-  num
+  num="$1"
+  "echo" "-ne" $(($num + 41))
+  return
+}
