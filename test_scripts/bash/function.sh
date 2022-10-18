@@ -14,4 +14,7 @@ v3="Global V3"
 function func2 {
   local v1
   local p
-  p
+  p="$1"
+  v1="Local ""$p"
+  "echo" "-e" "$v1"
+  "echo" "-e"
