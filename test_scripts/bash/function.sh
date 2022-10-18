@@ -17,4 +17,9 @@ function func2 {
   p="$1"
   v1="Local ""$p"
   "echo" "-e" "$v1"
-  "echo" "-e"
+  "echo" "-e" "$v2"
+  
+  v3="V3 Modified."
+}
+"func2" "Var"
+"echo" "-e
