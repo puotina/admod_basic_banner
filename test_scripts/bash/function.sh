@@ -34,3 +34,5 @@ function func3 {
 "func3" $((4))
 "echo" "-e"
 ret=$("func3" $((1)))
+"echo" "-e" "Returned:" "$ret"
+# Argument containing 
