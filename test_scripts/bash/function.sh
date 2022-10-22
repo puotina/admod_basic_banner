@@ -31,3 +31,6 @@ function func3 {
   "echo" "-ne" $(($num + 41))
   return
 }
+"func3" $((4))
+"echo" "-e"
+ret=$("func3" $((1)))
