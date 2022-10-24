@@ -39,4 +39,9 @@ ret=$("func3" $((1)))
 function g {
   local text
   text="$1"
-  "echo" "
+  "echo" "-ne" "$text"
+  return
+}
+function f {
+  local text
+  
