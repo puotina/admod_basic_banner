@@ -44,4 +44,7 @@ function g {
 }
 function f {
   local text
-  
+  text="$1"
+  "echo" "-ne" $("g" "$text")
+  return
+}
