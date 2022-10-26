@@ -48,3 +48,5 @@ function f {
   "echo" "-ne" $("g" "$text")
   return
 }
+test=$("f" "Param with space")
+"echo" "-e" "$test
