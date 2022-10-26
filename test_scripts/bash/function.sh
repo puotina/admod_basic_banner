@@ -49,4 +49,4 @@ function f {
   return
 }
 test=$("f" "Param with space")
-"echo" "-e" "$test
+"echo" "-e" "$test"
