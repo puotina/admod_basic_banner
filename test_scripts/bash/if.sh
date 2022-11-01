@@ -14,4 +14,7 @@ fi
 if [ $((2 > 1)) == 1 ]; then
   "echo" "-e" "True"
 fi
-if [ $((1 == 12)) == 1 ];
+if [ $((1 == 12)) == 1 ]; then
+  "echo" "-e" "No"
+fi
+if [ "a" == "b" ]; then
