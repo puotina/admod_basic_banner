@@ -18,3 +18,9 @@ if [ $((1 == 12)) == 1 ]; then
   "echo" "-e" "No"
 fi
 if [ "a" == "b" ]; then
+  "echo" "-e" "No"
+else
+  "echo" "-e" "a is not b"
+fi
+num=$((43))
+i
