@@ -23,4 +23,5 @@ else
   "echo" "-e" "a is not b"
 fi
 num=$((43))
-i
+if [ "43" == "$num" ]; then
+  "echo" "-e" "43 ==
