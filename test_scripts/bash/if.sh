@@ -24,4 +24,7 @@ else
 fi
 num=$((43))
 if [ "43" == "$num" ]; then
-  "echo" "-e" "43 ==
+  "echo" "-e" "43 == num"
+fi
+_0="43"
+if [ $(($_0 == $num)) == 1 ]; the
