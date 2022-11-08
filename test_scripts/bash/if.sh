@@ -27,4 +27,6 @@ if [ "43" == "$num" ]; then
   "echo" "-e" "43 == num"
 fi
 _0="43"
-if [ $(($_0 == $num)) == 1 ]; the
+if [ $(($_0 == $num)) == 1 ]; then
+  "echo" "-e" "43 === num"
+fi
