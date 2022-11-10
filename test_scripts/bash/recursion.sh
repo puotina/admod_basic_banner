@@ -12,3 +12,7 @@ function fact {
   local _0
   num="$1"
   if [ $(($num == 0)) == 1 ]; then
+    "echo" "-ne" $((1))
+    return
+  else
+    _0=$("fact"
