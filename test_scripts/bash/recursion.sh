@@ -20,4 +20,7 @@ function fact {
     return
   fi
 }
-"ec
+"echo" "-e" $("fact" $((5)))
+function fibonacci {
+  local _1
+ 
