@@ -15,4 +15,9 @@ function fact {
     "echo" "-ne" $((1))
     return
   else
-    _0=$("fact"
+    _0=$("fact" $(($num - 1)))
+    "echo" "-ne" $(($_0 * $num))
+    return
+  fi
+}
+"ec
