@@ -9,3 +9,6 @@ fi
 "loop" $((10))
 function fact {
   local num
+  local _0
+  num="$1"
+  if [ $(($num == 0)) == 1 ]; then
