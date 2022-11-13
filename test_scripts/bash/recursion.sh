@@ -23,4 +23,7 @@ function fact {
 "echo" "-e" $("fact" $((5)))
 function fibonacci {
   local _1
- 
+  local num
+  local _0
+  num="$1"
+  if [ $(($num == 0
