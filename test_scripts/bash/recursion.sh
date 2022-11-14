@@ -26,4 +26,7 @@ function fibonacci {
   local num
   local _0
   num="$1"
-  if [ $(($num == 0
+  if [ $(($num == 0)) == 1 ]; then
+    "echo" "-ne" $((0))
+    return
+  el
