@@ -31,4 +31,7 @@ function fibonacci {
     return
   else
     if [ $(($num == 1)) == 1 ]; then
-      "e
+      "echo" "-ne" $((1))
+      return
+    else
+      _0=$("fibonacci" $
