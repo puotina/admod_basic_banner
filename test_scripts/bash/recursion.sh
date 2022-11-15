@@ -29,4 +29,6 @@ function fibonacci {
   if [ $(($num == 0)) == 1 ]; then
     "echo" "-ne" $((0))
     return
-  el
+  else
+    if [ $(($num == 1)) == 1 ]; then
+      "e
