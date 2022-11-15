@@ -35,4 +35,6 @@ function fibonacci {
       return
     else
       _0=$("fibonacci" $(($num - 2)))
-      _1=$("fibonacci" $(($num 
+      _1=$("fibonacci" $(($num - 1)))
+      "echo" "-ne" $(($_0 + $_1))
+      retur
