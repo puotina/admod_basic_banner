@@ -37,4 +37,9 @@ function fibonacci {
       _0=$("fibonacci" $(($num - 2)))
       _1=$("fibonacci" $(($num - 1)))
       "echo" "-ne" $(($_0 + $_1))
-      retur
+      return
+    fi
+  fi
+}
+i=$((0))
+while [ $(($i < 7)) == 1 ]; 
