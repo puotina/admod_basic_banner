@@ -42,4 +42,6 @@ function fibonacci {
   fi
 }
 i=$((0))
-while [ $(($i < 7)) == 1 ]; 
+while [ $(($i < 7)) == 1 ]; do
+  "echo" "-e" $("fibonacci" "$i")
+  i=$(
