@@ -44,4 +44,5 @@ function fibonacci {
 i=$((0))
 while [ $(($i < 7)) == 1 ]; do
   "echo" "-e" $("fibonacci" "$i")
-  i=$(
+  i=$(($i + 1))
+done
