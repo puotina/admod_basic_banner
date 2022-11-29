@@ -11,4 +11,9 @@ set /a _1=^(8 - ^(3 %% 2^)^)
 echo !_1!
 set /a _2=^(-9 - 9^)
 echo !_2!
-set /a _3=^(^(2 
+set /a _3=^(^(2 + 8^) / 3^)
+echo !_3!
+if 2 EQU 2 (
+  set /a _4=1
+) else (
+  set 
