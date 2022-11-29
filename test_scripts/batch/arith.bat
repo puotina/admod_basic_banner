@@ -16,4 +16,10 @@ echo !_3!
 if 2 EQU 2 (
   set /a _4=1
 ) else (
-  set 
+  set /a _4=0
+)
+echo !_4!
+if 6 NEQ 8 (
+  set /a _5=1
+) else (
+  set
