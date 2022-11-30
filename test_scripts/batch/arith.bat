@@ -32,4 +32,9 @@ if 3 GTR 2 (
 )
 echo !_6!
 if 4 LSS 5 (
-  set /a _7
+  set /a _7=1
+) else (
+  set /a _7=0
+)
+echo !_7!
+if 6 G
