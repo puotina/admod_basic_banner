@@ -37,4 +37,9 @@ if 4 LSS 5 (
   set /a _7=0
 )
 echo !_7!
-if 6 G
+if 6 GEQ 2 (
+  set /a _8=1
+) else (
+  set /a _8=0
+)
+echo !_8!
