@@ -26,4 +26,10 @@ if 6 NEQ 8 (
 )
 echo !_5!
 if 3 GTR 2 (
-  set /a _6
+  set /a _6=1
+) else (
+  set /a _6=0
+)
+echo !_6!
+if 4 LSS 5 (
+  set /a _7
