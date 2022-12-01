@@ -51,4 +51,9 @@ if 19 LEQ 30 (
 echo !_9!
 if 1 NEQ 1 (
   set /a _10=1
+) else (
+  set /a _10=0
 )
+echo !_10!
+if 0 NEQ 1 (
+  set
