@@ -46,4 +46,9 @@ echo !_8!
 if 19 LEQ 30 (
   set /a _9=1
 ) else (
-  set /a 
+  set /a _9=0
+)
+echo !_9!
+if 1 NEQ 1 (
+  set /a _10=1
+)
