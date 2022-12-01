@@ -43,3 +43,7 @@ if 6 GEQ 2 (
   set /a _8=0
 )
 echo !_8!
+if 19 LEQ 30 (
+  set /a _9=1
+) else (
+  set /a 
