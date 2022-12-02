@@ -56,4 +56,8 @@ if 1 NEQ 1 (
 )
 echo !_10!
 if 0 NEQ 1 (
-  set
+  set /a _11=1
+) else (
+  set /a _11=0
+)
+echo !_11
