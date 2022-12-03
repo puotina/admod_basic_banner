@@ -64,4 +64,7 @@ echo !_11!
 set /a _12=^(2 - 1^)
 if !_12! NEQ 1 (
   set /a _13=1
-) e
+) else (
+  set /a _13=0
+)
+echo !_13!
