@@ -1,2 +1,5 @@
 @echo off
-setlocal En
+setlocal EnableDelayedExpansion
+setlocal EnableExtensions
+
+set a_0=
