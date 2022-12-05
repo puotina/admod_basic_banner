@@ -14,4 +14,6 @@ set /a a_0=1
 set /a a_1=2
 set /a a_2=3
 echo !a_0! !a_1! !a_2!
-set _0=
+set _0=10!a_0!
+set /a _1=^(!_0! * 2^)
+echo !
