@@ -19,4 +19,7 @@ set /a _1=^(!_0! * 2^)
 echo !_1!
 for /f "delims=" %%i in ('len !a!') do set _2=%%i
 echo !_2!
-for /f "delims=" %%i in ('len !a!'
+for /f "delims=" %%i in ('len !a!') do set _3=%%i
+set /a _4=^(!_3! * 8^)
+echo !_4!
+rem p
