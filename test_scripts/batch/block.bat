@@ -1,2 +1,5 @@
 @echo off
-setlocal Ena
+setlocal EnableDelayedExpansion
+setlocal EnableExtensions
+
+rem
