@@ -8,4 +8,6 @@ echo !a!
 set /a b=^(3 + 4^)
 echo !b!
 set c=!a!
-ech
+echo !c!
+set d=!b!!c!
+echo !d!
