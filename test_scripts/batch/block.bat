@@ -2,4 +2,8 @@
 setlocal EnableDelayedExpansion
 setlocal EnableExtensions
 
-rem
+rem Level 0 Start
+echo Hello
+rem Level 1 Start
+echo Lo
+r
