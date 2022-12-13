@@ -8,4 +8,7 @@ rem Level 1 Start
 echo Lo
 rem Level 2 Start
 echo and behold
-rem Level 2 En
+rem Level 2 End
+rem Level 1 End
+echo End
+rem Level 0 End
