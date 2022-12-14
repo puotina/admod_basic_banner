@@ -1,1 +1,3 @@
-@echo of
+@echo off
+setlocal EnableDelayedExpansion
+setlocal EnableExten
