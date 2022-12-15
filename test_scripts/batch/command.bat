@@ -1,3 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
-setlocal EnableExten
+setlocal EnableExtensions
+
+echo Println Called
+set cmd=ech
