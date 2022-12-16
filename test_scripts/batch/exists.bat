@@ -1,2 +1,6 @@
 @echo off
-setlocal EnableDelaye
+setlocal EnableDelayedExpansion
+setlocal EnableExtensions
+
+if exist Makefile (
+ 
