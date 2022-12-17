@@ -8,4 +8,9 @@ if exist Makefile (
   set /a ex=0
 )
 echo !ex!
-if e
+if exist Makefile (
+
+) else (
+
+)
+if exist Makef
