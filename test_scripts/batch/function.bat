@@ -2,4 +2,7 @@
 setlocal EnableDelayedExpansion
 setlocal EnableExtensions
 
-rem
+rem Function call
+set _1=World
+set _0=Hello
+cal
