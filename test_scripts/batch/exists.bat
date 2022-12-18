@@ -18,4 +18,6 @@ if exist Makefile (
 )
 if exist none (
   echo Impossible
-) 
+) else (
+  echo No
+)
