@@ -13,4 +13,9 @@ if exist Makefile (
 ) else (
 
 )
-if exist Makef
+if exist Makefile (
+  echo Yes
+)
+if exist none (
+  echo Impossible
+) 
