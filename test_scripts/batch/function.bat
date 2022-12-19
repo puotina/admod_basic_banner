@@ -7,4 +7,6 @@ set _1=World
 set _0=Hello
 call :func1 _6 0 _0 _1
 echo | set /p ^=!_6!
-rem 
+rem Global and local variables
+set v1=Global V1
+set v
