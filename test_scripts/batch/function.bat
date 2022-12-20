@@ -18,4 +18,8 @@ echo !v1!
 echo !v3!
 rem Return value
 set /a _3=4
-call :
+call :func3 _8 0 _3
+echo | set /p ^=!_8!
+echo:
+set /a _4=1
+c
