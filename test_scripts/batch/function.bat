@@ -12,4 +12,6 @@ set v1=Global V1
 set v2=Global V2
 set v3=Global V3
 set _2=Var
-ca
+call :func2 _7 0 _2
+echo | set /p ^=!_7!
+echo
