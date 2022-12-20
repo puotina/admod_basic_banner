@@ -14,4 +14,8 @@ set v3=Global V3
 set _2=Var
 call :func2 _7 0 _2
 echo | set /p ^=!_7!
-echo
+echo !v1!
+echo !v3!
+rem Return value
+set /a _3=4
+call :
