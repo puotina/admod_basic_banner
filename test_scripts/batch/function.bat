@@ -27,4 +27,9 @@ set ret=!_9!
 echo Returned: !ret!
 rem Argument containing space
 set _5=Param with space
-c
+call :f _10 0 _5
+set test=!_10!
+echo !test!
+
+goto :EOF
+:
