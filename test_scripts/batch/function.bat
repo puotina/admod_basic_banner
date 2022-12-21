@@ -22,4 +22,7 @@ call :func3 _8 0 _3
 echo | set /p ^=!_8!
 echo:
 set /a _4=1
-c
+call :func3 _9 0 _4
+set ret=!_9!
+echo Returned: !ret!
+rem
