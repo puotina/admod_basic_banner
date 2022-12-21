@@ -25,4 +25,6 @@ set /a _4=1
 call :func3 _9 0 _4
 set ret=!_9!
 echo Returned: !ret!
-rem
+rem Argument containing space
+set _5=Param with space
+c
