@@ -32,4 +32,7 @@ set test=!_10!
 echo !test!
 
 goto :EOF
-:
+:func1
+set p1_%~2=!%~3!
+set p2_%~2=!%~4!
+ech
