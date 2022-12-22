@@ -35,4 +35,9 @@ goto :EOF
 :func1
 set p1_%~2=!%~3!
 set p2_%~2=!%~4!
-ech
+echo !p1_%~2! !p2_%~2!
+
+goto :EOF
+:func2
+set p_%~2=!%~3!
+s
