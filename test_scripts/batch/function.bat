@@ -40,4 +40,7 @@ echo !p1_%~2! !p2_%~2!
 goto :EOF
 :func2
 set p_%~2=!%~3!
-s
+set v1_%~2=Local !p_%~2!
+echo !v1_%~2!
+echo !v2!
+se
