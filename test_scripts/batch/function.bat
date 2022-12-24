@@ -47,4 +47,6 @@ set v3=V3 Modified.
 
 goto :EOF
 :func3
-set num
+set num_%~2=!%~3!
+set /a _0_%~2=^(!num_%~2! + 41^)
+set %~1=
