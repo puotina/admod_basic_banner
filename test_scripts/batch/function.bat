@@ -43,4 +43,8 @@ set p_%~2=!%~3!
 set v1_%~2=Local !p_%~2!
 echo !v1_%~2!
 echo !v2!
-se
+set v3=V3 Modified.
+
+goto :EOF
+:func3
+set num
