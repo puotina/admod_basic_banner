@@ -49,4 +49,10 @@ goto :EOF
 :func3
 set num_%~2=!%~3!
 set /a _0_%~2=^(!num_%~2! + 41^)
-set %~1=
+set %~1=!_0_%~2!
+goto :EOF
+
+goto :EOF
+:g
+set text_%~2=!%~3!
+set %
