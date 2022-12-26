@@ -61,3 +61,6 @@ goto :EOF
 goto :EOF
 :f
 set text_%~2=!%~3!
+set _0_%~2=!text_%~2!
+set /a _2_%~2=^(1 + %~2^)
+call :g
