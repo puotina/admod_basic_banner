@@ -55,4 +55,9 @@ goto :EOF
 goto :EOF
 :g
 set text_%~2=!%~3!
-set %
+set %~1=!text_%~2!
+goto :EOF
+
+goto :EOF
+:f
+set text_%~2=!%~3!
