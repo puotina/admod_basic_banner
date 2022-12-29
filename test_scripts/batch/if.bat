@@ -15,4 +15,10 @@ if 1 EQU 1 (
 
 )
 echo !v!
-if 
+if 2 GTR 1 (
+  echo True
+)
+if 1 EQU 12 (
+  echo No
+)
+if a EQU b
