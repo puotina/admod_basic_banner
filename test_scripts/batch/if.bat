@@ -21,4 +21,9 @@ if 2 GTR 1 (
 if 1 EQU 12 (
   echo No
 )
-if a EQU b
+if a EQU b (
+  echo No
+) else (
+  echo a is not b
+)
+set /a num=4
