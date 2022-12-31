@@ -26,4 +26,8 @@ if a EQU b (
 ) else (
   echo a is not b
 )
-set /a num=4
+set /a num=43
+if 43 EQU !num! (
+  echo 43 ^=^= num
+)
+se
