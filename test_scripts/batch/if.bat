@@ -30,4 +30,6 @@ set /a num=43
 if 43 EQU !num! (
   echo 43 ^=^= num
 )
-se
+set _0=43
+if !_0! EQU !num! (
+  echo 43 ^=^=^= nu
