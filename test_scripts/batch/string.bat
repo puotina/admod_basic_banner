@@ -2,4 +2,8 @@
 setlocal EnableDelayedExpansion
 setlocal EnableExtensions
 
-echo 
+echo BYVoid
+echo Slash/
+echo Backslash\
+echo Quote^"^'
+echo Tab	T
