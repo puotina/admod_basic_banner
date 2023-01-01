@@ -32,4 +32,5 @@ if 43 EQU !num! (
 )
 set _0=43
 if !_0! EQU !num! (
-  echo 43 ^=^=^= nu
+  echo 43 ^=^=^= num
+)
