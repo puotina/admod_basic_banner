@@ -8,4 +8,6 @@ echo Backslash\
 echo Quote^"^'
 echo Tab	Tab
 rem println("Newline\nLine2");
-rem prin
+rem println("!");
+echo http://www.byvoid.com
+set /a _0=^(6 / 2^)
