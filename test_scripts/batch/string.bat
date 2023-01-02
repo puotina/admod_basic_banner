@@ -6,4 +6,6 @@ echo BYVoid
 echo Slash/
 echo Backslash\
 echo Quote^"^'
-echo Tab	T
+echo Tab	Tab
+rem println("Newline\nLine2");
+rem prin
