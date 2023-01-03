@@ -11,3 +11,7 @@ rem println("Newline\nLine2");
 rem println("!");
 echo http://www.byvoid.com
 set /a _0=^(6 / 2^)
+set /a _1=^(3 + 5^)
+echo !_0!BYVoid!_1!
+set _2=3
+set /a
