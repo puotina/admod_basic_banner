@@ -24,4 +24,7 @@ set /a _7=^(3 + !_6!^)
 echo !_7!
 if BYVoid EQU BYVoid (
   set /a _8=1
-) els
+) else (
+  set /a _8=0
+)
+echo !_8!
