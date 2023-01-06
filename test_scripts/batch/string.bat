@@ -20,4 +20,8 @@ set _4=3
 set /a _5=^(3 + !_4!^)
 echo !_5!2
 set _6=32
-set /a _7=^(3 +
+set /a _7=^(3 + !_6!^)
+echo !_7!
+if BYVoid EQU BYVoid (
+  set /a _8=1
+) els
