@@ -21,3 +21,6 @@ if !n! LSS 40 (
   set i=!j!
   set j=!k!
   set /a n=^(!n! + 1^)
+  echo !k!
+  goto WHILE_1
+)
