@@ -4,4 +4,6 @@ exists("Makefile");
 if (exists("Makefile")) {
   println("Yes");
 }
-if (exists(
+if (exists("none")) {
+  println("Impossible");
+} e
