@@ -1,4 +1,7 @@
 ex = exists("Makefile");
 println(ex);
 exists("Makefile");
-if (
+if (exists("Makefile")) {
+  println("Yes");
+}
+if (exists(
