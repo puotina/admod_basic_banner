@@ -1,1 +1,4 @@
-ex = 
+ex = exists("Makefile");
+println(ex);
+exists("Makefile");
+if (
