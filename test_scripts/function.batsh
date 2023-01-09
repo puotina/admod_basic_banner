@@ -21,3 +21,20 @@ println(v1);
 println(v3);
 
 // Return value
+function func3(num) {
+  return num + 41;
+}
+func3(4);
+println();
+ret = func3(1);
+println("Returned:", ret);
+
+// Argument containing space
+function g(text) {
+  return text;
+}
+function f(text) {
+  return g(text);
+}
+test = f("Param with space");
+println(test);
