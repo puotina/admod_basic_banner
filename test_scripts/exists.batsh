@@ -6,4 +6,6 @@ if (exists("Makefile")) {
 }
 if (exists("none")) {
   println("Impossible");
-} e
+} else {
+  println("No");
+}
