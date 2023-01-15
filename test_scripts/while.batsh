@@ -13,4 +13,6 @@ while (n < 40) {
   k = i + j;
   i = j;
   j = k;
-  n = n +
+  n = n + 1;
+  println(k);
+}
