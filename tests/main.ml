@@ -11,4 +11,7 @@ let drop_carrage_return str =
       if not (Char.equal ch '\r') then
         Buffer.add_char buffer ch
     );
-  Buffer.contents 
+  Buffer.contents buffer
+
+let test_result expected output exit_status =
+  let 
