@@ -14,4 +14,5 @@ let drop_carrage_return str =
   Buffer.contents buffer
 
 let test_result expected output exit_status =
-  let exit_message = Unix.Exit_or_signal.to_string_h
+  let exit_message = Unix.Exit_or_signal.to_string_hum exit_status in
+  assert_equal "exited normally" e
