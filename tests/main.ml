@@ -19,4 +19,5 @@ let test_result expected output exit_status =
   assert_equal expected output ~printer: Fn.id
 
 let test_bash name batsh expected =
-  l
+  let bash = Bash.compile batsh in
+  let code = (Bash.pr
