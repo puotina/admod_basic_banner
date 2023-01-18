@@ -16,4 +16,7 @@ let drop_carrage_return str =
 let test_result expected output exit_status =
   let exit_message = Unix.Exit_or_signal.to_string_hum exit_status in
   assert_equal "exited normally" exit_message ~printer: Fn.id;
-  assert_equal expected o
+  assert_equal expected output ~printer: Fn.id
+
+let test_bash name batsh expected =
+  l
