@@ -22,4 +22,4 @@ let test_bash name batsh expected =
   let bash = Bash.compile batsh in
   let code = (Bash.print bash) ^ "\n" in
   (* Code *)
-  let inx = In_chan
+  let inx = In_channel.create (script_dir ^ "/bash/" ^ name ^ ".
