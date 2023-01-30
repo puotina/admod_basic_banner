@@ -23,4 +23,6 @@ let test_bash name batsh expected =
   let code = (Bash.print bash) ^ "\n" in
   (* Code *)
   let inx = In_channel.create (script_dir ^ "/bash/" ^ name ^ ".sh") in
-  let code_expected = In_channel.input_all inx
+  let code_expected = In_channel.input_all inx in
+  In_channel.close inx;
+  assert_equal code_exp
