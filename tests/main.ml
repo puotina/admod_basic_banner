@@ -26,4 +26,5 @@ let test_bash name batsh expected =
   let code_expected = In_channel.input_all inx in
   In_channel.close inx;
   assert_equal code_expected code ~printer: Fn.id;
-  (* Run result 
+  (* Run result *)
+  let stdout, stdin = Unix.open_process "bash" in
