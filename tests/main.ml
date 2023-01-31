@@ -29,4 +29,5 @@ let test_bash name batsh expected =
   (* Run result *)
   let stdout, stdin = Unix.open_process "bash" in
   Out_channel.output_string stdin code;
-  Out_c
+  Out_channel.close stdin;
+  let output = In_channel.input_all 
