@@ -28,3 +28,5 @@ let test_bash name batsh expected =
   assert_equal code_expected code ~printer: Fn.id;
   (* Run result *)
   let stdout, stdin = Unix.open_process "bash" in
+  Out_channel.output_string stdin code;
+  Out_c
