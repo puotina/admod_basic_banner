@@ -32,4 +32,6 @@ let test_bash name batsh expected =
   Out_channel.close stdin;
   let output = In_channel.input_all stdout in
   let exit_status = Unix.close_process (stdout, stdin) in
-  test_result 
+  test_result expected output exit_status
+
+let test_winbat name batsh e
