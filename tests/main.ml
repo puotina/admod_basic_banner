@@ -34,4 +34,6 @@ let test_bash name batsh expected =
   let exit_status = Unix.close_process (stdout, stdin) in
   test_result expected output exit_status
 
-let test_winbat name batsh e
+let test_winbat name batsh expected =
+  let winbat = Winbat.compile batsh in
+ 
