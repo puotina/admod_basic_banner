@@ -37,4 +37,5 @@ let test_bash name batsh expected =
 let test_winbat name batsh expected =
   let winbat = Winbat.compile batsh in
   let code = (Winbat.print winbat) ^ "\n" in
-  
+  (* Code *)
+  let inx = In_channel.create (s
