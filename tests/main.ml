@@ -40,4 +40,5 @@ let test_winbat name batsh expected =
   (* Code *)
   let inx = In_channel.create (script_dir ^ "/batch/" ^ name ^ ".bat") in
   let code_expected = In_channel.input_all inx in
-  In_channel.clo
+  In_channel.close inx;
+  assert_equal code_expected code ~printer
