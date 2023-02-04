@@ -43,4 +43,5 @@ let test_winbat name batsh expected =
   In_channel.close inx;
   assert_equal code_expected code ~printer: Fn.id;
   (* Run result *)
-  let filename
+  let filename = Filename.temp_file "batsh" ".bat" in
+  let outx = Ou
