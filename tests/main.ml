@@ -45,4 +45,7 @@ let test_winbat name batsh expected =
   (* Run result *)
   let filename = Filename.temp_file "batsh" ".bat" in
   let outx = Out_channel.create filename in
-  Out_channel.output
+  Out_channel.output_string outx code;
+  Out_channel.close outx;
+
+  l
