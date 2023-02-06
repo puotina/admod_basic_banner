@@ -51,4 +51,5 @@ let test_winbat name batsh expected =
   let cmd = "wine cmd /c " ^ filename in
   let channels = Unix.open_process_full cmd ~env:[||] in
   let output_raw = In_channel.input_all channels.stdout in
-  let out
+  let output = drop_carrage_return output_raw in
+  let exit_stat
