@@ -49,4 +49,5 @@ let test_winbat name batsh expected =
   Out_channel.close outx;
 
   let cmd = "wine cmd /c " ^ filename in
-  let channels = 
+  let channels = Unix.open_process_full cmd ~env:[||] in
+  let output_raw = In_
