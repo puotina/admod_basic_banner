@@ -48,4 +48,5 @@ let test_winbat name batsh expected =
   Out_channel.output_string outx code;
   Out_channel.close outx;
 
-  l
+  let cmd = "wine cmd /c " ^ filename in
+  let channels = 
