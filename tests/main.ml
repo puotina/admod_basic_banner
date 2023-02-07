@@ -52,4 +52,5 @@ let test_winbat name batsh expected =
   let channels = Unix.open_process_full cmd ~env:[||] in
   let output_raw = In_channel.input_all channels.stdout in
   let output = drop_carrage_return output_raw in
-  let exit_stat
+  let exit_status = Unix.close_process_full channels in
+  test_result ex
