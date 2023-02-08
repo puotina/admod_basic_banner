@@ -57,4 +57,5 @@ let test_winbat name batsh expected =
 
 let get_expected name =
   let answer_filename = script_dir ^ "/output/" ^ name ^ ".txt" in
-  let inx = In_channel.cre
+  let inx = In_channel.create answer_filename in
+  let expected = In_chann
