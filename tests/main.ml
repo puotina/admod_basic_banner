@@ -53,4 +53,7 @@ let test_winbat name batsh expected =
   let output_raw = In_channel.input_all channels.stdout in
   let output = drop_carrage_return output_raw in
   let exit_status = Unix.close_process_full channels in
-  test_result ex
+  test_result expected output exit_status
+
+let get_expected name =
+ 
