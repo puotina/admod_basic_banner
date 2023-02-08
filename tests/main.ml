@@ -56,4 +56,5 @@ let test_winbat name batsh expected =
   test_result expected output exit_status
 
 let get_expected name =
-  let answer_filename = script_dir ^ "/output/" ^ 
+  let answer_filename = script_dir ^ "/output/" ^ name ^ ".txt" in
+  let inx = In_channel.cre
