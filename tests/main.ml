@@ -61,3 +61,6 @@ let get_expected name =
   let expected = In_channel.input_all inx in
   In_channel.close inx;
   expected
+
+let test name func _ =
+  let expected = get_expected
