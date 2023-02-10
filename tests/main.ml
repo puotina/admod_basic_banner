@@ -63,4 +63,5 @@ let get_expected name =
   expected
 
 let test name func _ =
-  let expected = get_expected
+  let expected = get_expected name in
+  let filename = script_dir ^ "/" ^ name ^ ".batsh
