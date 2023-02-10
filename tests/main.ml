@@ -64,4 +64,6 @@ let get_expected name =
 
 let test name func _ =
   let expected = get_expected name in
-  let filename = script_dir ^ "/" ^ name ^ ".batsh
+  let filename = script_dir ^ "/" ^ name ^ ".batsh" in
+  let batsh = Parser.create_from_file filename in
+  func n
