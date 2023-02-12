@@ -68,4 +68,5 @@ let test name func _ =
   let batsh = Parser.create_from_file filename in
   func name batsh expected
 
-let test_cases = "Batsh Unit Tests
+let test_cases = "Batsh Unit Tests" >::: [
+    "[Bash]Comment"       >:: test "comment
