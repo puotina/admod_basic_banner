@@ -71,4 +71,5 @@ let test name func _ =
 let test_cases = "Batsh Unit Tests" >::: [
     "[Bash]Comment"       >:: test "comment" test_bash;
     "[Bash]Block"         >:: test "block" test_bash;
-    "[Bash]Arith"         >:: test "arith" test_bash
+    "[Bash]Arith"         >:: test "arith" test_bash;
+    "[Bash]Assignment"    >:: test "a
