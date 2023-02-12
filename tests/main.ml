@@ -69,4 +69,5 @@ let test name func _ =
   func name batsh expected
 
 let test_cases = "Batsh Unit Tests" >::: [
-    "[Bash]Comment"       >:: test "comment
+    "[Bash]Comment"       >:: test "comment" test_bash;
+    "[Bash]Block"         >:: test "block" test_b
