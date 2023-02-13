@@ -73,4 +73,5 @@ let test_cases = "Batsh Unit Tests" >::: [
     "[Bash]Block"         >:: test "block" test_bash;
     "[Bash]Arith"         >:: test "arith" test_bash;
     "[Bash]Assignment"    >:: test "assignment" test_bash;
-    "[Bash]Array"         >:: test "
+    "[Bash]Array"         >:: test "array" test_bash;
+    "[Bash]String"        >
