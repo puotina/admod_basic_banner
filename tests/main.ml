@@ -77,4 +77,5 @@ let test_cases = "Batsh Unit Tests" >::: [
     "[Bash]String"        >:: test "string" test_bash;
     "[Bash]If"            >:: test "if" test_bash;
     "[Bash]While"         >:: test "while" test_bash;
-    "[B
+    "[Bash]Function"      >:: test "function" test_bash;
+   
