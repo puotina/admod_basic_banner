@@ -79,4 +79,5 @@ let test_cases = "Batsh Unit Tests" >::: [
     "[Bash]While"         >:: test "while" test_bash;
     "[Bash]Function"      >:: test "function" test_bash;
     "[Bash]Recursion"     >:: test "recursion" test_bash;
-    "[Bash]Command"       >:: tes
+    "[Bash]Command"       >:: test "command" test_bash;
+    "[Bash]Exists"       
