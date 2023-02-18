@@ -81,4 +81,5 @@ let test_cases = "Batsh Unit Tests" >::: [
     "[Bash]Recursion"     >:: test "recursion" test_bash;
     "[Bash]Command"       >:: test "command" test_bash;
     "[Bash]Exists"        >:: test "exists" test_bash;
-    "[Winbat]Co
+    "[Winbat]Comment"     >:: test "comment" test_winbat;
+    "[
