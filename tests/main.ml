@@ -85,4 +85,5 @@ let test_cases = "Batsh Unit Tests" >::: [
     "[Winbat]Block"       >:: test "block" test_winbat;
     "[Winbat]Arith"       >:: test "arith" test_winbat;
     "[Winbat]Assignment"  >:: test "assignment" test_winbat;
-    (* "[Winbat]Array"       >:: test "array" test_winb
+    (* "[Winbat]Array"       >:: test "array" test_winbat; *)
+    "[Winbat]String"      >:: test "str
