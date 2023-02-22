@@ -89,4 +89,5 @@ let test_cases = "Batsh Unit Tests" >::: [
     "[Winbat]String"      >:: test "string" test_winbat;
     "[Winbat]If"          >:: test "if" test_winbat;
     "[Winbat]While"       >:: test "while" test_winbat;
-    "[Winbat
+    "[Winbat]Function"    >:: test "function" test_winbat;
+    "[Win
